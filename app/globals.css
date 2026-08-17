@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* Brand palette — Premium European Technology */
+  --color-white: #ffffff;
+  --color-ink: #12141a;        /* graphite / near-black — primary text, dark sections */
+  --color-ink-soft: #454b56;   /* secondary text on light */
+  --color-mist: #f4f5f7;       /* light gray section backgrounds */
+  --color-mist-dark: #eceef2;
+  --color-line: #e3e5ea;       /* hairline borders */
+  --color-line-strong: #d3d6dd;
+  --color-blue: #2953ff;       /* electric blue accent */
+  --color-blue-dark: #1a3ccc;
+  --color-blue-soft: #eef2ff;  /* tinted accent background */
+  --color-blue-soft-line: #d7deff;
+
+  --font-display: var(--font-manrope);
+  --font-body: var(--font-inter);
+
+  --shadow-card: 0 1px 2px rgba(18, 20, 26, 0.04), 0 8px 24px -12px rgba(18, 20, 26, 0.10);
+  --shadow-card-hover: 0 2px 4px rgba(18, 20, 26, 0.06), 0 16px 40px -16px rgba(18, 20, 26, 0.16);
+}
+
+@theme inline {
+  --color-white: var(--color-white);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-mist: var(--color-mist);
+  --color-mist-dark: var(--color-mist-dark);
+  --color-line: var(--color-line);
+  --color-line-strong: var(--color-line-strong);
+  --color-blue: var(--color-blue);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-blue-soft: var(--color-blue-soft);
+  --color-blue-soft-line: var(--color-blue-soft-line);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.6s ease forwards;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), var(--font-body), ui-sans-serif, sans-serif;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Reveal-on-scroll: elements start hidden only once JS confirms motion is welcome */
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: var(--animate-fade-up);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
