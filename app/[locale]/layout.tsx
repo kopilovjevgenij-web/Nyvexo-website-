@@ -88,7 +88,6 @@ export default async function LocaleLayout({
         description: dictionary.meta.description,
         email: SITE.email,
         telephone: SITE.phone,
-        sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin],
       },
       {
         "@type": "WebSite",

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
-import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/icons/social";
 import { Logo } from "@/components/Logo";
 import { Container } from "@/components/ui/Container";
 import { SITE, type Locale } from "@/lib/constants";
@@ -17,35 +16,6 @@ export function Footer({ dictionary, locale }: { dictionary: Dictionary; locale:
           <div className="lg:col-span-2">
             <Logo variant="dark" />
             <p className="mt-4 max-w-xs text-sm font-medium text-white/50">{SITE.tagline}</p>
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href={SITE.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="inline-flex size-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <InstagramIcon className="size-4" />
-              </a>
-              <a
-                href={SITE.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="inline-flex size-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <FacebookIcon className="size-4" />
-              </a>
-              <a
-                href={SITE.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="inline-flex size-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <LinkedinIcon className="size-4" />
-              </a>
-            </div>
           </div>
 
           <div>
