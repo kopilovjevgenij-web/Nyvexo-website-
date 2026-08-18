@@ -3,19 +3,20 @@ import { Mail, Phone } from "lucide-react";
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/icons/social";
 import { Logo } from "@/components/Logo";
 import { Container } from "@/components/ui/Container";
-import { footerNav } from "@/data/nav";
-import { SITE } from "@/lib/constants";
+import { SITE, type Locale } from "@/lib/constants";
+import { localeHref } from "@/lib/i18n/paths";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function Footer() {
+export function Footer({ dictionary, locale }: { dictionary: Dictionary; locale: Locale }) {
+  const nav = dictionary.footer;
+
   return (
     <footer className="bg-ink text-white">
       <Container className="py-16 sm:py-20">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo variant="dark" />
-            <p className="mt-4 max-w-xs text-sm font-medium text-white/50">
-              {SITE.tagline}
-            </p>
+            <p className="mt-4 max-w-xs text-sm font-medium text-white/50">{SITE.tagline}</p>
             <div className="mt-6 flex items-center gap-3">
               <a
                 href={SITE.social.instagram}
@@ -48,9 +49,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white">Solutions</h3>
+            <h3 className="text-sm font-semibold text-white">{nav.solutionsHeading}</h3>
             <ul className="mt-4 space-y-3">
-              {footerNav.solutions.map((item) => (
+              {nav.solutions.map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="text-sm text-white/60 transition-colors hover:text-white">
                     {item.label}
@@ -61,9 +62,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white">Company</h3>
+            <h3 className="text-sm font-semibold text-white">{nav.companyHeading}</h3>
             <ul className="mt-4 space-y-3">
-              {footerNav.company.map((item) => (
+              {nav.company.map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="text-sm text-white/60 transition-colors hover:text-white">
                     {item.label}
@@ -74,7 +75,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white">Contact</h3>
+            <h3 className="text-sm font-semibold text-white">{nav.contactHeading}</h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <a
@@ -87,7 +88,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+                  href={`tel:${SITE.phoneHref}`}
                   className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
                 >
                   <Phone className="size-4 shrink-0" />
@@ -99,11 +100,13 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-white/40">© {new Date().getFullYear()} {SITE.name}. Все права защищены.</p>
+          <p className="text-xs text-white/40">
+            © {new Date().getFullYear()} {SITE.name}. {nav.rights}
+          </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            {footerNav.legal.map((item) => (
+            {nav.legal.map((item) => (
               <li key={item.label}>
-                <Link href={item.href} className="text-xs text-white/50 transition-colors hover:text-white">
+                <Link href={localeHref(locale, item.href)} className="text-xs text-white/50 transition-colors hover:text-white">
                   {item.label}
                 </Link>
               </li>

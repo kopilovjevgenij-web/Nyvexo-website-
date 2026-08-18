@@ -2,20 +2,18 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
-import { caseStudies } from "@/data/cases";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function CaseStudies() {
+export function CaseStudies({ dictionary }: { dictionary: Dictionary }) {
+  const t = dictionary.cases;
+
   return (
     <section id="cases" className="bg-mist py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Кейсы"
-          title="Примеры решений"
-          description="Реальных клиентских кейсов пока нет в публичном доступе — ниже demo-примеры того, как решения SmartFlow работают на практике. Структуру легко заменить на подтверждённые результаты клиентов."
-        />
+        <SectionHeading eyebrow={t.eyebrow} title={t.heading} description={t.subtitle} />
 
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {caseStudies.map((item, i) => (
+          {t.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 90}>
               <div className="h-full rounded-2xl border border-line bg-white p-7">
                 <div className="flex items-start justify-between gap-4">
@@ -24,16 +22,32 @@ export function CaseStudies() {
                     <h3 className="mt-1.5 text-xl font-semibold text-ink">{item.title}</h3>
                   </div>
                   <Badge tone="neutral" className="shrink-0">
-                    Concept / Demo
+                    {t.badge}
                   </Badge>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-ink-soft">{item.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
+
+                <dl className="mt-5 space-y-3">
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-ink-soft">{t.labels.problem}</dt>
+                    <dd className="mt-1 text-sm leading-relaxed text-ink">{item.problem}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-ink-soft">{t.labels.solution}</dt>
+                    <dd className="mt-1 text-sm leading-relaxed text-ink">{item.solution}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-ink-soft">{t.labels.automation}</dt>
+                    <dd className="mt-1 text-sm leading-relaxed text-ink">{item.automation}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.06em] text-ink-soft">{t.labels.result}</dt>
+                    <dd className="mt-1 text-sm font-medium leading-relaxed text-ink">{item.result}</dd>
+                  </div>
+                </dl>
+
+                <div className="mt-5 flex flex-wrap gap-2 border-t border-line pt-4">
                   {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-mist px-3 py-1 text-xs font-medium text-ink-soft"
-                    >
+                    <span key={tag} className="rounded-full bg-mist px-3 py-1 text-xs font-medium text-ink-soft">
                       {tag}
                     </span>
                   ))}

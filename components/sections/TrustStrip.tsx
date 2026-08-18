@@ -1,15 +1,14 @@
 import { Container } from "@/components/ui/Container";
-import { integrations } from "@/data/technology";
+import { integrations } from "@/lib/tech-list";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function TrustStrip() {
+export function TrustStrip({ dictionary }: { dictionary: Dictionary }) {
   const loop = [...integrations, ...integrations];
 
   return (
     <section className="border-y border-line bg-mist py-10">
       <Container>
-        <p className="mb-6 text-center text-sm font-medium text-ink-soft">
-          Цифровые решения, которые работают вместе
-        </p>
+        <p className="mb-6 text-center text-sm font-medium text-ink-soft">{dictionary.trustStrip.heading}</p>
       </Container>
       <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex w-max animate-marquee gap-3 motion-reduce:animate-none">

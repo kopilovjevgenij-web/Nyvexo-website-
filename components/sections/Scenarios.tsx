@@ -2,24 +2,21 @@ import { ChevronRight, MessageSquareText } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { scenarios } from "@/data/scenarios";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function Scenarios() {
+export function Scenarios({ dictionary }: { dictionary: Dictionary }) {
+  const t = dictionary.scenarios;
+
   return (
     <section className="bg-mist py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Как это работает на практике"
-          title="Как SmartFlow может работать в реальном бизнесе"
-        />
+        <SectionHeading eyebrow={t.eyebrow} title={t.heading} />
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {scenarios.map((scenario, i) => (
+          {t.items.map((scenario, i) => (
             <Reveal key={scenario.label} delay={i * 100} className="h-full">
               <div className="flex h-full flex-col rounded-3xl border border-line bg-white p-7">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-blue">
-                  {scenario.label}
-                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-blue">{scenario.label}</span>
                 <h3 className="mt-2 text-xl font-semibold text-ink">{scenario.title}</h3>
 
                 <div className="mt-5 flex items-start gap-2.5 rounded-xl bg-mist p-4">
@@ -47,7 +44,7 @@ export function Scenarios() {
 
         <Reveal delay={300} className="mt-10 flex justify-center">
           <a href="#contact" className="inline-flex items-center gap-1 text-sm font-semibold text-ink">
-            Обсудить сценарий для вашего бизнеса
+            {t.linkCta}
             <ChevronRight className="size-4" aria-hidden />
           </a>
         </Reveal>

@@ -3,6 +3,9 @@
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import type { Locale } from "@/lib/constants";
+import { localeHref } from "@/lib/i18n/paths";
+import type { Dictionary } from "@/lib/i18n/types";
 
 type Consent = {
   essential: true;
@@ -29,7 +32,8 @@ function useHasStoredConsent() {
   );
 }
 
-export function CookieBanner() {
+export function CookieBanner({ dictionary, locale }: { dictionary: Dictionary; locale: Locale }) {
+  const t = dictionary.cookie;
   const hasStoredConsent = useHasStoredConsent();
   const [dismissed, setDismissed] = useState(false);
   const [manageOpen, setManageOpen] = useState(false);
@@ -54,20 +58,13 @@ export function CookieBanner() {
   };
 
   return (
-    <div
-      role="dialog"
-      aria-live="polite"
-      aria-label="Настройки cookie"
-      className="fixed inset-x-0 bottom-0 z-[100] p-4 sm:p-6"
-    >
+    <div role="dialog" aria-live="polite" aria-label={t.managePreferences} className="fixed inset-x-0 bottom-0 z-[100] p-4 sm:p-6">
       <Container className="!px-0 sm:!px-0 max-w-3xl">
         <div className="rounded-2xl border border-line bg-white/95 p-5 shadow-[var(--shadow-card-hover)] backdrop-blur-md sm:p-6">
           <p className="text-sm leading-relaxed text-ink-soft">
-            Мы используем cookie, чтобы сайт работал корректно и мы могли улучшать его на основе
-            статистики использования. Вы можете принять все cookie, отклонить необязательные или
-            настроить их самостоятельно. Подробнее — в{" "}
-            <Link href="/cookie-policy" className="font-medium text-ink underline underline-offset-2">
-              Cookie Policy
+            {t.message}{" "}
+            <Link href={localeHref(locale, "/cookie-policy")} className="font-medium text-ink underline underline-offset-2">
+              {t.policyLinkText}
             </Link>
             .
           </p>
@@ -76,35 +73,35 @@ export function CookieBanner() {
             <div className="mt-4 space-y-3 rounded-xl border border-line bg-mist p-4">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-sm font-medium text-ink">Необходимые</p>
-                  <p className="text-xs text-ink-soft">Всегда включены — нужны для работы сайта.</p>
+                  <p className="text-sm font-medium text-ink">{t.essentialTitle}</p>
+                  <p className="text-xs text-ink-soft">{t.essentialDesc}</p>
                 </div>
-                <input type="checkbox" checked disabled className="size-4 accent-blue" aria-label="Необходимые cookie, всегда включены" />
+                <input type="checkbox" checked disabled className="size-4 accent-blue" aria-label={t.essentialTitle} />
               </div>
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-sm font-medium text-ink">Аналитика</p>
-                  <p className="text-xs text-ink-soft">Помогает понять, как посетители используют сайт.</p>
+                  <p className="text-sm font-medium text-ink">{t.analyticsTitle}</p>
+                  <p className="text-xs text-ink-soft">{t.analyticsDesc}</p>
                 </div>
                 <input
                   type="checkbox"
                   checked={analytics}
                   onChange={(e) => setAnalytics(e.target.checked)}
                   className="size-4 accent-blue"
-                  aria-label="Аналитические cookie"
+                  aria-label={t.analyticsTitle}
                 />
               </div>
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-sm font-medium text-ink">Маркетинг</p>
-                  <p className="text-xs text-ink-soft">Используется для релевантной рекламы.</p>
+                  <p className="text-sm font-medium text-ink">{t.marketingTitle}</p>
+                  <p className="text-xs text-ink-soft">{t.marketingDesc}</p>
                 </div>
                 <input
                   type="checkbox"
                   checked={marketing}
                   onChange={(e) => setMarketing(e.target.checked)}
                   className="size-4 accent-blue"
-                  aria-label="Маркетинговые cookie"
+                  aria-label={t.marketingTitle}
                 />
               </div>
             </div>
@@ -115,27 +112,27 @@ export function CookieBanner() {
               onClick={acceptAll}
               className="h-11 rounded-full bg-blue px-5 text-sm font-medium text-white transition-colors hover:bg-blue-dark sm:order-3"
             >
-              Accept all
+              {t.acceptAll}
             </button>
             <button
               onClick={rejectNonEssential}
               className="h-11 rounded-full border border-line-strong px-5 text-sm font-medium text-ink transition-colors hover:bg-mist sm:order-2"
             >
-              Reject non-essential
+              {t.rejectNonEssential}
             </button>
             {manageOpen ? (
               <button
                 onClick={savePreferences}
                 className="h-11 rounded-full border border-line-strong px-5 text-sm font-medium text-ink transition-colors hover:bg-mist sm:order-1"
               >
-                Save preferences
+                {t.savePreferences}
               </button>
             ) : (
               <button
                 onClick={() => setManageOpen(true)}
                 className="h-11 rounded-full px-5 text-sm font-medium text-ink-soft transition-colors hover:text-ink sm:order-1"
               >
-                Manage preferences
+                {t.managePreferences}
               </button>
             )}
           </div>

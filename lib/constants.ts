@@ -2,13 +2,10 @@ export const SITE = {
   name: "SmartFlow",
   tagline: "Websites. Automation. AI.",
   legalName: "SmartFlow",
-  url: "https://smartflow.example.com",
-  description:
-    "SmartFlow создаёт сайты, автоматизирует бизнес-процессы и внедряет AI-чат-ботов и голосовых агентов для бизнеса.",
-  locale: "ru",
-  // Placeholder contact details — replace with real company details before launch.
-  email: "hello@smartflow.example.com",
-  phone: "+371 00 000 000",
+  url: "https://smart-flow-website.vercel.app",
+  email: "kopilov.jevgenij@gmail.com",
+  phone: "+371 28106463",
+  phoneHref: "+37128106463",
   social: {
     instagram: "https://instagram.com/smartflow",
     facebook: "https://facebook.com/smartflow",
@@ -16,8 +13,12 @@ export const SITE = {
   },
 } as const;
 
-// Prepared for future locales — Russian ships first, EN/LV routes can be
-// added under app/[locale] using this same data layer without touching components.
-export const LOCALES = ["ru", "en", "lv"] as const;
+export const LOCALES = ["lv", "en", "ru"] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = "ru";
+export const DEFAULT_LOCALE: Locale = "lv";
+
+export const LOCALE_LABELS: Record<Locale, string> = {
+  lv: "LV",
+  en: "EN",
+  ru: "RU",
+};

@@ -2,16 +2,18 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/icons/icon-map";
-import { whyItems } from "@/data/why-smartflow";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function WhySmartFlow() {
+export function WhySmartFlow({ dictionary }: { dictionary: Dictionary }) {
+  const t = dictionary.why;
+
   return (
     <section className="bg-mist py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow="Почему мы" title="Почему SmartFlow" />
+        <SectionHeading eyebrow={t.eyebrow} title={t.heading} />
 
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {whyItems.map((item, i) => (
+          {t.items.map((item, i) => (
             <Reveal key={item.title} delay={(i % 3) * 90}>
               <div className="flex h-full gap-4 rounded-2xl border border-line bg-white p-6">
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-blue-soft text-blue">

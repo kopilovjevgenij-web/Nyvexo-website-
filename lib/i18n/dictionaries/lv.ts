@@ -1,0 +1,643 @@
+import type { Dictionary } from "../types";
+
+export const dictionary: Dictionary = {
+  meta: {
+    title: "SmartFlow — mājaslapas, AI un biznesa automatizācija",
+    description:
+      "SmartFlow izstrādā mājaslapas, automatizē biznesa procesus un ievieš AI čatbotus un balss aģentus, kas atbild klientiem 24/7.",
+    ogTitle: "SmartFlow — mājaslapas, automatizācija un AI biznesam",
+    ogDescription: "Mājaslapas, biznesa procesu automatizācija un AI asistenti, kas ietaupa laiku un palīdz nezaudēt klientus.",
+  },
+  nav: {
+    links: [
+      { label: "Risinājumi", href: "#value" },
+      { label: "Pakalpojumi", href: "#services" },
+      { label: "Biznesam", href: "#industries" },
+      { label: "Kā strādājam", href: "#how-it-works" },
+      { label: "Piemēri", href: "#cases" },
+      { label: "FAQ", href: "#faq" },
+    ],
+    cta: "Pārrunāt projektu",
+    openMenu: "Atvērt izvēlni",
+    closeMenu: "Aizvērt izvēlni",
+  },
+  hero: {
+    badge: "Websites · Automation · AI",
+    titleMain: "Mājaslapas, automatizācija un AI",
+    titleAccent: "biznesam, kas nezaudē klientus",
+    subtitle:
+      "SmartFlow izstrādā mājaslapas, automatizē biznesa procesus un ievieš AI asistentus, čatbotus un balss aģentus, kas atbild klientiem 24/7 un pārņem rutīnas darbu.",
+    ctaPrimary: "Pārrunāt projektu",
+    ctaSecondary: "Saņemt bezmaksas auditu",
+    trustItems: ["Maziem un vidējiem uzņēmumiem", "Mājaslapas · Automatizācija · AI", "Sākam ar vienu procesu"],
+    flowLabel: "Jūsu biznesa digitālā plūsma",
+    flowNodes: ["Mājaslapa", "AI", "Automatizācija", "CRM", "Kalendārs", "Klients"],
+  },
+  trustStrip: {
+    heading: "Digitāli risinājumi, kas strādā kopā",
+  },
+  problems: {
+    eyebrow: "Biznesa realitāte",
+    heading: "Kur bizness katru dienu zaudē laiku?",
+    items: [
+      {
+        icon: "repeat",
+        title: "Pārāk daudz manuāla darba",
+        description: "Darbinieki veic atkārtotas darbības tā vietā, lai risinātu svarīgus uzdevumus.",
+      },
+      {
+        icon: "clock",
+        title: "Klienti gaida atbildi",
+        description: "Pieprasījumi un ziņas ienāk vakaros, naktīs un brīvdienās.",
+      },
+      {
+        icon: "shuffle",
+        title: "Informācija ir izkliedēta",
+        description: "Instagram, WhatsApp, CRM, tabulas un kalendārs nav savienoti savā starpā.",
+      },
+      {
+        icon: "monitor-x",
+        title: "Mājaslapa vienkārši eksistē",
+        description: "Tā var izskatīties labi, bet nepalīdzēt pārdot vai apkalpot klientus.",
+      },
+    ],
+    closing: "SmartFlow apvieno šos procesus vienā strādājošā sistēmā.",
+  },
+  valueProp: {
+    heading1: "Mēs automatizējam nevis tehnoloģijas.",
+    heading2: "Mēs automatizējam",
+    headingAccent: "biznesu.",
+    beforeLabel: "Bija",
+    beforeItems: ["Manuāls darbs", "Ziņas", "Tabulas", "Zvani", "Zaudēti pieprasījumi", "Atkārtoti uzdevumi"],
+    afterLabel: "Kļuva",
+    afterItems: ["AI", "Automatizācija", "CRM", "Kalendārs", "Mājaslapa", "Paziņojumi", "Saziņa 24/7"],
+    statement: "Jūs nepērkat vēl vienu rīku. Jūs iegūstat sistēmu, kas paveic rutīnas darbu jūsu vietā.",
+  },
+  services: {
+    eyebrow: "Pakalpojumi",
+    heading: "Ko mēs veidojam",
+    labels: { forWhom: "Kam paredzēts", automates: "Ko automatizē", businessGets: "Ko iegūst bizness" },
+    items: [
+      {
+        index: "01",
+        slug: "websites",
+        icon: "globe",
+        title: "Mājaslapas biznesam",
+        whatItIs: "Mūsdienīga mājaslapa, kas izskatās profesionāli un strādā klientu piesaistei, nevis vienkārši eksistē.",
+        forWhom: "Uzņēmumiem, kam nepieciešama mājaslapa ar tiešsaistes pieraksti, pieprasījumu formām un skaidru struktūru.",
+        automates: "Pieprasījumu pieņemšanu, klientu pierakstu, datu nodošanu CRM.",
+        businessGets: "Vairāk pieprasījumu no mājaslapas un mazāk manuāla darba to apstrādē.",
+        cta: "Pārrunāt mājaslapu",
+      },
+      {
+        index: "02",
+        slug: "automation",
+        icon: "workflow",
+        title: "Biznesa procesu automatizācija",
+        whatItIs: "Savienojam rīkus, kurus jau izmantojat, un novēršam atkārtotas manuālas darbības.",
+        forWhom: "Uzņēmumiem, kur pieprasījumi, ziņas un dati tiek apstrādāti manuāli.",
+        automates: "Pieprasījumu pieņemšanu, paziņojumus, CRM atjaunināšanu, follow-up, atskaites.",
+        businessGets: "Mazāk rutīnas komandai un ātrāku katra pieprasījuma apstrādi.",
+        flow: ["Pieprasījums", "CRM", "Paziņojums", "Menedžeris", "Kalendārs", "Follow-up"],
+        cta: "Automatizēt procesu",
+      },
+      {
+        index: "03",
+        slug: "ai-chatbots",
+        icon: "message-circle",
+        title: "AI čatboti",
+        whatItIs: "AI asistents, kas atbild klientiem tajos kanālos, kur viņi jums jau raksta.",
+        forWhom: "Uzņēmumiem, kas saņem daudz ziņu Instagram, WhatsApp vai mājaslapā.",
+        automates: "Atbildes klientiem 24/7, pieprasījumu kvalifikāciju, pierakstu un sarežģītu jautājumu nodošanu menedžerim.",
+        businessGets: "Klienti saņem atbildi uzreiz — pat naktī un brīvdienās.",
+        channels: ["Website", "Instagram", "WhatsApp", "Facebook", "Telegram"],
+        cta: "Pārrunāt AI botu",
+      },
+      {
+        index: "04",
+        slug: "voice-ai",
+        icon: "phone-call",
+        title: "AI balss aģenti",
+        whatItIs: "AI, kas pieņem zvanus, konsultē un pieraksta klientus balsī — tāpat kā dzīvs darbinieks.",
+        forWhom: "Uzņēmumiem, kur ir daudz zvanu un daļa no tiem paliek bez atbildes.",
+        automates: "Zvanu pieņemšanu, konsultāciju, pierakstu uz pakalpojumu, datu nodošanu CRM un kalendārā.",
+        businessGets: "Neviens zvans nepaliek bez atbildes — pat tad, kad birojs ir slēgts.",
+        flow: [
+          "Zvans",
+          "AI atbild",
+          "Nosaka iemeslu",
+          "Konsultē",
+          "Apkopo datus",
+          "Pieraksta klientu",
+          "CRM / Kalendārs",
+          "Menedžeris saņem informāciju",
+        ],
+        cta: "Pārrunāt Voice AI",
+      },
+    ],
+  },
+  pricing: {
+    eyebrow: "Ar ko sākt",
+    heading: "Kā var sākt",
+    subtitle: "Nav nepieciešams uzreiz mainīt visu biznesu — var sākt ar vienu procesu un pakāpeniski paplašināt sistēmu.",
+    note: "Cena tiek aprēķināta pēc uzdevuma izvērtēšanas — precīzu tāmi nosūtām pēc īsas pārrunas.",
+    tiers: [
+      {
+        name: "START",
+        tag: "Lai sāktu",
+        description: "Viens process vai viens uzdevums — piemēram, pieprasījumu apstrāde vai klientu pieraksts.",
+        items: ["Viens automatizēts process", "Ātra ieviešana", "Skaidrs rezultāts"],
+      },
+      {
+        name: "GROW",
+        tag: "Lai augtu",
+        description: "Vairāki savstarpēji saistīti procesi — pieprasījumi, CRM, paziņojumi, follow-up.",
+        items: ["Vairāki procesi", "Rīku integrācija", "Mazāk manuāla darba komandai"],
+      },
+      {
+        name: "AI SYSTEM",
+        tag: "Pilna sistēma",
+        description: "Pilnvērtīga sistēma: AI, automatizācija, CRM un integrācijas strādā kopā.",
+        items: ["AI + Automation + CRM", "Darbojas 24/7", "Sistēma, kas aug kopā ar biznesu"],
+      },
+    ],
+  },
+  bigStatement: {
+    line1: "Viens bizness.",
+    line2: "Viena sistēma.",
+    line3: "Mazāk manuāla darba.",
+    inputs: ["Mājaslapa", "AI", "Automatizācija", "CRM", "Integrācijas"],
+  },
+  industries: {
+    eyebrow: "Biznesam",
+    heading: "Kur SmartFlow var palīdzēt?",
+    items: [
+      {
+        icon: "utensils",
+        title: "Restaurants",
+        description: "AI atbild uz jautājumiem, pieņem pieprasījumus un palīdz ar galdiņu rezervācijām.",
+        capability: "AI rezervācijas + Instagram + WhatsApp + follow-up",
+      },
+      {
+        icon: "stethoscope",
+        title: "Clinics",
+        description: "Pieraksts, konsultācijas, atgādinājumi un saziņa ar pacientiem.",
+        capability: "Voice AI + pieraksts + atgādinājumi + CRM",
+      },
+      {
+        icon: "sparkles",
+        title: "Beauty",
+        description: "Klientu pieraksts, atbildes uz jautājumiem un automātiski atgādinājumi par vizīti.",
+        capability: "Tiešsaistes pieraksts + atgādinājumi + AI atbildes",
+      },
+      {
+        icon: "hotel",
+        title: "Hotels",
+        description: "Rezervācijas, atbildes uz biežiem jautājumiem, saziņa ar viesiem pirms un pēc ierašanās.",
+        capability: "Rezervācijas + FAQ + saziņa ar viesiem",
+      },
+      {
+        icon: "building-2",
+        title: "Real Estate",
+        description: "Pieprasījumu apstrāde, klientu kvalifikācija un automātisks follow-up par objektiem.",
+        capability: "Lead kvalifikācija + CRM + follow-up",
+      },
+      {
+        icon: "shopping-bag",
+        title: "E-commerce",
+        description: "Klientu atbalsts, atbildes par precēm un pasūtījumiem, pieprasījumu apstrāde.",
+        capability: "Klientu atbalsts + atbildes par pasūtījumiem",
+      },
+      {
+        icon: "briefcase",
+        title: "Professional Services",
+        description: "Lead vākšana, pieprasījumu kvalifikācija un saziņas automatizācija ar klientiem.",
+        capability: "Lead vākšana + kvalifikācija + saziņas automatizācija",
+      },
+    ],
+  },
+  scenarios: {
+    eyebrow: "Kā tas strādā praksē",
+    heading: "Kā SmartFlow var strādāt reālā biznesā",
+    linkCta: "Pārrunāt scenāriju savam biznesam",
+    items: [
+      {
+        label: "Scenārijs 1 — Restorāns",
+        title: "Rezervācija caur Instagram",
+        trigger: "«Vai varu rezervēt galdiņu sestdienai?»",
+        steps: [
+          "Klients raksta Instagram",
+          "AI atbild",
+          "Pārbauda pieejamību",
+          "Apkopo vārdu un tālruni",
+          "Izveido rezervāciju",
+          "Nosūta apstiprinājumu",
+          "Informācija tiek saglabāta",
+        ],
+      },
+      {
+        label: "Scenārijs 2 — Klīnika",
+        title: "Pieraksts pa tālruni",
+        trigger: "«Vēlos pierakstīties pie zobārsta»",
+        steps: [
+          "Klients zvana",
+          "AI Voice Agent atbild",
+          "Nosaka pakalpojumu",
+          "Piedāvā brīvu laiku",
+          "Pieraksta klientu",
+          "Nosūta apstiprinājumu",
+          "CRM tiek atjaunināts",
+        ],
+      },
+      {
+        label: "Scenārijs 3 — Pakalpojumu bizness",
+        title: "Pieprasījums no mājaslapas",
+        trigger: "Klients atstāj pieprasījumu mājaslapā",
+        steps: [
+          "Pieprasījums nonāk CRM",
+          "AI kvalificē klientu",
+          "Menedžeris saņem paziņojumu",
+          "Klients saņem automātisku follow-up",
+        ],
+      },
+    ],
+  },
+  beforeAfter: {
+    beforeTitle: "Pirms SmartFlow",
+    afterTitle: "Pēc SmartFlow",
+    beforeItems: ["Manuāli pieprasījumi", "Neatbildēti zvani", "Lēnas atbildes", "Tabulas", "Nesaistītas sistēmas", "Atkārtoti uzdevumi"],
+    afterItems: [
+      "AI strādā 24/7",
+      "Pieprasījumi tiek apkopoti automātiski",
+      "CRM atjauninās automātiski",
+      "Klienti saņem ātras atbildes",
+      "Sistēmas ir savienotas",
+      "Komanda nodarbojas ar svarīgu darbu",
+    ],
+  },
+  process: {
+    eyebrow: "Process",
+    heading: "No idejas līdz strādājošai sistēmai",
+    emphasis: "Nav jāmaina viss bizness uzreiz. Sākam ar vienu procesu.",
+    steps: [
+      { index: "01", title: "Izzinām", description: "Iepazīstam biznesu, mērķus un pašreizējos procesus." },
+      { index: "02", title: "Atrodam iespējas", description: "Nosakām, ko var automatizēt." },
+      { index: "03", title: "Izveidojam", description: "Izstrādājam mājaslapu, AI asistentu vai automatizācijas sistēmu." },
+      { index: "04", title: "Palaižam", description: "Integrējam, testējam un palaižam darbā." },
+      { index: "05", title: "Atbalstām", description: "Nepieciešamības gadījumā uzturam sistēmu un attīstām to tālāk." },
+    ],
+  },
+  audit: {
+    eyebrow: "SmartFlow Audit",
+    heading: "Bezmaksas SmartFlow Audit",
+    subtitle: "Parādīsim, kurus jūsu biznesa procesus var automatizēt un kur AI patiešām ir jēga.",
+    disclaimer: "Bez saistībām. Vispirms izprotam uzdevumu — tad piedāvājam risinājumu.",
+    improveLabel: "Ko vēlaties uzlabot?",
+    improveOptions: [
+      "Pārāk daudz manuāla darba",
+      "Daudz zvanu",
+      "Daudz ziņu",
+      "Zaudējam klientus",
+      "Nepieciešama jauna mājaslapa",
+      "Vēlamies AI",
+      "Vēlamies automatizāciju",
+      "Nezinu — nepieciešama konsultācija",
+    ],
+    form: {
+      name: "Vārds",
+      company: "Uzņēmums",
+      email: "E-pasts",
+      phone: "Tālrunis",
+      website: "Mājaslapa",
+      submit: "Saņemt bezmaksas auditu",
+      submitting: "Sūtām...",
+      successTitle: "Paldies!",
+      successText: "Saņēmām jūsu pieteikumu auditam. Sazināsimies ar jums tuvākajā laikā.",
+      error: "Neizdevās nosūtīt formu. Lūdzu, mēģiniet vēlreiz vai rakstiet mums tieši.",
+    },
+  },
+  cases: {
+    eyebrow: "Risinājumu piemēri",
+    heading: "Kā tas varētu strādāt jūsu biznesā",
+    subtitle: "Tie nav konkrētu klientu stāsti, bet piemēri tam, kādus risinājumus SmartFlow var izveidot jūsu biznesa veidam.",
+    badge: "Solution concept",
+    labels: {
+      problem: "Problēma",
+      solution: "SmartFlow risinājums",
+      automation: "Kas notiek automātiski",
+      result: "Rezultāts biznesam",
+    },
+    items: [
+      {
+        title: "Restorāna automatizācija",
+        industry: "Restaurants",
+        problem: "Administrators saņem desmitiem ziņu un zvanu par rezervācijām, vienlaikus strādājot zālē.",
+        solution: "AI asistents atbild klientiem Instagram un WhatsApp, precizē detaļas un noformē rezervāciju.",
+        automation: "Pieejamības pārbaude, vārda un tālruņa apkopošana, rezervācijas izveide, apstiprinājuma nosūtīšana.",
+        result: "Mazāk manuāla darba un mazāk neatbildētu pieprasījumu.",
+        tags: ["AI čatbots", "Instagram", "WhatsApp", "Rezervācija"],
+      },
+      {
+        title: "Klīnikas automatizācija",
+        industry: "Clinics",
+        problem: "Pacienti zvana darba laikā, kad administrators ir aizņemts, un daļa zvanu paliek bez atbildes.",
+        solution: "AI balss aģents pieņem zvanus, precizē pakalpojumu un piedāvā brīvu laiku.",
+        automation: "Pieraksts uz vizīti, atgādinājumi un CRM atjaunināšana bez administratora iesaistes.",
+        result: "Mazāk neatbildētu zvanu un paredzamāks grafiks.",
+        tags: ["Voice AI", "CRM", "Atgādinājumi", "Kalendārs"],
+      },
+      {
+        title: "Nekustamā īpašuma aģentūras automatizācija",
+        industry: "Real Estate",
+        problem: "Pieprasījumi nāk no dažādiem avotiem, un daļa klientu nesaņem savlaicīgu atbildi.",
+        solution: "Pieprasījumi automātiski nonāk CRM un tiek kvalificēti pēc noteiktiem kritērijiem.",
+        automation: "Pieprasījumu sadale starp menedžeriem, paziņojumi un automātisks follow-up.",
+        result: "Neviens pieprasījums nepaliek bez uzmanības.",
+        tags: ["Automation", "CRM", "Lead kvalifikācija"],
+      },
+      {
+        title: "Pakalpojumu uzņēmuma automatizācija",
+        industry: "Professional Services",
+        problem: "Komanda tērē laiku atkārtotiem klientu jautājumiem un manuālai kontaktu vākšanai.",
+        solution: "AI asistents atbild uz biežākajiem jautājumiem un apkopo potenciālo klientu kontaktus.",
+        automation: "Pieprasījumu kvalifikācija, menedžera informēšana, follow-up pēc pirmā kontakta.",
+        result: "Komanda nodarbojas ar svarīgu darbu, nevis atkārtotām atbildēm.",
+        tags: ["AI čatbots", "Automation", "Lead kvalifikācija"],
+      },
+    ],
+  },
+  why: {
+    eyebrow: "Kāpēc mēs",
+    heading: "Kāpēc bizness izvēlas SmartFlow",
+    items: [
+      { icon: "target", title: "Business-first", description: "Vispirms izprotam biznesa uzdevumu, tad izvēlamies tehnoloģiju." },
+      { icon: "layers", title: "One system", description: "Apvienojam mājaslapu, AI, CRM un automatizāciju vienā sistēmā." },
+      { icon: "puzzle", title: "Custom", description: "Risinājums tiek veidots konkrētam jūsu biznesa procesam." },
+      { icon: "message-square", title: "Simple", description: "Sarežģītas tehnoloģijas skaidrojam vienkāršā, saprotamā valodā." },
+      { icon: "trending-up", title: "Scalable", description: "Sistēmu var attīstīt kopā ar biznesa izaugsmi." },
+      { icon: "life-buoy", title: "Support", description: "Palīdzam un uzturam sistēmu arī pēc palaišanas." },
+    ],
+  },
+  technology: {
+    heading: "Mēs izmantojam tehnoloģijas kā rīkus",
+    disclaimer: "SmartFlow nav oficiāls minēto pakalpojumu partneris — mēs integrējam šīs tehnoloģijas biznesa procesos.",
+  },
+  faq: {
+    eyebrow: "Jautājumi un atbildes",
+    heading: "FAQ",
+    items: [
+      {
+        question: "Ar ko sākt?",
+        answer: "Var sākt ar vienu procesu — piemēram, pieprasījumu apstrādi, klientu pierakstu vai atbildēm uz ziņām. Pēc tam sistēmu var pakāpeniski paplašināt.",
+      },
+      {
+        question: "Vai jūs strādājat tikai ar AI?",
+        answer: "Nē. Mēs izstrādājam mājaslapas, automatizējam biznesa procesus un integrējam AI tur, kur tas patiešām sniedz labumu.",
+      },
+      {
+        question: "Cik maksā mājaslapa?",
+        answer: "Cena atkarīga no sarežģītības: lapu skaita, tiešsaistes pieraksta nepieciešamības, CRM integrācijas un AI funkcionalitātes. Pēc pārrunas nosūtām precīzu tāmi ar sadalījumu pa posmiem.",
+      },
+      {
+        question: "Cik maksā AI bots?",
+        answer: "Cena atkarīga no kanālu skaita (mājaslapa, Instagram, WhatsApp un citi), scenāriju sarežģītības un integrācijas dziļuma ar jūsu zināšanu bāzi un CRM.",
+      },
+      {
+        question: "Cik maksā automatizācija?",
+        answer: "Cena atkarīga no procesu un servisu skaita, kurus nepieciešams savienot. Var sākt ar vienu procesu un pakāpeniski paplašināt sistēmu.",
+      },
+      {
+        question: "Vai var integrēt Instagram?",
+        answer: "Jā, mēs pieslēdzam Instagram Direct AI asistentam, lai tas automātiski atbildētu uz ziņām.",
+      },
+      {
+        question: "Vai var pieslēgt WhatsApp?",
+        answer: "Jā, WhatsApp ir viens no pieprasītākajiem kanāliem AI čatbotiem un klientu paziņojumiem.",
+      },
+      {
+        question: "Vai var pieslēgt CRM?",
+        answer: "Jā, mēs integrējam populārās CRM sistēmas, kā arī Google Sheets un Google Calendar, ja jums nav atsevišķas CRM.",
+      },
+      {
+        question: "Vai AI var atbildēt pa tālruni?",
+        answer: "Jā, AI balss aģents var pieņemt zvanus, konsultēt klientus, atbildēt uz biežiem jautājumiem un pierakstīt uz pakalpojumu.",
+      },
+      {
+        question: "Vai AI var strādāt 24/7?",
+        answer: "Jā, tā ir viena no galvenajām priekšrocībām: AI čatboti un balss aģenti strādā visu diennakti, tai skaitā vakaros, naktīs un brīvdienās.",
+      },
+      {
+        question: "Vai var integrēt Google Calendar?",
+        answer: "Jā, mēs pieslēdzam Google Calendar automātiskam klientu pierakstam un tikšanos plānošanai.",
+      },
+      {
+        question: "Vai nepieciešams mainīt esošās programmas?",
+        answer: "Ne obligāti. Mēs cenšamies iebūvēt risinājumus rīkos, kurus jūs jau izmantojat, nevis aizstāt tos bez vajadzības.",
+      },
+      {
+        question: "Vai var sākt ar vienu procesu?",
+        answer: "Jā, tā ir izplatīta un saprātīga pieeja — sākt ar vienu procesu (piemēram, pieprasījumu apstrādi) un pakāpeniski pievienot jaunus.",
+      },
+      {
+        question: "Vai ir atbalsts pēc palaišanas?",
+        answer: "Jā, mēs uzturam sistēmu pēc palaišanas: sekojam līdzi stabilitātei, veicam labojumus un palīdzam tai augt kopā ar biznesu.",
+      },
+    ],
+  },
+  finalCta: {
+    heading: "Atradīsim, ko jūsu biznesā var automatizēt",
+    subtitle: "Pastāstiet, kā šobrīd darbojas jūsu bizness. Parādīsim, kurus procesus var vienkāršot, automatizēt vai stiprināt ar AI.",
+    ctaPrimary: "Saņemt bezmaksas auditu",
+    ctaSecondary: "Pārrunāt projektu",
+  },
+  contact: {
+    eyebrow: "Kontakti",
+    heading: "Pārrunāsim jūsu projektu",
+    subtitle: "Pastāstiet par uzdevumu — atbildēsim tuvākajā laikā un piedāvāsim, ar ko labāk sākt: mājaslapu, automatizāciju vai AI.",
+    serviceLabel: "Pakalpojums",
+    serviceOptions: ["Mājaslapa", "Automatizācija", "AI čatbots", "AI balss aģents", "Integrācijas", "Neesmu pārliecināts(-a) — nepieciešama konsultācija"],
+    form: {
+      name: "Vārds",
+      company: "Uzņēmums",
+      email: "E-pasts",
+      phone: "Tālrunis",
+      website: "Mājaslapa",
+      message: "Ziņojums",
+      consentPrefix: "Piekrītu",
+      consentLink: "Privātuma politikai",
+      submit: "Nosūtīt pieteikumu",
+      submitting: "Sūtām...",
+      successTitle: "Paldies!",
+      successText: "Saņēmām jūsu pieteikumu. Sazināsimies ar jums tuvākajā laikā.",
+      error: "Neizdevās nosūtīt formu. Lūdzu, mēģiniet vēlreiz vai rakstiet mums tieši uz",
+    },
+  },
+  footer: {
+    solutionsHeading: "Risinājumi",
+    companyHeading: "Uzņēmums",
+    contactHeading: "Kontakti",
+    solutions: [
+      { label: "Mājaslapas biznesam", href: "#services" },
+      { label: "Biznesa automatizācija", href: "#services" },
+      { label: "AI čatboti", href: "#services" },
+      { label: "AI balss aģenti", href: "#services" },
+    ],
+    company: [
+      { label: "Kā strādājam", href: "#how-it-works" },
+      { label: "Piemēri", href: "#cases" },
+      { label: "FAQ", href: "#faq" },
+      { label: "Kontakti", href: "#contact" },
+    ],
+    legal: [
+      { label: "Privātuma politika", href: "/privacy-policy" },
+      { label: "Lietošanas noteikumi", href: "/terms" },
+      { label: "Sīkdatņu politika", href: "/cookie-policy" },
+    ],
+    rights: "Visas tiesības aizsargātas.",
+  },
+  cookie: {
+    message:
+      "Mēs izmantojam sīkdatnes, lai mājaslapa darbotos pareizi un lai varētu to uzlabot, balstoties uz lietošanas statistiku. Jūs varat pieņemt visas sīkdatnes, noraidīt neobligātās vai iestatīt tās pats. Vairāk informācijas —",
+    policyLinkText: "Sīkdatņu politikā",
+    acceptAll: "Pieņemt visas",
+    rejectNonEssential: "Noraidīt neobligātās",
+    managePreferences: "Iestatīt",
+    savePreferences: "Saglabāt iestatījumus",
+    essentialTitle: "Nepieciešamās",
+    essentialDesc: "Vienmēr ieslēgtas — nepieciešamas mājaslapas darbībai.",
+    analyticsTitle: "Analītika",
+    analyticsDesc: "Palīdz saprast, kā apmeklētāji izmanto mājaslapu.",
+    marketingTitle: "Mārketings",
+    marketingDesc: "Tiek izmantotas, lai rādītu relevantāku reklāmu.",
+  },
+  legal: {
+    disclaimer:
+      "Šis dokuments ir SmartFlow mājaslapas veidne un sniegts informatīvos nolūkos. Pirms publicēšanas tas jāpārbauda un jāpielāgo kvalificētam juristam atbilstoši piemērojamajiem tiesību aktiem (tostarp GDPR) un uzņēmuma jurisdikcijai.",
+    updatedLabel: "Pēdējoreiz atjaunināts:",
+    privacy: {
+      title: "Privātuma politika",
+      description: "SmartFlow privātuma politika — kā mēs apstrādājam personas datus.",
+      updated: "2026. gada 17. augusts",
+      sections: [
+        {
+          heading: "1. Vispārīgi noteikumi",
+          body: [
+            "SmartFlow («mēs») ciena mājaslapas apmeklētāju un klientu, kuri iesniedz pieprasījumus caur formām, privātumu. Šī politika apraksta, kādus datus mēs vācam, kāpēc un kā tie tiek apstrādāti atbilstoši vispārējiem GDPR principiem.",
+          ],
+        },
+        {
+          heading: "2. Kādus datus mēs vācam",
+          body: [
+            "Kontaktinformācija: vārds, e-pasts, tālrunis, uzņēmuma nosaukums, mājaslapa.",
+            "Informācija par biznesu un pieprasījumu, kas norādīta pieteikuma vai audita formā.",
+            "Tehniskie dati: sīkdatnes, mājaslapas lietošanas dati (ar piekrišanu analītikai).",
+          ],
+        },
+        {
+          heading: "3. Datu apstrādes mērķi",
+          body: [
+            "Pieprasījumu apstrāde un saziņa ar klientiem.",
+            "Komerciālu piedāvājumu un konsultāciju sagatavošana.",
+            "Mājaslapas darbības uzlabošana, balstoties uz apkopotu statistiku.",
+          ],
+        },
+        {
+          heading: "4. Apstrādes tiesiskais pamats",
+          body: [
+            "Datu apstrāde notiek, pamatojoties uz lietotāja piekrišanu (formas iesniegšanas brīdī), kā arī uzņēmuma leģitīmajām interesēm apstrādāt ienākošos biznesa pieprasījumus.",
+          ],
+        },
+        {
+          heading: "5. Datu glabāšana un nodošana trešajām personām",
+          body: [
+            "Dati var tikt nodoti pakalpojumiem, kurus SmartFlow izmanto darbībai: CRM, e-pasta sūtīšanas rīki, automatizācijas rīki (piemēram, Make, n8n) — tikai tādā apjomā, kas nepieciešams pakalpojuma sniegšanai.",
+          ],
+        },
+        {
+          heading: "6. Datu subjekta tiesības",
+          body: [
+            "Jums ir tiesības pieprasīt piekļuvi saviem datiem, to labošanu, dzēšanu vai apstrādes ierobežošanu, kā arī jebkurā brīdī atsaukt piekrišanu, rakstot uz kopilov.jevgenij@gmail.com.",
+          ],
+        },
+        {
+          heading: "7. Sīkdatnes",
+          body: ["Vairāk par sīkdatņu izmantošanu — atsevišķā dokumentā Sīkdatņu politika."],
+        },
+        {
+          heading: "8. Kontakti",
+          body: ["Jautājumos par personas datu apstrādi: kopilov.jevgenij@gmail.com."],
+        },
+      ],
+    },
+    terms: {
+      title: "Lietošanas noteikumi",
+      description: "SmartFlow mājaslapas un pakalpojumu lietošanas noteikumi.",
+      updated: "2026. gada 17. augusts",
+      sections: [
+        {
+          heading: "1. Vispārīgi noteikumi",
+          body: ["Izmantojot SmartFlow mājaslapu, jūs piekrītat šiem noteikumiem. Ja nepiekrītat, lūdzu, neizmantojiet mājaslapu."],
+        },
+        {
+          heading: "2. Pakalpojumi",
+          body: [
+            "SmartFlow sniedz mājaslapu izstrādes, biznesa procesu automatizācijas, AI čatbotu un balss aģentu ieviešanas, kā arī trešo pušu sistēmu integrācijas pakalpojumus. Precīzs pakalpojumu apjoms, cena un termiņi tiek noteikti atsevišķā komerciālā piedāvājumā vai līgumā ar klientu.",
+          ],
+        },
+        {
+          heading: "3. Pieteikumi mājaslapā",
+          body: ["Iesniedzot formu mājaslapā, jūs apstiprināt, ka sniegtie dati ir pareizi, un piekrītat, ka mēs varam sazināties ar jums, lai pārrunātu pieprasījumu."],
+        },
+        {
+          heading: "4. Intelektuālais īpašums",
+          body: ["Mājaslapas saturs (teksti, dizains, grafika) pieder SmartFlow, ja nav norādīts citādi, un to nedrīkst izmantot bez iepriekšējas piekrišanas."],
+        },
+        {
+          heading: "5. Atbildības ierobežojums",
+          body: ["Mājaslapā sniegtā informācija tiek nodrošināta «tāda, kāda tā ir» un ir informatīva rakstura. SmartFlow neuzņemas atbildību par netiešiem zaudējumiem, kas radušies mājaslapas lietošanas rezultātā."],
+        },
+        {
+          heading: "6. Noteikumu izmaiņas",
+          body: ["Mēs varam atjaunināt šos noteikumus. Aktuālā versija vienmēr ir pieejama šajā lapā."],
+        },
+        {
+          heading: "7. Kontakti",
+          body: ["Jautājumos par lietošanas noteikumiem: kopilov.jevgenij@gmail.com."],
+        },
+      ],
+    },
+    cookiePolicy: {
+      title: "Sīkdatņu politika",
+      description: "Kā SmartFlow izmanto sīkdatnes šajā mājaslapā.",
+      updated: "2026. gada 17. augusts",
+      sections: [
+        {
+          heading: "1. Kas ir sīkdatnes",
+          body: ["Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu pārlūkprogrammā, apmeklējot mājaslapu, un palīdz tai pareizi darboties un atcerēties jūsu iestatījumus."],
+        },
+        {
+          heading: "2. Kādas sīkdatnes mēs izmantojam",
+          body: [
+            "Nepieciešamās — nodrošina mājaslapas pamatdarbību. Tās nevar atslēgt.",
+            "Analītiskās — palīdz saprast, kā apmeklētāji izmanto mājaslapu (tikai ar jūsu piekrišanu).",
+            "Mārketinga — tiek izmantotas, lai rādītu relevantāku reklāmu (tikai ar jūsu piekrišanu).",
+          ],
+        },
+        {
+          heading: "3. Sīkdatņu pārvaldība",
+          body: ["Pirmajā apmeklējuma reizē varat pieņemt visas sīkdatnes, noraidīt neobligātās vai iestatīt tās manuāli, izmantojot joslu lapas apakšā."],
+        },
+        {
+          heading: "4. Piekrišana",
+          body: ["Mēs neizmantojam analītiskās vai mārketinga sīkdatnes bez jūsu skaidras piekrišanas. Neobligāto sīkdatņu noraidīšana neietekmē mājaslapas pamatfunkciju pieejamību."],
+        },
+        {
+          heading: "5. Kontakti",
+          body: ["Jautājumi par sīkdatņu izmantošanu: kopilov.jevgenij@gmail.com."],
+        },
+      ],
+    },
+  },
+};
+
+export default dictionary;

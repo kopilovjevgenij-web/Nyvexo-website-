@@ -1,5 +1,4 @@
-// A working list of technologies SmartFlow can integrate with —
-// not a claim of official partnership with any of the vendors listed.
+// Product/technology names — proper nouns, identical across all locales.
 export const integrations: string[] = [
   "AI",
   "Website",
@@ -15,7 +14,6 @@ export const integrations: string[] = [
 ];
 
 export const technologies: string[] = [
-  "AI",
   "OpenAI",
   "Claude",
   "Voice AI",
