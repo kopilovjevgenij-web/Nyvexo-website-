@@ -140,23 +140,26 @@ export const dictionary: Dictionary = {
     eyebrow: "Ar ko sākt",
     heading: "Kā var sākt",
     subtitle: "Nav nepieciešams uzreiz mainīt visu biznesu — var sākt ar vienu procesu un pakāpeniski paplašināt sistēmu.",
-    note: "Cena tiek aprēķināta pēc uzdevuma izvērtēšanas — precīzu tāmi nosūtām pēc īsas pārrunas.",
+    note: "Precīza cena — pēc bezmaksas audita.",
     tiers: [
       {
         name: "START",
         tag: "Lai sāktu",
+        price: "no €650",
         description: "Viens process vai viens uzdevums — piemēram, pieprasījumu apstrāde vai klientu pieraksts.",
         items: ["Viens automatizēts process", "Ātra ieviešana", "Skaidrs rezultāts"],
       },
       {
         name: "GROW",
         tag: "Lai augtu",
+        price: "no €3 200",
         description: "Vairāki savstarpēji saistīti procesi — pieprasījumi, CRM, paziņojumi, follow-up.",
         items: ["Vairāki procesi", "Rīku integrācija", "Mazāk manuāla darba komandai"],
       },
       {
         name: "AI SYSTEM",
         tag: "Pilna sistēma",
+        price: "no €7 000",
         description: "Pilnvērtīga sistēma: AI, automatizācija, CRM un integrācijas strādā kopā.",
         items: ["AI + Automation + CRM", "Darbojas 24/7", "Sistēma, kas aug kopā ar biznesu"],
       },
@@ -320,7 +323,7 @@ export const dictionary: Dictionary = {
     eyebrow: "Risinājumu piemēri",
     heading: "Kā tas varētu strādāt jūsu biznesā",
     subtitle: "Tie nav konkrētu klientu stāsti, bet piemēri tam, kādus risinājumus SmartFlow var izveidot jūsu biznesa veidam.",
-    badge: "Solution concept",
+    badge: "Piemērs",
     labels: {
       problem: "Problēma",
       solution: "SmartFlow risinājums",
@@ -381,6 +384,20 @@ export const dictionary: Dictionary = {
   technology: {
     heading: "Mēs izmantojam tehnoloģijas kā rīkus",
     disclaimer: "SmartFlow nav oficiāls minēto pakalpojumu partneris — mēs integrējam šīs tehnoloģijas biznesa procesos.",
+    items: [
+      { name: "OpenAI", benefit: "gudras atbildes klientiem" },
+      { name: "Claude", benefit: "precīzi AI dialogi" },
+      { name: "Voice AI", benefit: "zvani bez gaidīšanas" },
+      { name: "Make", benefit: "automatizācija bez koda" },
+      { name: "n8n", benefit: "savienojam servisus automātiski" },
+      { name: "APIs", benefit: "pieslēdzam jebkuru sistēmu" },
+      { name: "Webhooks", benefit: "tūlītēja datu nodošana" },
+      { name: "CRM", benefit: "darījumi zem kontroles" },
+      { name: "Google", benefit: "kalendārs un tabulas sinhroni" },
+      { name: "WhatsApp", benefit: "ziņas klientiem uzreiz" },
+      { name: "Instagram", benefit: "pieprasījumi tieši no Direct" },
+      { name: "Telegram", benefit: "paziņojumi un bota atbildes" },
+    ],
   },
   faq: {
     eyebrow: "Jautājumi un atbildes",

@@ -17,9 +17,12 @@ export type ServiceItem = {
 export type PricingTier = {
   name: string;
   tag: string;
+  price: string;
   description: string;
   items: string[];
 };
+
+export type TechItem = { name: string; benefit: string };
 
 export type IndustryItem = {
   icon: "utensils" | "stethoscope" | "sparkles" | "hotel" | "building-2" | "shopping-bag" | "briefcase";
@@ -180,6 +183,7 @@ export type Dictionary = {
   technology: {
     heading: string;
     disclaimer: string;
+    items: TechItem[];
   };
   faq: {
     eyebrow: string;

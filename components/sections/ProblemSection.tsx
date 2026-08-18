@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/icons/icon-map";
 import type { Dictionary } from "@/lib/i18n/types";
@@ -31,6 +32,12 @@ export function ProblemSection({ dictionary }: { dictionary: Dictionary }) {
           <p className="mx-auto mt-14 max-w-2xl text-balance text-center text-xl font-semibold text-ink sm:text-2xl">
             {t.closing}
           </p>
+        </Reveal>
+
+        <Reveal delay={380} className="mt-8 flex justify-center">
+          <Button href="#audit" size="md">
+            {dictionary.hero.ctaSecondary}
+          </Button>
         </Reveal>
       </Container>
     </section>

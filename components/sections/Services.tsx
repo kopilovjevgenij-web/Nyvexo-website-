@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/icons/icon-map";
 import type { Dictionary } from "@/lib/i18n/types";
@@ -74,6 +75,12 @@ export function Services({ dictionary }: { dictionary: Dictionary }) {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={450} className="mt-10 flex justify-center">
+          <Button href="#audit" size="md">
+            {dictionary.hero.ctaSecondary}
+          </Button>
+        </Reveal>
       </Container>
     </section>
   );

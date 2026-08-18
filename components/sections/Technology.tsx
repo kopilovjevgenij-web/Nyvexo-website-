@@ -1,6 +1,5 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { technologies } from "@/lib/tech-list";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export function Technology({ dictionary }: { dictionary: Dictionary }) {
@@ -14,10 +13,10 @@ export function Technology({ dictionary }: { dictionary: Dictionary }) {
           <p className="mt-3 text-sm text-ink-soft">{t.disclaimer}</p>
         </Reveal>
 
-        <Reveal delay={120} className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-2.5">
-          {technologies.map((tech) => (
-            <span key={tech} className="rounded-full border border-line bg-mist px-4 py-2 text-sm font-medium text-ink-soft">
-              {tech}
+        <Reveal delay={120} className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-2.5">
+          {t.items.map((tech) => (
+            <span key={tech.name} className="rounded-full border border-line bg-mist px-4 py-2 text-sm text-ink-soft">
+              <span className="font-semibold text-ink">{tech.name}</span> — {tech.benefit}
             </span>
           ))}
         </Reveal>

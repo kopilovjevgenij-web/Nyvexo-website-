@@ -1,4 +1,6 @@
 // Product/technology names — proper nouns, identical across all locales.
+// (The Technology section's name+benefit pairs live in the Dictionary
+// instead, since the benefit text is translated per locale.)
 export const integrations: string[] = [
   "AI",
   "Website",
@@ -11,19 +13,4 @@ export const integrations: string[] = [
   "Make",
   "n8n",
   "Voice AI",
-];
-
-export const technologies: string[] = [
-  "OpenAI",
-  "Claude",
-  "Voice AI",
-  "Make",
-  "n8n",
-  "APIs",
-  "Webhooks",
-  "CRM",
-  "Google",
-  "WhatsApp",
-  "Instagram",
-  "Telegram",
 ];

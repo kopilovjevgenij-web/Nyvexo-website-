@@ -30,6 +30,9 @@ export function PricingTiers({ dictionary }: { dictionary: Dictionary }) {
                 <h3 className={`mt-2 font-display text-2xl font-bold ${i === 2 ? "text-white" : "text-ink"}`}>
                   {tier.name}
                 </h3>
+                <p className={`mt-4 font-display text-3xl font-bold ${i === 2 ? "text-white" : "text-ink"}`}>
+                  {tier.price}
+                </p>
                 <p className={`mt-3 text-sm leading-relaxed ${i === 2 ? "text-white/70" : "text-ink-soft"}`}>
                   {tier.description}
                 </p>

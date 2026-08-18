@@ -140,23 +140,26 @@ export const dictionary: Dictionary = {
     eyebrow: "Where to start",
     heading: "How you can get started",
     subtitle: "You don't need to change your whole business at once — start with one process and grow the system from there.",
-    note: "Pricing is scoped after we understand the task — we send an exact quote after a short brief.",
+    note: "Exact pricing — after a free audit.",
     tiers: [
       {
         name: "START",
         tag: "To get going",
+        price: "from €650",
         description: "One process or one task — for example, handling enquiries or booking customers.",
         items: ["One automated process", "Fast to launch", "A clear, visible result"],
       },
       {
         name: "GROW",
         tag: "To scale up",
+        price: "from €3,200",
         description: "Several connected processes — enquiries, CRM, notifications, follow-ups.",
         items: ["Several processes", "Connected tools", "Less manual work for the team"],
       },
       {
         name: "AI SYSTEM",
         tag: "The full system",
+        price: "from €7,000",
         description: "A complete system: AI, automation, CRM and integrations working together.",
         items: ["AI + Automation + CRM", "Runs 24/7", "A system that grows with your business"],
       },
@@ -320,7 +323,7 @@ export const dictionary: Dictionary = {
     eyebrow: "Solution examples",
     heading: "How this could work in your business",
     subtitle: "These aren't stories about specific clients — they're examples of what SmartFlow can build for your type of business.",
-    badge: "Solution concept",
+    badge: "Example",
     labels: {
       problem: "Problem",
       solution: "SmartFlow's solution",
@@ -381,6 +384,20 @@ export const dictionary: Dictionary = {
   technology: {
     heading: "We use technology as a tool",
     disclaimer: "SmartFlow isn't an official partner of the services listed — we integrate these technologies into your business processes.",
+    items: [
+      { name: "OpenAI", benefit: "smart replies to customers" },
+      { name: "Claude", benefit: "precise AI conversations" },
+      { name: "Voice AI", benefit: "calls with no wait" },
+      { name: "Make", benefit: "automation without code" },
+      { name: "n8n", benefit: "connects your tools automatically" },
+      { name: "APIs", benefit: "plug in any system" },
+      { name: "Webhooks", benefit: "instant data handoff" },
+      { name: "CRM", benefit: "deals under control" },
+      { name: "Google", benefit: "calendar and sheets synced" },
+      { name: "WhatsApp", benefit: "instant customer messages" },
+      { name: "Instagram", benefit: "leads straight from DMs" },
+      { name: "Telegram", benefit: "notifications and bot replies" },
+    ],
   },
   faq: {
     eyebrow: "Questions & answers",
