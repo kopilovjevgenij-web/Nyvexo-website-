@@ -1,20 +1,19 @@
-# Real SmartFlow logo goes here
+# SmartFlow brand assets
 
-No brand logo file exists anywhere in this repository yet (checked: `public/`,
-repo root, all asset folders). The mark currently rendered by
-`components/Logo.tsx` is a **placeholder** inline SVG, not the real SmartFlow
-brand — do not treat it as final.
+`logo.png` is the real SmartFlow logo, as supplied by the client — background
+removed (made transparent) and whitespace trimmed; the artwork itself
+(shapes, colors, proportions) is untouched.
 
-## To install the real logo
+`logo-mark.png` is the icon-only "SF" mark cropped from the same file, used
+to generate `app/icon.png` and `app/apple-icon.png` (the site favicon /
+apple-touch-icon).
 
-1. Add the real file(s) here, e.g.:
-   - `public/brand/logo.svg` (preferred — crisp at every size)
-   - `public/brand/logo-dark.svg` (light-on-dark variant for the footer, if
-     the brand has one; falls back to `logo.svg` if omitted)
-2. In `components/Logo.tsx`, flip `HAS_REAL_LOGO` from `false` to `true`.
-3. Redeploy. The real asset is then used in the header, footer, mobile nav,
-   and — via `app/icon.tsx` / `app/apple-icon.tsx` — the favicon.
+`components/Logo.tsx` renders `logo.png` directly on light backgrounds
+(header, mobile nav). On the dark footer, the "Smart" portion of the
+wordmark (dark navy) isn't legible against the dark background, so it's
+placed — unaltered — on a small white rounded chip instead of being
+recolored, per "don't change the logo's colors."
 
-No new logo has been invented or generated to replace it in the meantime,
-per instructions: the placeholder stays clearly a placeholder until the real
-asset is dropped in.
+To replace with an updated asset later: overwrite `logo.png` (and
+re-crop `logo-mark.png` / regenerate the two favicon PNGs at `app/icon.png`
+and `app/apple-icon.png` if the mark itself changes).
