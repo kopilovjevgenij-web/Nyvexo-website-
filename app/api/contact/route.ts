@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   }
 
   // TODO: forward `body` to CRM / Google Sheets / Telegram / email / Make / n8n.
-  console.log("[SmartFlow contact submission]", {
+  console.log("[Nyvexo contact submission]", {
     formType: body.formType ?? "contact",
     receivedAt: new Date().toISOString(),
     ...body,

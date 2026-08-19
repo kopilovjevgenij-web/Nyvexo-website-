@@ -31,7 +31,7 @@ export function BigStatement({ dictionary }: { dictionary: Dictionary }) {
             ))}
           </div>
           <div className="mx-auto my-6 h-8 w-px bg-line-strong" aria-hidden />
-          <span className="inline-flex rounded-full bg-ink px-6 py-2.5 text-sm font-semibold text-white">SmartFlow</span>
+          <span className="inline-flex rounded-full bg-ink px-6 py-2.5 text-sm font-semibold text-white">Nyvexo</span>
         </Reveal>
       </Container>
     </section>

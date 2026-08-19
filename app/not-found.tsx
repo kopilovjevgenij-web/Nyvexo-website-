@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-soft">404</p>
         <h1 className="text-2xl font-semibold">Page not found</h1>
         <Link href={`/${DEFAULT_LOCALE}`} className="text-sm font-medium text-blue underline underline-offset-2">
-          Back to SmartFlow
+          Back to Nyvexo
         </Link>
       </body>
     </html>

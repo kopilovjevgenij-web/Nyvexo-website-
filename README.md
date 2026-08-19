@@ -1,6 +1,6 @@
-# SmartFlow — Websites, Automation & AI
+# Nyvexo — Websites, Automation & AI
 
-Marketing site for SmartFlow, built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
+Marketing site for Nyvexo, built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
 Fully localized: Latvian (default), English, Russian.
 
 ## Getting started
@@ -39,23 +39,29 @@ proxy.ts              redirects any URL with no locale prefix to /lv (no browser
 
 ## Content
 
-Case studies are framed as "Solution concept" examples (Problem → Solution → What
-happens automatically → Result) — not real client stories. No testimonials, client
-logos, or stats are fabricated anywhere; sections that would need them (e.g.
-testimonials) are simply omitted until real ones exist, per the project's trust rules.
+Case studies are framed as short "Example" cards (Problem → Solution → What happens
+automatically → Result) — not real client stories. No testimonials, client logos, or
+stats are fabricated anywhere; `components/sections/Testimonials.tsx` exists with
+clearly-labeled mock data but isn't imported into the page until real reviews exist.
 
-## Replacing the placeholder brand
+## Brand assets
 
 - `lib/constants.ts` — company name, email, phone, social links.
-- `components/Logo.tsx` / `public/brand/README.md` — no real logo asset exists in this
-  repo yet; drop the real file into `public/brand/` and flip `HAS_REAL_LOGO` to `true`.
-- `app/icon.tsx` / `app/apple-icon.tsx` / `app/[locale]/opengraph-image.tsx` — generated
-  favicon/OG image; replace with static assets under `public/` if preferred.
+- `public/brand/README.md` — what the real logo files are, and how `components/Logo.tsx`
+  uses them (see note below about the missing light-background lockup).
+- `app/icon.png` / `app/apple-icon.png` — static favicon / apple-touch-icon, generated
+  from `public/brand/nyvexo-icon.png`.
+- `app/[locale]/opengraph-image.tsx` — generated OG image, embeds the real icon.
+
+**Known gap:** only a white-on-dark full lockup was supplied, not a dark-on-light one.
+`Logo.tsx`'s light-background variant (header, mobile nav) therefore renders the real
+icon image next to "Nyvexo" set as live text, instead of a flattened logo image. Drop a
+real light-background lockup into `public/brand/` and wire it up there if one arrives.
 
 ## Lead form
 
 `app/api/contact/route.ts` validates and logs submissions from the Contact and
-SmartFlow Audit forms (both forms send a `locale` field). Wire it up to a CRM, Google
+Nyvexo Audit forms (both forms send a `locale` field). Wire it up to a CRM, Google
 Sheets, Telegram, email, or a Make/n8n webhook — the request/response contract used by
 the forms won't change.
 

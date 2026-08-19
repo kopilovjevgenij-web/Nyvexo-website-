@@ -11,7 +11,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { AuditForm } from "@/components/sections/AuditForm";
 import { CaseStudies } from "@/components/sections/CaseStudies";
-import { WhySmartFlow } from "@/components/sections/WhySmartFlow";
+import { WhyNyvexo } from "@/components/sections/WhyNyvexo";
 import { Technology } from "@/components/sections/Technology";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -43,7 +43,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <PricingTiers dictionary={dictionary} />
       <AuditForm dictionary={dictionary} locale={locale} />
       <CaseStudies dictionary={dictionary} />
-      <WhySmartFlow dictionary={dictionary} />
+      <WhyNyvexo dictionary={dictionary} />
       <Technology dictionary={dictionary} />
       <FAQ dictionary={dictionary} />
       <FinalCTA dictionary={dictionary} />

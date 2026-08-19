@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALES, DEFAULT_LOCALE } from "@/lib/constants";
 
-// SmartFlow always defaults to Latvian for any URL without a locale prefix —
+// Nyvexo always defaults to Latvian for any URL without a locale prefix —
 // browser Accept-Language is intentionally ignored per the brand's
 // "LV is the primary version" requirement.
 export function proxy(request: NextRequest) {

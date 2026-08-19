@@ -13,11 +13,14 @@ type Consent = {
   marketing: boolean;
 };
 
-const STORAGE_KEY = "smartflow-cookie-consent";
+// Renamed from "smartflow-*" during the Nyvexo rebrand — visitors who
+// already made a cookie choice under the old key will see the banner once
+// more after this ships, which is an acceptable one-time reset.
+const STORAGE_KEY = "nyvexo-cookie-consent";
 
 function saveConsent(consent: Consent) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
-  window.dispatchEvent(new CustomEvent("smartflow-consent-updated", { detail: consent }));
+  window.dispatchEvent(new CustomEvent("nyvexo-consent-updated", { detail: consent }));
 }
 
 const noopSubscribe = () => () => {};

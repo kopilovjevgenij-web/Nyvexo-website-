@@ -1,19 +1,20 @@
-# SmartFlow brand assets
+# Nyvexo brand assets
 
-`logo.png` is the real SmartFlow logo, as supplied by the client — background
-removed (made transparent) and whitespace trimmed; the artwork itself
-(shapes, colors, proportions) is untouched.
+Both files here are the real Nyvexo brand assets as supplied by the client,
+resized only (Lanczos downsample, no redrawing):
 
-`logo-mark.png` is the icon-only "SF" mark cropped from the same file, used
-to generate `app/icon.png` and `app/apple-icon.png` (the site favicon /
-apple-touch-icon).
+- `nyvexo-icon.png` — the square "N" mark. Source: a 1200×1200 export.
+  Used directly as-is: it already has its own gradient background baked
+  in, so no wrapper/chip is needed on any surface. Also the source for
+  `app/icon.png` (32×32) and `app/apple-icon.png` (180×180).
+- `nyvexo-full-white.png` — the client's white-on-dark full lockup
+  (icon + "Nyvexo" wordmark, white text with a purple accent "X").
+  Used as-is on dark backgrounds (footer).
 
-`components/Logo.tsx` renders `logo.png` directly on light backgrounds
-(header, mobile nav). On the dark footer, the "Smart" portion of the
-wordmark (dark navy) isn't legible against the dark background, so it's
-placed — unaltered — on a small white rounded chip instead of being
-recolored, per "don't change the logo's colors."
-
-To replace with an updated asset later: overwrite `logo.png` (and
-re-crop `logo-mark.png` / regenerate the two favicon PNGs at `app/icon.png`
-and `app/apple-icon.png` if the mark itself changes).
+**No dark-on-light full lockup was supplied.** On light backgrounds
+(header, mobile nav) `components/Logo.tsx` therefore pairs the real icon
+image with "Nyvexo" set as live text in the site's own type (Manrope),
+rather than flattening a new logo image — the icon artwork itself is
+never redrawn. If a real light-background lockup is provided later, drop
+it in here as e.g. `nyvexo-full-dark.png` and update `Logo.tsx`'s
+`variant="light"` branch to use it directly instead.

@@ -31,7 +31,7 @@ export function ValueProposition({ dictionary }: { dictionary: Dictionary }) {
 
           <Reveal delay={200} className="flex items-center justify-center gap-3 py-2 lg:flex-col lg:py-0">
             <ArrowRight className="size-5 text-white/30 lg:-rotate-0" aria-hidden />
-            <span className="rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white">SmartFlow</span>
+            <span className="rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white">Nyvexo</span>
             <ArrowRight className="size-5 text-white/30" aria-hidden />
           </Reveal>
 

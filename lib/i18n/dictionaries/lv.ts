@@ -2,10 +2,10 @@ import type { Dictionary } from "../types";
 
 export const dictionary: Dictionary = {
   meta: {
-    title: "SmartFlow — mājaslapas, AI un biznesa automatizācija",
+    title: "Nyvexo — mājaslapas, AI un biznesa automatizācija",
     description:
-      "SmartFlow izstrādā mājaslapas, automatizē biznesa procesus un ievieš AI čatbotus un balss aģentus, kas atbild klientiem 24/7.",
-    ogTitle: "SmartFlow — mājaslapas, automatizācija un AI biznesam",
+      "Nyvexo izstrādā mājaslapas, automatizē biznesa procesus un ievieš AI čatbotus un balss aģentus, kas atbild klientiem 24/7.",
+    ogTitle: "Nyvexo — mājaslapas, automatizācija un AI biznesam",
     ogDescription: "Mājaslapas, biznesa procesu automatizācija un AI asistenti, kas ietaupa laiku un palīdz nezaudēt klientus.",
   },
   nav: {
@@ -26,7 +26,7 @@ export const dictionary: Dictionary = {
     titleMain: "Mājaslapas, automatizācija un AI",
     titleAccent: "biznesam, kas nezaudē klientus",
     subtitle:
-      "SmartFlow izstrādā mājaslapas, automatizē biznesa procesus un ievieš AI asistentus, čatbotus un balss aģentus, kas atbild klientiem 24/7 un pārņem rutīnas darbu.",
+      "Nyvexo izstrādā mājaslapas, automatizē biznesa procesus un ievieš AI asistentus, čatbotus un balss aģentus, kas atbild klientiem 24/7 un pārņem rutīnas darbu.",
     ctaPrimary: "Pārrunāt projektu",
     ctaSecondary: "Saņemt bezmaksas auditu",
     trustItems: ["Maziem un vidējiem uzņēmumiem", "Mājaslapas · Automatizācija · AI", "Sākam ar vienu procesu"],
@@ -61,7 +61,7 @@ export const dictionary: Dictionary = {
         description: "Tā var izskatīties labi, bet nepalīdzēt pārdot vai apkalpot klientus.",
       },
     ],
-    closing: "SmartFlow apvieno šos procesus vienā strādājošā sistēmā.",
+    closing: "Nyvexo apvieno šos procesus vienā strādājošā sistēmā.",
   },
   valueProp: {
     heading1: "Mēs automatizējam nevis tehnoloģijas.",
@@ -173,7 +173,7 @@ export const dictionary: Dictionary = {
   },
   industries: {
     eyebrow: "Biznesam",
-    heading: "Kur SmartFlow var palīdzēt?",
+    heading: "Kur Nyvexo var palīdzēt?",
     items: [
       {
         icon: "utensils",
@@ -221,7 +221,7 @@ export const dictionary: Dictionary = {
   },
   scenarios: {
     eyebrow: "Kā tas strādā praksē",
-    heading: "Kā SmartFlow var strādāt reālā biznesā",
+    heading: "Kā Nyvexo var strādāt reālā biznesā",
     linkCta: "Pārrunāt scenāriju savam biznesam",
     items: [
       {
@@ -266,8 +266,8 @@ export const dictionary: Dictionary = {
     ],
   },
   beforeAfter: {
-    beforeTitle: "Pirms SmartFlow",
-    afterTitle: "Pēc SmartFlow",
+    beforeTitle: "Pirms Nyvexo",
+    afterTitle: "Pēc Nyvexo",
     beforeItems: ["Manuāli pieprasījumi", "Neatbildēti zvani", "Lēnas atbildes", "Tabulas", "Nesaistītas sistēmas", "Atkārtoti uzdevumi"],
     afterItems: [
       "AI strādā 24/7",
@@ -291,8 +291,8 @@ export const dictionary: Dictionary = {
     ],
   },
   audit: {
-    eyebrow: "SmartFlow Audit",
-    heading: "Bezmaksas SmartFlow Audit",
+    eyebrow: "Nyvexo Audit",
+    heading: "Bezmaksas Nyvexo Audit",
     subtitle: "Parādīsim, kurus jūsu biznesa procesus var automatizēt un kur AI patiešām ir jēga.",
     disclaimer: "Bez saistībām. Vispirms izprotam uzdevumu — tad piedāvājam risinājumu.",
     improveLabel: "Ko vēlaties uzlabot?",
@@ -322,11 +322,11 @@ export const dictionary: Dictionary = {
   cases: {
     eyebrow: "Risinājumu piemēri",
     heading: "Kā tas varētu strādāt jūsu biznesā",
-    subtitle: "Tie nav konkrētu klientu stāsti, bet piemēri tam, kādus risinājumus SmartFlow var izveidot jūsu biznesa veidam.",
+    subtitle: "Tie nav konkrētu klientu stāsti, bet piemēri tam, kādus risinājumus Nyvexo var izveidot jūsu biznesa veidam.",
     badge: "Piemērs",
     labels: {
       problem: "Problēma",
-      solution: "SmartFlow risinājums",
+      solution: "Nyvexo risinājums",
       automation: "Kas notiek automātiski",
       result: "Rezultāts biznesam",
     },
@@ -371,7 +371,7 @@ export const dictionary: Dictionary = {
   },
   why: {
     eyebrow: "Kāpēc mēs",
-    heading: "Kāpēc bizness izvēlas SmartFlow",
+    heading: "Kāpēc bizness izvēlas Nyvexo",
     items: [
       { icon: "target", title: "Business-first", description: "Vispirms izprotam biznesa uzdevumu, tad izvēlamies tehnoloģiju." },
       { icon: "layers", title: "One system", description: "Apvienojam mājaslapu, AI, CRM un automatizāciju vienā sistēmā." },
@@ -383,7 +383,7 @@ export const dictionary: Dictionary = {
   },
   technology: {
     heading: "Mēs izmantojam tehnoloģijas kā rīkus",
-    disclaimer: "SmartFlow nav oficiāls minēto pakalpojumu partneris — mēs integrējam šīs tehnoloģijas biznesa procesos.",
+    disclaimer: "Nyvexo nav oficiāls minēto pakalpojumu partneris — mēs integrējam šīs tehnoloģijas biznesa procesos.",
     items: [
       { name: "OpenAI", benefit: "gudras atbildes klientiem" },
       { name: "Claude", benefit: "precīzi AI dialogi" },
@@ -529,17 +529,17 @@ export const dictionary: Dictionary = {
   },
   legal: {
     disclaimer:
-      "Šis dokuments ir SmartFlow mājaslapas veidne un sniegts informatīvos nolūkos. Pirms publicēšanas tas jāpārbauda un jāpielāgo kvalificētam juristam atbilstoši piemērojamajiem tiesību aktiem (tostarp GDPR) un uzņēmuma jurisdikcijai.",
+      "Šis dokuments ir Nyvexo mājaslapas veidne un sniegts informatīvos nolūkos. Pirms publicēšanas tas jāpārbauda un jāpielāgo kvalificētam juristam atbilstoši piemērojamajiem tiesību aktiem (tostarp GDPR) un uzņēmuma jurisdikcijai.",
     updatedLabel: "Pēdējoreiz atjaunināts:",
     privacy: {
       title: "Privātuma politika",
-      description: "SmartFlow privātuma politika — kā mēs apstrādājam personas datus.",
+      description: "Nyvexo privātuma politika — kā mēs apstrādājam personas datus.",
       updated: "2026. gada 17. augusts",
       sections: [
         {
           heading: "1. Vispārīgi noteikumi",
           body: [
-            "SmartFlow («mēs») ciena mājaslapas apmeklētāju un klientu, kuri iesniedz pieprasījumus caur formām, privātumu. Šī politika apraksta, kādus datus mēs vācam, kāpēc un kā tie tiek apstrādāti atbilstoši vispārējiem GDPR principiem.",
+            "Nyvexo («mēs») ciena mājaslapas apmeklētāju un klientu, kuri iesniedz pieprasījumus caur formām, privātumu. Šī politika apraksta, kādus datus mēs vācam, kāpēc un kā tie tiek apstrādāti atbilstoši vispārējiem GDPR principiem.",
           ],
         },
         {
@@ -567,7 +567,7 @@ export const dictionary: Dictionary = {
         {
           heading: "5. Datu glabāšana un nodošana trešajām personām",
           body: [
-            "Dati var tikt nodoti pakalpojumiem, kurus SmartFlow izmanto darbībai: CRM, e-pasta sūtīšanas rīki, automatizācijas rīki (piemēram, Make, n8n) — tikai tādā apjomā, kas nepieciešams pakalpojuma sniegšanai.",
+            "Dati var tikt nodoti pakalpojumiem, kurus Nyvexo izmanto darbībai: CRM, e-pasta sūtīšanas rīki, automatizācijas rīki (piemēram, Make, n8n) — tikai tādā apjomā, kas nepieciešams pakalpojuma sniegšanai.",
           ],
         },
         {
@@ -588,17 +588,17 @@ export const dictionary: Dictionary = {
     },
     terms: {
       title: "Lietošanas noteikumi",
-      description: "SmartFlow mājaslapas un pakalpojumu lietošanas noteikumi.",
+      description: "Nyvexo mājaslapas un pakalpojumu lietošanas noteikumi.",
       updated: "2026. gada 17. augusts",
       sections: [
         {
           heading: "1. Vispārīgi noteikumi",
-          body: ["Izmantojot SmartFlow mājaslapu, jūs piekrītat šiem noteikumiem. Ja nepiekrītat, lūdzu, neizmantojiet mājaslapu."],
+          body: ["Izmantojot Nyvexo mājaslapu, jūs piekrītat šiem noteikumiem. Ja nepiekrītat, lūdzu, neizmantojiet mājaslapu."],
         },
         {
           heading: "2. Pakalpojumi",
           body: [
-            "SmartFlow sniedz mājaslapu izstrādes, biznesa procesu automatizācijas, AI čatbotu un balss aģentu ieviešanas, kā arī trešo pušu sistēmu integrācijas pakalpojumus. Precīzs pakalpojumu apjoms, cena un termiņi tiek noteikti atsevišķā komerciālā piedāvājumā vai līgumā ar klientu.",
+            "Nyvexo sniedz mājaslapu izstrādes, biznesa procesu automatizācijas, AI čatbotu un balss aģentu ieviešanas, kā arī trešo pušu sistēmu integrācijas pakalpojumus. Precīzs pakalpojumu apjoms, cena un termiņi tiek noteikti atsevišķā komerciālā piedāvājumā vai līgumā ar klientu.",
           ],
         },
         {
@@ -607,11 +607,11 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "4. Intelektuālais īpašums",
-          body: ["Mājaslapas saturs (teksti, dizains, grafika) pieder SmartFlow, ja nav norādīts citādi, un to nedrīkst izmantot bez iepriekšējas piekrišanas."],
+          body: ["Mājaslapas saturs (teksti, dizains, grafika) pieder Nyvexo, ja nav norādīts citādi, un to nedrīkst izmantot bez iepriekšējas piekrišanas."],
         },
         {
           heading: "5. Atbildības ierobežojums",
-          body: ["Mājaslapā sniegtā informācija tiek nodrošināta «tāda, kāda tā ir» un ir informatīva rakstura. SmartFlow neuzņemas atbildību par netiešiem zaudējumiem, kas radušies mājaslapas lietošanas rezultātā."],
+          body: ["Mājaslapā sniegtā informācija tiek nodrošināta «tāda, kāda tā ir» un ir informatīva rakstura. Nyvexo neuzņemas atbildību par netiešiem zaudējumiem, kas radušies mājaslapas lietošanas rezultātā."],
         },
         {
           heading: "6. Noteikumu izmaiņas",
@@ -625,7 +625,7 @@ export const dictionary: Dictionary = {
     },
     cookiePolicy: {
       title: "Sīkdatņu politika",
-      description: "Kā SmartFlow izmanto sīkdatnes šajā mājaslapā.",
+      description: "Kā Nyvexo izmanto sīkdatnes šajā mājaslapā.",
       updated: "2026. gada 17. augusts",
       sections: [
         {

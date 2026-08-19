@@ -1,15 +1,14 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-// Real SmartFlow brand asset — public/brand/logo.png (unaltered colors and
-// proportions, background removed for transparency). The wordmark's dark
-// portion ("Smart") isn't legible directly on dark surfaces, so the "dark"
-// variant places the exact same, unmodified artwork on a light chip instead
-// of recoloring it.
-const LOGO_RATIO = 1075 / 210;
-const HEIGHT = 34;
-const WIDTH = Math.round(HEIGHT * LOGO_RATIO);
-
+// Real Nyvexo brand assets (public/brand/), unaltered:
+// - nyvexo-icon.png: the square gradient "N" mark — used everywhere.
+// - nyvexo-full-white.png: the client's white-on-dark full lockup — used
+//   as-is on dark surfaces (footer).
+// No dark-on-light full lockup was supplied, so light surfaces (header,
+// mobile nav) pair the real icon image with the brand name set as live
+// text in the site's own type, rather than a flattened image — the icon
+// artwork itself is never redrawn.
 export function Logo({
   variant = "light",
   className,
@@ -17,24 +16,25 @@ export function Logo({
   variant?: "light" | "dark";
   className?: string;
 }) {
-  const image = (
-    <Image
-      src="/brand/logo.png"
-      alt="SmartFlow"
-      width={WIDTH}
-      height={HEIGHT}
-      priority
-      className="h-[34px] w-auto"
-    />
-  );
-
   if (variant === "dark") {
     return (
-      <span className={cn("inline-flex items-center rounded-xl bg-white px-3 py-2", className)}>
-        {image}
+      <span className={cn("inline-flex items-center", className)}>
+        <Image
+          src="/brand/nyvexo-full-white.png"
+          alt="Nyvexo"
+          width={987}
+          height={305}
+          priority
+          className="h-8 w-auto sm:h-9"
+        />
       </span>
     );
   }
 
-  return <span className={cn("inline-flex items-center", className)}>{image}</span>;
+  return (
+    <span className={cn("inline-flex items-center gap-2.5", className)}>
+      <Image src="/brand/nyvexo-icon.png" alt="" width={512} height={512} priority className="size-8 shrink-0" />
+      <span className="font-display text-lg font-bold tracking-tight text-ink">Nyvexo</span>
+    </span>
+  );
 }

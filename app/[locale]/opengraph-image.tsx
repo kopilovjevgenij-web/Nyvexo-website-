@@ -1,5 +1,7 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { SITE, LOCALES } from "@/lib/constants";
+import { LOCALES } from "@/lib/constants";
 import { getDictionary } from "@/lib/i18n/config";
 import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
@@ -14,6 +16,9 @@ export default async function OpengraphImage({ params }: { params: Promise<{ loc
   const locale = resolveLocale((await params).locale);
   const dictionary = await getDictionary(locale);
   const t = dictionary.hero;
+
+  const iconBuffer = await readFile(join(process.cwd(), "public/brand/nyvexo-icon.png"));
+  const iconSrc = `data:image/png;base64,${iconBuffer.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -32,23 +37,8 @@ export default async function OpengraphImage({ params }: { params: Promise<{ loc
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 52,
-              height: 52,
-              borderRadius: 14,
-              background: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#12141a",
-              fontSize: 24,
-              fontWeight: 700,
-            }}
-          >
-            SF
-          </div>
-          <div style={{ fontSize: 30, fontWeight: 700 }}>{SITE.name}</div>
+          <img src={iconSrc} width={52} height={52} style={{ borderRadius: 14 }} alt="" />
+          <div style={{ fontSize: 30, fontWeight: 700 }}>Nyvexo</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>

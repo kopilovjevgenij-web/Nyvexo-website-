@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/icons/icon-map";
 import type { Dictionary } from "@/lib/i18n/types";
 
-export function WhySmartFlow({ dictionary }: { dictionary: Dictionary }) {
+export function WhyNyvexo({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.why;
 
   return (

@@ -68,7 +68,7 @@ export function Header({ dictionary, locale }: { dictionary: Dictionary; locale:
       )}
     >
       <Container className="flex h-[4.5rem] items-center justify-between py-4">
-        <Link href={`/${locale}`} onClick={() => setOpen(false)} aria-label="SmartFlow">
+        <Link href={`/${locale}`} onClick={() => setOpen(false)} aria-label="Nyvexo">
           <Logo />
         </Link>
 

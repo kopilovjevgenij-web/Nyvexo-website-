@@ -2,10 +2,10 @@ import type { Dictionary } from "../types";
 
 export const dictionary: Dictionary = {
   meta: {
-    title: "SmartFlow — Websites, AI & Business Automation",
+    title: "Nyvexo — Websites, AI & Business Automation",
     description:
-      "SmartFlow builds websites, automates business processes, and deploys AI chatbots and voice agents that answer customers 24/7.",
-    ogTitle: "SmartFlow — Websites, Automation & AI for Business",
+      "Nyvexo builds websites, automates business processes, and deploys AI chatbots and voice agents that answer customers 24/7.",
+    ogTitle: "Nyvexo — Websites, Automation & AI for Business",
     ogDescription: "Websites, business process automation, and AI assistants that save time and stop you losing customers.",
   },
   nav: {
@@ -26,7 +26,7 @@ export const dictionary: Dictionary = {
     titleMain: "Websites, automation and AI",
     titleAccent: "for a business that doesn't lose customers",
     subtitle:
-      "SmartFlow builds websites, automates business processes, and deploys AI assistants, chatbots and voice agents that answer customers 24/7 and take routine work off your plate.",
+      "Nyvexo builds websites, automates business processes, and deploys AI assistants, chatbots and voice agents that answer customers 24/7 and take routine work off your plate.",
     ctaPrimary: "Discuss your project",
     ctaSecondary: "Get a free audit",
     trustItems: ["For small and medium businesses", "Websites · Automation · AI", "Start with a single process"],
@@ -61,7 +61,7 @@ export const dictionary: Dictionary = {
         description: "It can look good and still do nothing to sell or serve your customers.",
       },
     ],
-    closing: "SmartFlow connects these processes into one working system.",
+    closing: "Nyvexo connects these processes into one working system.",
   },
   valueProp: {
     heading1: "We don't automate technology.",
@@ -173,7 +173,7 @@ export const dictionary: Dictionary = {
   },
   industries: {
     eyebrow: "For business",
-    heading: "Where can SmartFlow help?",
+    heading: "Where can Nyvexo help?",
     items: [
       {
         icon: "utensils",
@@ -221,7 +221,7 @@ export const dictionary: Dictionary = {
   },
   scenarios: {
     eyebrow: "How it works in practice",
-    heading: "How SmartFlow can work in a real business",
+    heading: "How Nyvexo can work in a real business",
     linkCta: "Discuss a scenario for your business",
     items: [
       {
@@ -266,8 +266,8 @@ export const dictionary: Dictionary = {
     ],
   },
   beforeAfter: {
-    beforeTitle: "Before SmartFlow",
-    afterTitle: "After SmartFlow",
+    beforeTitle: "Before Nyvexo",
+    afterTitle: "After Nyvexo",
     beforeItems: ["Manual enquiries", "Missed calls", "Slow replies", "Spreadsheets", "Disconnected tools", "Repetitive tasks"],
     afterItems: [
       "AI works 24/7",
@@ -291,8 +291,8 @@ export const dictionary: Dictionary = {
     ],
   },
   audit: {
-    eyebrow: "SmartFlow Audit",
-    heading: "Free SmartFlow Audit",
+    eyebrow: "Nyvexo Audit",
+    heading: "Free Nyvexo Audit",
     subtitle: "We'll show you which processes in your business can be automated, and where AI genuinely makes sense.",
     disclaimer: "No obligation. We understand the task first — then we propose a solution.",
     improveLabel: "What would you like to improve?",
@@ -322,11 +322,11 @@ export const dictionary: Dictionary = {
   cases: {
     eyebrow: "Solution examples",
     heading: "How this could work in your business",
-    subtitle: "These aren't stories about specific clients — they're examples of what SmartFlow can build for your type of business.",
+    subtitle: "These aren't stories about specific clients — they're examples of what Nyvexo can build for your type of business.",
     badge: "Example",
     labels: {
       problem: "Problem",
-      solution: "SmartFlow's solution",
+      solution: "Nyvexo's solution",
       automation: "What happens automatically",
       result: "Result for the business",
     },
@@ -371,7 +371,7 @@ export const dictionary: Dictionary = {
   },
   why: {
     eyebrow: "Why us",
-    heading: "Why businesses choose SmartFlow",
+    heading: "Why businesses choose Nyvexo",
     items: [
       { icon: "target", title: "Business-first", description: "We understand the business problem first, then pick the technology." },
       { icon: "layers", title: "One system", description: "We bring your website, AI, CRM and automation together into one system." },
@@ -383,7 +383,7 @@ export const dictionary: Dictionary = {
   },
   technology: {
     heading: "We use technology as a tool",
-    disclaimer: "SmartFlow isn't an official partner of the services listed — we integrate these technologies into your business processes.",
+    disclaimer: "Nyvexo isn't an official partner of the services listed — we integrate these technologies into your business processes.",
     items: [
       { name: "OpenAI", benefit: "smart replies to customers" },
       { name: "Claude", benefit: "precise AI conversations" },
@@ -529,17 +529,17 @@ export const dictionary: Dictionary = {
   },
   legal: {
     disclaimer:
-      "This document is a template for the SmartFlow website, provided for informational purposes. Before publishing, it should be reviewed and adapted by a qualified lawyer in line with applicable law (including GDPR) and the company's jurisdiction.",
+      "This document is a template for the Nyvexo website, provided for informational purposes. Before publishing, it should be reviewed and adapted by a qualified lawyer in line with applicable law (including GDPR) and the company's jurisdiction.",
     updatedLabel: "Last updated:",
     privacy: {
       title: "Privacy Policy",
-      description: "SmartFlow's privacy policy — how we handle personal data.",
+      description: "Nyvexo's privacy policy — how we handle personal data.",
       updated: "August 17, 2026",
       sections: [
         {
           heading: "1. General",
           body: [
-            "SmartFlow (\"we\", \"us\") respects the privacy of website visitors and clients who submit enquiries through our forms. This Policy describes what data we collect, why, and how it's processed in line with general GDPR principles.",
+            "Nyvexo (\"we\", \"us\") respects the privacy of website visitors and clients who submit enquiries through our forms. This Policy describes what data we collect, why, and how it's processed in line with general GDPR principles.",
           ],
         },
         {
@@ -565,7 +565,7 @@ export const dictionary: Dictionary = {
         {
           heading: "5. Storage and sharing with third parties",
           body: [
-            "Data may be shared with services SmartFlow relies on to operate: CRM, email tools, automation tools (e.g. Make, n8n) — strictly to the extent required to deliver the service.",
+            "Data may be shared with services Nyvexo relies on to operate: CRM, email tools, automation tools (e.g. Make, n8n) — strictly to the extent required to deliver the service.",
           ],
         },
         {
@@ -584,17 +584,17 @@ export const dictionary: Dictionary = {
     },
     terms: {
       title: "Terms of Service",
-      description: "Terms of use for the SmartFlow website and services.",
+      description: "Terms of use for the Nyvexo website and services.",
       updated: "August 17, 2026",
       sections: [
         {
           heading: "1. General terms",
-          body: ["Using the SmartFlow website means you agree to these terms. If you don't agree, please don't use the site."],
+          body: ["Using the Nyvexo website means you agree to these terms. If you don't agree, please don't use the site."],
         },
         {
           heading: "2. Services",
           body: [
-            "SmartFlow provides website development, business process automation, AI chatbot and voice agent implementation, and third-party integrations. The exact scope, price and timeline of services are set out in a separate proposal or contract with the client.",
+            "Nyvexo provides website development, business process automation, AI chatbot and voice agent implementation, and third-party integrations. The exact scope, price and timeline of services are set out in a separate proposal or contract with the client.",
           ],
         },
         {
@@ -603,11 +603,11 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "4. Intellectual property",
-          body: ["Site content (text, design, graphics) belongs to SmartFlow unless stated otherwise, and may not be used without prior consent."],
+          body: ["Site content (text, design, graphics) belongs to Nyvexo unless stated otherwise, and may not be used without prior consent."],
         },
         {
           heading: "5. Limitation of liability",
-          body: ["Information on the site is provided \"as is\" for reference purposes. SmartFlow is not liable for indirect losses arising from the use of the site."],
+          body: ["Information on the site is provided \"as is\" for reference purposes. Nyvexo is not liable for indirect losses arising from the use of the site."],
         },
         {
           heading: "6. Changes to these terms",
@@ -621,7 +621,7 @@ export const dictionary: Dictionary = {
     },
     cookiePolicy: {
       title: "Cookie Policy",
-      description: "How SmartFlow uses cookies on this website.",
+      description: "How Nyvexo uses cookies on this website.",
       updated: "August 17, 2026",
       sections: [
         {
