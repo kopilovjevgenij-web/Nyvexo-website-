@@ -581,7 +581,7 @@ export const dictionary: Dictionary = {
         {
           heading: "6. Права субъекта данных",
           body: [
-            "Вы имеете право запросить доступ к своим данным, их исправление, удаление или ограничение обработки, а также отозвать согласие в любой момент, написав на kopilov.jevgenij@gmail.com.",
+            "Вы имеете право запросить доступ к своим данным, их исправление, удаление или ограничение обработки, а также отозвать согласие в любой момент, написав на jevgenij@nyvexo.lv.",
           ],
         },
         {
@@ -590,7 +590,7 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "8. Контакты",
-          body: ["По вопросам обработки персональных данных: kopilov.jevgenij@gmail.com."],
+          body: ["По вопросам обработки персональных данных: jevgenij@nyvexo.lv."],
         },
       ],
     },
@@ -627,7 +627,7 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "7. Контакты",
-          body: ["По вопросам, связанным с условиями использования: kopilov.jevgenij@gmail.com."],
+          body: ["По вопросам, связанным с условиями использования: jevgenij@nyvexo.lv."],
         },
       ],
     },
@@ -658,7 +658,7 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "5. Контакты",
-          body: ["Вопросы по использованию cookie: kopilov.jevgenij@gmail.com."],
+          body: ["Вопросы по использованию cookie: jevgenij@nyvexo.lv."],
         },
       ],
     },

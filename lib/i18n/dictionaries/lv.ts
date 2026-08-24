@@ -573,7 +573,7 @@ export const dictionary: Dictionary = {
         {
           heading: "6. Datu subjekta tiesības",
           body: [
-            "Jums ir tiesības pieprasīt piekļuvi saviem datiem, to labošanu, dzēšanu vai apstrādes ierobežošanu, kā arī jebkurā brīdī atsaukt piekrišanu, rakstot uz kopilov.jevgenij@gmail.com.",
+            "Jums ir tiesības pieprasīt piekļuvi saviem datiem, to labošanu, dzēšanu vai apstrādes ierobežošanu, kā arī jebkurā brīdī atsaukt piekrišanu, rakstot uz jevgenij@nyvexo.lv.",
           ],
         },
         {
@@ -582,7 +582,7 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "8. Kontakti",
-          body: ["Jautājumos par personas datu apstrādi: kopilov.jevgenij@gmail.com."],
+          body: ["Jautājumos par personas datu apstrādi: jevgenij@nyvexo.lv."],
         },
       ],
     },
@@ -619,7 +619,7 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "7. Kontakti",
-          body: ["Jautājumos par lietošanas noteikumiem: kopilov.jevgenij@gmail.com."],
+          body: ["Jautājumos par lietošanas noteikumiem: jevgenij@nyvexo.lv."],
         },
       ],
     },
@@ -650,7 +650,7 @@ export const dictionary: Dictionary = {
         },
         {
           heading: "5. Kontakti",
-          body: ["Jautājumi par sīkdatņu izmantošanu: kopilov.jevgenij@gmail.com."],
+          body: ["Jautājumi par sīkdatņu izmantošanu: jevgenij@nyvexo.lv."],
         },
       ],
     },

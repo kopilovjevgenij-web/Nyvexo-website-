@@ -6,7 +6,7 @@ export const SITE = {
   // deployment URL predates the rename and hasn't been re-pointed to a
   // Nyvexo domain yet — see rebrand notes.
   url: "https://smart-flow-website.vercel.app",
-  email: "kopilov.jevgenij@gmail.com",
+  email: "jevgenij@nyvexo.lv",
   phone: "+371 28106463",
   phoneHref: "+37128106463",
   social: {
