@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { FoundingClient } from "@/components/sections/FoundingClient";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { ValueProposition } from "@/components/sections/ValueProposition";
@@ -11,7 +12,6 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { AuditForm } from "@/components/sections/AuditForm";
 import { CaseStudies } from "@/components/sections/CaseStudies";
-import { FoundingClient } from "@/components/sections/FoundingClient";
 import { WhyNyvexo } from "@/components/sections/WhyNyvexo";
 import { Technology } from "@/components/sections/Technology";
 import { FAQ } from "@/components/sections/FAQ";
@@ -32,6 +32,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <>
       <Hero dictionary={dictionary} />
+      <FoundingClient dictionary={dictionary} />
       <TrustStrip dictionary={dictionary} />
       <ProblemSection dictionary={dictionary} />
       <ValueProposition dictionary={dictionary} />
@@ -44,7 +45,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <PricingTiers dictionary={dictionary} />
       <AuditForm dictionary={dictionary} locale={locale} />
       <CaseStudies dictionary={dictionary} />
-      <FoundingClient dictionary={dictionary} />
       <WhyNyvexo dictionary={dictionary} />
       <Technology dictionary={dictionary} />
       <FAQ dictionary={dictionary} />
