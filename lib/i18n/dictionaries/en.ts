@@ -369,6 +369,17 @@ export const dictionary: Dictionary = {
       },
     ],
   },
+  foundingClient: {
+    eyebrow: "NYVEXO LAUNCH",
+    heading: "We're just getting started — and this is your chance",
+    text: "Nyvexo is currently onboarding its first clients. For the first 5 businesses who launch a project with us, we offer a 30–40% discount — in exchange, we only ask for an honest case study and review of the results, even if they're not perfect.",
+    items: [
+      "30–40% off your chosen package (START / GROW / AI SYSTEM)",
+      "Priority support during the launch phase",
+      "The only condition — a real case with your numbers, no polishing",
+    ],
+    cta: "Become one of the first",
+  },
   why: {
     eyebrow: "Why us",
     heading: "Why businesses choose Nyvexo",

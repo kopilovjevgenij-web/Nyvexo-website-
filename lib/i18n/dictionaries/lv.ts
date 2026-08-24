@@ -369,6 +369,17 @@ export const dictionary: Dictionary = {
       },
     ],
   },
+  foundingClient: {
+    eyebrow: "NYVEXO UZSĀKŠANA",
+    heading: "Mēs tikko sākam — un šī ir jūsu iespēja",
+    text: "Nyvexo šobrīd piesaista pirmos klientus. Pirmajiem 5 uzņēmumiem, kas uzsāks projektu kopā ar mums, piedāvājam 30–40% atlaidi — pretī lūdzam tikai godīgu gadījuma aprakstu un atsauksmi par rezultātu, pat ja tas nebūs ideāls.",
+    items: [
+      "30–40% atlaide izvēlētajam paketei (START / GROW / AI SYSTEM)",
+      "Prioritārs atbalsts uzsākšanas posmā",
+      "Vienīgais nosacījums — reāls gadījums ar jūsu skaitļiem, bez izskaistināšanas",
+    ],
+    cta: "Kļūt par vienu no pirmajiem",
+  },
   why: {
     eyebrow: "Kāpēc mēs",
     heading: "Kāpēc bizness izvēlas Nyvexo",

@@ -175,6 +175,13 @@ export type Dictionary = {
     labels: { problem: string; solution: string; automation: string; result: string };
     items: [CaseItem, CaseItem, CaseItem, CaseItem];
   };
+  foundingClient: {
+    eyebrow: string;
+    heading: string;
+    text: string;
+    items: [string, string, string];
+    cta: string;
+  };
   why: {
     eyebrow: string;
     heading: string;
