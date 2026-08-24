@@ -2,10 +2,7 @@ export const SITE = {
   name: "Nyvexo",
   tagline: "Websites. Automation. AI.",
   legalName: "Nyvexo",
-  // Domain intentionally left as-is: the smart-flow-website.vercel.app
-  // deployment URL predates the rename and hasn't been re-pointed to a
-  // Nyvexo domain yet — see rebrand notes.
-  url: "https://smart-flow-website.vercel.app",
+  url: "https://nyvexo.lv",
   email: "jevgenij@nyvexo.lv",
   phone: "+371 28106463",
   phoneHref: "+37128106463",
