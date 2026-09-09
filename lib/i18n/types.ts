@@ -218,6 +218,7 @@ export type Dictionary = {
     solutions: NavLink[];
     company: NavLink[];
     legal: NavLink[];
+    legalNotice: string;
     rights: string;
   };
   cookie: {

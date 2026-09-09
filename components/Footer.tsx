@@ -69,19 +69,23 @@ export function Footer({ dictionary, locale }: { dictionary: Dictionary; locale:
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} {SITE.name}. {nav.rights}
-          </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            {nav.legal.map((item) => (
-              <li key={item.label}>
-                <Link href={localeHref(locale, item.href)} className="text-xs text-white/50 transition-colors hover:text-white">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-14 border-t border-white/10 pt-8">
+          <p className="max-w-3xl text-xs leading-relaxed text-white/40">{nav.legalNotice}</p>
+
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs text-white/40">
+              © {new Date().getFullYear()} {SITE.name}. {nav.rights}
+            </p>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+              {nav.legal.map((item) => (
+                <li key={item.label}>
+                  <Link href={localeHref(locale, item.href)} className="text-xs text-white/50 transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
     </footer>

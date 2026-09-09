@@ -517,10 +517,12 @@ export const dictionary: Dictionary = {
       { label: "Contact", href: "#contact" },
     ],
     legal: [
+      { label: "Terms of Service", href: "/terms" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms", href: "/terms" },
       { label: "Cookie Policy", href: "/cookie-policy" },
     ],
+    legalNotice:
+      "Nyvexo — Jevgenijs Kopilovs, registered with the Latvian State Revenue Service (VID) as a self-employed person (saimnieciskās darbības veicējs) since 07.09.2026. Place of business: the website www.nyvexo.lv. VAT status: not a VAT payer. Contact: jevgenij@nyvexo.lv.",
     rights: "All rights reserved.",
   },
   cookie: {
@@ -545,88 +547,126 @@ export const dictionary: Dictionary = {
     privacy: {
       title: "Privacy Policy",
       description: "Nyvexo's privacy policy — how we handle personal data.",
-      updated: "August 17, 2026",
+      updated: "September 9, 2026",
       sections: [
         {
-          heading: "1. General",
+          heading: "1. Data controller",
           body: [
-            "Nyvexo (\"we\", \"us\") respects the privacy of website visitors and clients who submit enquiries through our forms. This Policy describes what data we collect, why, and how it's processed in line with general GDPR principles.",
+            "The data controller is Jevgenijs Kopilovs, trading as Nyvexo, registered with VID as a self-employed person. Contact for data protection matters: jevgenij@nyvexo.lv.",
           ],
         },
         {
-          heading: "2. What data we collect",
+          heading: "2. What data we process",
           body: [
-            "Contact details: name, email, phone, company name, website.",
-            "Information about your business and request, as provided in an enquiry or audit form.",
-            "Technical data: cookies and site usage data (only with consent to analytics).",
+            "By completing the request form on the Website, we receive the name, contact details (email and/or phone), and message content you provide. We also automatically receive technical data about your visit (IP address, browser type) from our hosting provider (Vercel) for security and site-operation purposes; no separate marketing analytics is used on the Website.",
           ],
         },
         {
-          heading: "3. Purposes of processing",
+          heading: "3. Purpose and legal basis",
           body: [
-            "Handling enquiries and communicating with clients.",
-            "Preparing proposals and consultations.",
-            "Improving the site based on aggregated statistics.",
+            "We process data to respond to your request and, once agreed, to deliver services (GDPR Art. 6(1)(a) — consent given by submitting the form, and Art. 6(1)(b) — steps taken prior to, and performance of, a contract). For accounting purposes, data may be processed to comply with a legal obligation (GDPR Art. 6(1)(c)).",
           ],
         },
         {
-          heading: "4. Legal basis for processing",
-          body: ["Data is processed on the basis of user consent (when a form is submitted), and the company's legitimate interest in handling incoming business enquiries."],
-        },
-        {
-          heading: "5. Storage and sharing with third parties",
+          heading: "4. Retention period",
           body: [
-            "Data may be shared with services Nyvexo relies on to operate: CRM, email tools, automation tools (e.g. Make, n8n) — strictly to the extent required to deliver the service.",
+            "Request data is kept for as long as needed for correspondence, and, where a contract is signed, for the retention period required for accounting records under Latvian law.",
           ],
         },
         {
-          heading: "6. Your rights",
-          body: ["You may request access to your data, its correction, deletion, or restriction of processing, and withdraw consent at any time by writing to jevgenij@nyvexo.lv."],
+          heading: "5. Sharing data with third parties",
+          body: [
+            "The Website's request form is delivered using the email service Zoho Mail, which sends your submission as an email to jevgenij@nyvexo.lv. For accounting purposes, data may be shared with an accountant or bookkeeping service. Data is not sold and is not shared with third parties for marketing purposes.",
+          ],
         },
         {
-          heading: "7. Cookies",
-          body: ["See the separate Cookie Policy for details on our use of cookies."],
+          heading: "6. Cookies",
+          body: [
+            "The Website does not use cookies for analytics or marketing. Only strictly necessary technical cookies and similar technologies (localStorage) may be used for the Website to function — for example, to remember your choice in the cookie consent banner.",
+          ],
         },
         {
-          heading: "8. Contact",
-          body: ["For questions about personal data processing: jevgenij@nyvexo.lv."],
+          heading: "7. Your rights",
+          body: [
+            "You have the right to request access to your data, correction, deletion, restriction of processing, to object to processing, or to request data portability — by writing to jevgenij@nyvexo.lv. You also have the right to lodge a complaint with Latvia's Data State Inspectorate (Datu valsts inspekcija, www.dvi.gov.lv) if you believe your rights have been violated.",
+          ],
+        },
+        {
+          heading: "8. Data security",
+          body: [
+            "We take reasonable technical and organisational measures to protect your data from unauthorised access, loss, or disclosure.",
+          ],
+        },
+        {
+          heading: "9. Changes to this policy",
+          body: ["This policy may be updated — the current version is always available on this page."],
+        },
+        {
+          heading: "10. Contact",
+          body: ["jevgenij@nyvexo.lv"],
         },
       ],
     },
     terms: {
       title: "Terms of Service",
-      description: "Terms of use for the Nyvexo website and services.",
-      updated: "August 17, 2026",
+      description: "Terms of service for the Nyvexo website.",
+      updated: "September 9, 2026",
       sections: [
         {
-          heading: "1. General terms",
-          body: ["Using the Nyvexo website means you agree to these terms. If you don't agree, please don't use the site."],
-        },
-        {
-          heading: "2. Services",
+          heading: "General",
           body: [
-            "Nyvexo provides website development, business process automation, AI chatbot and voice agent implementation, and third-party integrations. The exact scope, price and timeline of services are set out in a separate proposal or contract with the client.",
+            "These terms govern the use of the website www.nyvexo.lv (\"Website\") and submitting requests through it. The Website is operated by Jevgenijs Kopilovs, trading as Nyvexo, registered with the Latvian State Revenue Service (VID) as a self-employed person (saimnieciskās darbības veicējs) since 07.09.2026. Place of business: the website www.nyvexo.lv. VAT status: not a VAT payer. Contact: jevgenij@nyvexo.lv. The provision of specific commercial services (project development, automation, AI solutions) is governed by a separate written Service Agreement, entered into individually with each client — these Website terms are a general framework, not the full agreement text.",
           ],
         },
         {
-          heading: "3. Website enquiries",
-          body: ["By submitting a form on the site, you confirm the data provided is accurate and agree that we may contact you to discuss your request."],
+          heading: "1. Services",
+          body: [
+            "Nyvexo offers website development, business process automation, and AI solutions (chatbots, voice agents) for small and medium businesses, including as fixed packages (START / GROW / AI SYSTEM). Prices shown on the Website are indicative — the final price, scope, and timeline for a specific project are set out in a separate Service Agreement before work begins.",
+          ],
         },
         {
-          heading: "4. Intellectual property",
-          body: ["Site content (text, design, graphics) belongs to Nyvexo unless stated otherwise, and may not be used without prior consent."],
+          heading: "2. Submitting a request",
+          body: [
+            "By completing a request form (\"Free Audit\" or similar) on the Website, you send an informational inquiry — this is not a binding order or payment obligation. A response is sent to your provided contact details within a reasonable time.",
+          ],
         },
         {
-          heading: "5. Limitation of liability",
-          body: ["Information on the site is provided \"as is\" for reference purposes. Nyvexo is not liable for indirect losses arising from the use of the site."],
+          heading: "3. Entering into an agreement and payment",
+          body: [
+            "Service delivery begins only after both parties sign a separate Service Agreement setting out the scope of work, price, timeline, and payment terms. As Nyvexo is not a VAT payer, VAT is not applied on invoices.",
+          ],
         },
         {
-          heading: "6. Changes to these terms",
-          body: ["We may update these terms from time to time. The current version is always available on this page."],
+          heading: "4. Founding client offer",
+          body: [
+            "While the \"Founding client\" offer is published on the Website, its specific terms (discount amount, number of spots, requirements) apply as published on the Website at the time of the offer.",
+          ],
         },
         {
-          heading: "7. Contact",
-          body: ["For questions about these terms: jevgenij@nyvexo.lv."],
+          heading: "5. Intellectual property",
+          body: [
+            "Rights to the Website's content (text, design, logo) belong to Nyvexo. Rights to the deliverables of a specific project (code, configuration, design files) are governed by the separate Service Agreement — typically transferring to the client upon receipt of full payment.",
+          ],
+        },
+        {
+          heading: "6. Limitation of liability",
+          body: [
+            "The Website and the information on it are provided \"as is\". Nyvexo makes reasonable efforts to keep information accurate but is not liable for indirect losses arising from use of the Website. Liability for a specific project is governed by the relevant Service Agreement.",
+          ],
+        },
+        {
+          heading: "7. Governing law",
+          body: [
+            "These terms and any disputes relating to use of the Website are governed by the laws of the Republic of Latvia.",
+          ],
+        },
+        {
+          heading: "8. Changes",
+          body: ["Nyvexo may update these terms by publishing a new version on the Website. The current version is always available on this page."],
+        },
+        {
+          heading: "9. Contact",
+          body: ["For questions, write to: jevgenij@nyvexo.lv."],
         },
       ],
     },

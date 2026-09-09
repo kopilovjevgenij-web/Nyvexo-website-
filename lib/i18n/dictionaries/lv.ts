@@ -517,10 +517,12 @@ export const dictionary: Dictionary = {
       { label: "Kontakti", href: "#contact" },
     ],
     legal: [
+      { label: "Pakalpojumu sniegšanas noteikumi", href: "/terms" },
       { label: "Privātuma politika", href: "/privacy-policy" },
-      { label: "Lietošanas noteikumi", href: "/terms" },
       { label: "Sīkdatņu politika", href: "/cookie-policy" },
     ],
+    legalNotice:
+      "Nyvexo — Jevgenijs Kopilovs, reģistrēts Valsts ieņēmumu dienestā kā saimnieciskās darbības veicējs (pašnodarbināta persona) no 07.09.2026. Darbības vieta: tīmekļa vietne www.nyvexo.lv. PVN maksātāja statuss: nav PVN maksātājs. Kontakti: jevgenij@nyvexo.lv.",
     rights: "Visas tiesības aizsargātas.",
   },
   cookie: {
@@ -545,92 +547,126 @@ export const dictionary: Dictionary = {
     privacy: {
       title: "Privātuma politika",
       description: "Nyvexo privātuma politika — kā mēs apstrādājam personas datus.",
-      updated: "2026. gada 17. augusts",
+      updated: "2026. gada 9. septembris",
       sections: [
         {
-          heading: "1. Vispārīgi noteikumi",
+          heading: "1. Pārzinis",
           body: [
-            "Nyvexo («mēs») ciena mājaslapas apmeklētāju un klientu, kuri iesniedz pieprasījumus caur formām, privātumu. Šī politika apraksta, kādus datus mēs vācam, kāpēc un kā tie tiek apstrādāti atbilstoši vispārējiem GDPR principiem.",
+            "Personas datu pārzinis ir Jevgenijs Kopilovs, kas darbojas ar tirdzniecības nosaukumu Nyvexo, reģistrēts VID kā saimnieciskās darbības veicējs. Kontakti datu aizsardzības jautājumos: jevgenij@nyvexo.lv.",
           ],
         },
         {
-          heading: "2. Kādus datus mēs vācam",
+          heading: "2. Kādus datus mēs apstrādājam",
           body: [
-            "Kontaktinformācija: vārds, e-pasts, tālrunis, uzņēmuma nosaukums, mājaslapa.",
-            "Informācija par biznesu un pieprasījumu, kas norādīta pieteikuma vai audita formā.",
-            "Tehniskie dati: sīkdatnes, mājaslapas lietošanas dati (ar piekrišanu analītikai).",
+            "Aizpildot pieprasījuma formu Mājaslapā, mēs saņemam jūsu norādīto vārdu, kontaktinformāciju (e-pastu un/vai tālruni) un ziņojuma saturu. Papildus mēs automātiski saņemam tehniskus datus par vietnes apmeklējumu (IP adrese, pārlūkprogrammas veids) no mūsu hostinga pakalpojumu sniedzēja (Vercel) drošības un vietnes darbības nodrošināšanas nolūkos; atsevišķa mārketinga analītika vietnē netiek izmantota.",
           ],
         },
         {
-          heading: "3. Datu apstrādes mērķi",
+          heading: "3. Apstrādes nolūks un tiesiskais pamats",
           body: [
-            "Pieprasījumu apstrāde un saziņa ar klientiem.",
-            "Komerciālu piedāvājumu un konsultāciju sagatavošana.",
-            "Mājaslapas darbības uzlabošana, balstoties uz apkopotu statistiku.",
+            "Datus apstrādājam, lai atbildētu uz jūsu pieprasījumu un, ja vienojamies, sniegtu pakalpojumus (Vispārīgās datu aizsardzības regulas (VDAR) 6. panta 1. punkta a) apakšpunkts — piekrišana, iesniedzot formu, un b) apakšpunkts — līguma sagatavošana un izpilde). Grāmatvedības nolūkos dati var tikt apstrādāti, pildot juridisku pienākumu (VDAR 6. panta 1. punkta c) apakšpunkts).",
           ],
         },
         {
-          heading: "4. Apstrādes tiesiskais pamats",
+          heading: "4. Datu glabāšanas termiņš",
           body: [
-            "Datu apstrāde notiek, pamatojoties uz lietotāja piekrišanu (formas iesniegšanas brīdī), kā arī uzņēmuma leģitīmajām interesēm apstrādāt ienākošos biznesa pieprasījumus.",
+            "Pieprasījumu dati tiek glabāti tik ilgi, cik nepieciešams saziņai un, ja noslēgts līgums, saskaņā ar Latvijas normatīvajos aktos noteikto grāmatvedības dokumentu glabāšanas termiņu.",
           ],
         },
         {
-          heading: "5. Datu glabāšana un nodošana trešajām personām",
+          heading: "5. Datu nodošana trešajām personām",
           body: [
-            "Dati var tikt nodoti pakalpojumiem, kurus Nyvexo izmanto darbībai: CRM, e-pasta sūtīšanas rīki, automatizācijas rīki (piemēram, Make, n8n) — tikai tādā apjomā, kas nepieciešams pakalpojuma sniegšanai.",
+            "Pieprasījumu apstrādei un piegādei tiek izmantots e-pasta pakalpojumu sniedzējs Zoho Mail, uz kuru Mājaslapas pieprasījuma forma nosūta jūsu ziņojumu kā e-pastu uz jevgenij@nyvexo.lv. Grāmatvedības nolūkos dati var tikt nodoti grāmatvedim/grāmatvedības pakalpojumu sniedzējam. Dati netiek pārdoti un netiek nodoti trešajām personām mārketinga nolūkos.",
           ],
         },
         {
-          heading: "6. Datu subjekta tiesības",
+          heading: "6. Sīkdatnes",
           body: [
-            "Jums ir tiesības pieprasīt piekļuvi saviem datiem, to labošanu, dzēšanu vai apstrādes ierobežošanu, kā arī jebkurā brīdī atsaukt piekrišanu, rakstot uz jevgenij@nyvexo.lv.",
+            "Vietne neizmanto sīkdatnes analītikas vai mārketinga nolūkos. Var tikt izmantotas tikai obligāti nepieciešamas tehniskas sīkdatnes un līdzīgas tehnoloģijas (localStorage) vietnes darbībai — piemēram, jūsu izvēles saglabāšanai sīkdatņu piekrišanas panelī.",
           ],
         },
         {
-          heading: "7. Sīkdatnes",
-          body: ["Vairāk par sīkdatņu izmantošanu — atsevišķā dokumentā Sīkdatņu politika."],
+          heading: "7. Jūsu tiesības",
+          body: [
+            "Jums ir tiesības pieprasīt piekļuvi saviem datiem, to labošanu, dzēšanu, apstrādes ierobežošanu, iebilst pret apstrādi vai pieprasīt datu pārnesamību — rakstot uz jevgenij@nyvexo.lv. Jums ir arī tiesības iesniegt sūdzību Datu valsts inspekcijā (www.dvi.gov.lv), ja uzskatāt, ka jūsu tiesības ir pārkāptas.",
+          ],
         },
         {
-          heading: "8. Kontakti",
-          body: ["Jautājumos par personas datu apstrādi: jevgenij@nyvexo.lv."],
+          heading: "8. Datu drošība",
+          body: [
+            "Mēs veicam saprātīgus tehniskos un organizatoriskos pasākumus, lai aizsargātu jūsu datus no nesankcionētas piekļuves, zaudēšanas vai izpaušanas.",
+          ],
+        },
+        {
+          heading: "9. Izmaiņas šajā politikā",
+          body: ["Šī politika var tikt atjaunināta — aktuālā redakcija vienmēr pieejama šajā lapā."],
+        },
+        {
+          heading: "10. Kontakti",
+          body: ["jevgenij@nyvexo.lv"],
         },
       ],
     },
     terms: {
-      title: "Lietošanas noteikumi",
-      description: "Nyvexo mājaslapas un pakalpojumu lietošanas noteikumi.",
-      updated: "2026. gada 17. augusts",
+      title: "Pakalpojumu sniegšanas noteikumi",
+      description: "Nyvexo mājaslapas pakalpojumu sniegšanas noteikumi.",
+      updated: "2026. gada 9. septembris",
       sections: [
         {
-          heading: "1. Vispārīgi noteikumi",
-          body: ["Izmantojot Nyvexo mājaslapu, jūs piekrītat šiem noteikumiem. Ja nepiekrītat, lūdzu, neizmantojiet mājaslapu."],
-        },
-        {
-          heading: "2. Pakalpojumi",
+          heading: "Vispārīgie noteikumi",
           body: [
-            "Nyvexo sniedz mājaslapu izstrādes, biznesa procesu automatizācijas, AI čatbotu un balss aģentu ieviešanas, kā arī trešo pušu sistēmu integrācijas pakalpojumus. Precīzs pakalpojumu apjoms, cena un termiņi tiek noteikti atsevišķā komerciālā piedāvājumā vai līgumā ar klientu.",
+            "Šie noteikumi attiecas uz mājaslapas www.nyvexo.lv (\"Mājaslapa\") lietošanu un pieprasījumu iesniegšanu caur to. Mājaslapas uzturētājs ir Jevgenijs Kopilovs, kas darbojas ar tirdzniecības nosaukumu Nyvexo, reģistrēts Valsts ieņēmumu dienestā (VID) kā saimnieciskās darbības veicējs (pašnodarbināta persona) no 07.09.2026. Darbības vieta: tīmekļa vietne www.nyvexo.lv. PVN maksātāja statuss: nav PVN maksātājs. Kontakti: jevgenij@nyvexo.lv. Konkrētu komerciālo pakalpojumu sniegšanu (projekta izstrādi, automatizāciju, AI risinājumus) regulē atsevišķs rakstisks Pakalpojumu līgums, kas tiek noslēgts ar katru klientu individuāli — šie Mājaslapas noteikumi ir vispārīgs ietvars, ne pilns līguma teksts.",
           ],
         },
         {
-          heading: "3. Pieteikumi mājaslapā",
-          body: ["Iesniedzot formu mājaslapā, jūs apstiprināt, ka sniegtie dati ir pareizi, un piekrītat, ka mēs varam sazināties ar jums, lai pārrunātu pieprasījumu."],
+          heading: "1. Pakalpojumi",
+          body: [
+            "Nyvexo piedāvā mājaslapu izstrādi, biznesa procesu automatizāciju un AI risinājumus (čatboti, balss aģenti) mazajiem un vidējiem uzņēmumiem, tostarp fiksētu pakešu veidā (START / GROW / AI SYSTEM). Mājaslapā norādītās cenas ir orientējošas — konkrētā projekta galīgā cena, apjoms un termiņi tiek fiksēti atsevišķā Pakalpojumu līgumā pirms darba uzsākšanas.",
+          ],
         },
         {
-          heading: "4. Intelektuālais īpašums",
-          body: ["Mājaslapas saturs (teksti, dizains, grafika) pieder Nyvexo, ja nav norādīts citādi, un to nedrīkst izmantot bez iepriekšējas piekrišanas."],
+          heading: "2. Pieprasījuma iesniegšana",
+          body: [
+            "Aizpildot pieprasījuma formu (\"Bezmaksas audits\" vai līdzīgu) Mājaslapā, jūs nosūtāt informācijas pieprasījumu — tas nav saistošs pasūtījums vai maksājuma pienākums. Atbilde tiek sniegta uz jūsu norādīto kontaktinformāciju saprātīgā termiņā.",
+          ],
         },
         {
-          heading: "5. Atbildības ierobežojums",
-          body: ["Mājaslapā sniegtā informācija tiek nodrošināta «tāda, kāda tā ir» un ir informatīva rakstura. Nyvexo neuzņemas atbildību par netiešiem zaudējumiem, kas radušies mājaslapas lietošanas rezultātā."],
+          heading: "3. Līguma noslēgšana un samaksa",
+          body: [
+            "Pakalpojumu sniegšana sākas tikai pēc tam, kad abas puses ir parakstījušas atsevišķu Pakalpojumu līgumu, kurā fiksēts darba apjoms, cena, termiņi un samaksas kārtība. Tā kā Nyvexo nav PVN maksātājs, rēķinos PVN netiek piemērots.",
+          ],
         },
         {
-          heading: "6. Noteikumu izmaiņas",
-          body: ["Mēs varam atjaunināt šos noteikumus. Aktuālā versija vienmēr ir pieejama šajā lapā."],
+          heading: "4. Founding client piedāvājums",
+          body: [
+            "Laika periodā, kad Mājaslapā ir redzams \"Founding client\" piedāvājums, tā konkrētie nosacījumi (atlaides apmērs, vietu skaits, prasības) ir spēkā tādā redakcijā, kāda tā ir publicēta Mājaslapā piedāvājuma publicēšanas brīdī.",
+          ],
         },
         {
-          heading: "7. Kontakti",
-          body: ["Jautājumos par lietošanas noteikumiem: jevgenij@nyvexo.lv."],
+          heading: "5. Intelektuālais īpašums",
+          body: [
+            "Tiesības uz Mājaslapas saturu (teksti, dizains, logotips) pieder Nyvexo. Tiesības uz konkrēta projekta rezultātu (kods, konfigurācija, dizaina maketi) tiek regulētas atsevišķajā Pakalpojumu līgumā — parasti tās pāriet klientam pēc pilnas apmaksas saņemšanas.",
+          ],
+        },
+        {
+          heading: "6. Atbildības ierobežojums",
+          body: [
+            "Mājaslapa un tajā sniegtā informācija tiek nodrošināta \"kā ir\". Nyvexo pieliek saprātīgas pūles, lai informācija būtu precīza, taču neuzņemas atbildību par netiešiem zaudējumiem, kas radušies Mājaslapas izmantošanas rezultātā. Atbildība par konkrētu projektu ir reglamentēta attiecīgajā Pakalpojumu līgumā.",
+          ],
+        },
+        {
+          heading: "7. Piemērojamie tiesību akti",
+          body: [
+            "Šos noteikumus un jebkurus strīdus, kas saistīti ar Mājaslapas lietošanu, regulē Latvijas Republikas normatīvie akti.",
+          ],
+        },
+        {
+          heading: "8. Izmaiņas",
+          body: ["Nyvexo var atjaunināt šos noteikumus, publicējot jaunu redakciju Mājaslapā. Spēkā esošā redakcija vienmēr ir pieejama šajā lapā."],
+        },
+        {
+          heading: "9. Kontakti",
+          body: ["Jautājumu gadījumā rakstiet: jevgenij@nyvexo.lv."],
         },
       ],
     },

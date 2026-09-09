@@ -88,6 +88,15 @@ export default async function LocaleLayout({
         description: dictionary.meta.description,
         email: SITE.email,
         telephone: SITE.phone,
+        founder: {
+          "@type": "Person",
+          name: "Jevgenijs Kopilovs",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "LV",
+        },
+        areaServed: "LV",
       },
       {
         "@type": "WebSite",
