@@ -28,7 +28,6 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
       title={t.privacy.title}
       updated={t.privacy.updated}
       updatedLabel={t.updatedLabel}
-      disclaimer={t.disclaimer}
       sections={t.privacy.sections}
     />
   );

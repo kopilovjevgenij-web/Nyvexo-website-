@@ -28,7 +28,6 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
       title={t.terms.title}
       updated={t.terms.updated}
       updatedLabel={t.updatedLabel}
-      disclaimer={t.disclaimer}
       sections={t.terms.sections}
     />
   );

@@ -11,7 +11,7 @@ export function LegalPage({
   title: string;
   updated: string;
   updatedLabel: string;
-  disclaimer: string;
+  disclaimer?: string;
   sections: { heading: string; body: string[] }[];
 }) {
   return (
@@ -22,10 +22,12 @@ export function LegalPage({
           {updatedLabel} {updated}
         </p>
 
-        <div className="mt-6 flex gap-3 rounded-2xl border border-blue-soft-line bg-blue-soft p-4 text-sm leading-relaxed text-ink">
-          <AlertTriangle className="mt-0.5 size-4 shrink-0 text-blue" aria-hidden />
-          <p>{disclaimer}</p>
-        </div>
+        {disclaimer && (
+          <div className="mt-6 flex gap-3 rounded-2xl border border-blue-soft-line bg-blue-soft p-4 text-sm leading-relaxed text-ink">
+            <AlertTriangle className="mt-0.5 size-4 shrink-0 text-blue" aria-hidden />
+            <p>{disclaimer}</p>
+          </div>
+        )}
 
         <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-display prose-headings:font-semibold prose-a:text-blue">
           {sections.map((section) => (
