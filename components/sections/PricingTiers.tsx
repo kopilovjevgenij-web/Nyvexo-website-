@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -36,6 +36,16 @@ export function PricingTiers({ dictionary }: { dictionary: Dictionary }) {
                 <p className={`mt-3 text-sm leading-relaxed ${i === 2 ? "text-white/70" : "text-ink-soft"}`}>
                   {tier.description}
                 </p>
+                {tier.launchNote && (
+                  <p
+                    className={`mt-3 inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium ${
+                      i === 2 ? "bg-white/10 text-white/90" : "bg-blue-soft text-blue"
+                    }`}
+                  >
+                    <Clock className="size-3.5 shrink-0" aria-hidden />
+                    {tier.launchNote}
+                  </p>
+                )}
                 <ul className="mt-6 space-y-2.5">
                   {tier.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm">

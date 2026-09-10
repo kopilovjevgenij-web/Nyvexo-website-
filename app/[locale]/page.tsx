@@ -9,8 +9,10 @@ import { Industries } from "@/components/sections/Industries";
 import { Scenarios } from "@/components/sections/Scenarios";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { LossCalculator } from "@/components/sections/LossCalculator";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { AuditForm } from "@/components/sections/AuditForm";
+import { TrustBadges } from "@/components/sections/TrustBadges";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { WhyNyvexo } from "@/components/sections/WhyNyvexo";
 import { Technology } from "@/components/sections/Technology";
@@ -42,8 +44,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Scenarios dictionary={dictionary} />
       <BeforeAfter dictionary={dictionary} />
       <HowItWorks dictionary={dictionary} />
+      <LossCalculator dictionary={dictionary} locale={locale} />
       <PricingTiers dictionary={dictionary} />
       <AuditForm dictionary={dictionary} locale={locale} />
+      <TrustBadges dictionary={dictionary} locale={locale} />
       <CaseStudies dictionary={dictionary} />
       <WhyNyvexo dictionary={dictionary} />
       <Technology dictionary={dictionary} />
