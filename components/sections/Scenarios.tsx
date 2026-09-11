@@ -1,8 +1,11 @@
+"use client";
+
 import { ChevronRight, MessageSquareText } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Dictionary } from "@/lib/i18n/types";
+import { scrollToHash } from "@/lib/utils";
 
 export function Scenarios({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.scenarios;
@@ -43,7 +46,11 @@ export function Scenarios({ dictionary }: { dictionary: Dictionary }) {
         </div>
 
         <Reveal delay={300} className="mt-10 flex justify-center">
-          <a href="#contact" className="inline-flex items-center gap-1 text-sm font-semibold text-ink">
+          <a
+            href="#contact"
+            onClick={(e) => scrollToHash(e, "#contact")}
+            className="inline-flex items-center gap-1 text-sm font-semibold text-ink"
+          >
             {t.linkCta}
             <ChevronRight className="size-4" aria-hidden />
           </a>

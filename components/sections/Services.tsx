@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -5,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/icons/icon-map";
 import type { Dictionary } from "@/lib/i18n/types";
+import { scrollToHash } from "@/lib/utils";
 
 export function Services({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.services;
@@ -67,7 +70,11 @@ export function Services({ dictionary }: { dictionary: Dictionary }) {
                   </div>
                 </dl>
 
-                <a href="#contact" className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink">
+                <a
+                  href="#contact"
+                  onClick={(e) => scrollToHash(e, "#contact")}
+                  className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink"
+                >
                   {service.cta}
                   <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
                 </a>

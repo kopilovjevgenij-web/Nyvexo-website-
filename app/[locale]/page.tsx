@@ -12,9 +12,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { LossCalculator } from "@/components/sections/LossCalculator";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { AuditForm } from "@/components/sections/AuditForm";
-import { TrustBadges } from "@/components/sections/TrustBadges";
-import { CaseStudies } from "@/components/sections/CaseStudies";
-import { WhyNyvexo } from "@/components/sections/WhyNyvexo";
+import { TrustSection } from "@/components/sections/TrustSection";
 import { Technology } from "@/components/sections/Technology";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -34,23 +32,21 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <>
       <Hero dictionary={dictionary} />
-      <FoundingClient dictionary={dictionary} />
       <TrustStrip dictionary={dictionary} />
       <ProblemSection dictionary={dictionary} />
+      <BeforeAfter dictionary={dictionary} />
       <ValueProposition dictionary={dictionary} />
       <Services dictionary={dictionary} />
-      <BigStatement dictionary={dictionary} />
       <Industries dictionary={dictionary} />
       <Scenarios dictionary={dictionary} />
-      <BeforeAfter dictionary={dictionary} />
+      <BigStatement dictionary={dictionary} />
       <HowItWorks dictionary={dictionary} />
+      <TrustSection dictionary={dictionary} locale={locale} />
+      <Technology dictionary={dictionary} />
+      <FoundingClient dictionary={dictionary} />
       <LossCalculator dictionary={dictionary} locale={locale} />
       <PricingTiers dictionary={dictionary} />
       <AuditForm dictionary={dictionary} locale={locale} />
-      <TrustBadges dictionary={dictionary} locale={locale} />
-      <CaseStudies dictionary={dictionary} />
-      <WhyNyvexo dictionary={dictionary} />
-      <Technology dictionary={dictionary} />
       <FAQ dictionary={dictionary} />
       <FinalCTA dictionary={dictionary} />
       <Contact dictionary={dictionary} locale={locale} />

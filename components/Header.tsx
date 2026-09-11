@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/constants";
 import type { Dictionary } from "@/lib/i18n/types";
-import { cn } from "@/lib/utils";
+import { cn, scrollToHash } from "@/lib/utils";
 
 function switchLocaleHref(pathname: string, target: Locale) {
   const segments = pathname.split("/");
@@ -77,6 +77,7 @@ export function Header({ dictionary, locale }: { dictionary: Dictionary; locale:
             <a
               key={item.href}
               href={item.href}
+              onClick={(e) => scrollToHash(e, item.href)}
               className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
             >
               {item.label}
@@ -111,7 +112,10 @@ export function Header({ dictionary, locale }: { dictionary: Dictionary; locale:
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  scrollToHash(e, item.href);
+                }}
                 className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-mist"
               >
                 {item.label}
