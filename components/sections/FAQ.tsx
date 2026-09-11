@@ -18,7 +18,7 @@ export function FAQ({ dictionary }: { dictionary: Dictionary }) {
   };
 
   return (
-    <section id="faq" className="bg-mist py-20 sm:py-28">
+    <section id="faq" className="scroll-mt-[4.5rem] bg-mist py-20 sm:py-28">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.heading} align="center" className="mx-auto" />

@@ -26,7 +26,7 @@ export function LossCalculator({ dictionary, locale }: { dictionary: Dictionary;
   const formattedLoss = new Intl.NumberFormat(numberFormatLocale[locale], { maximumFractionDigits: 0 }).format(loss);
 
   return (
-    <section id="calculator" className="py-20 sm:py-28">
+    <section id="calculator" className="scroll-mt-[4.5rem] py-20 sm:py-28">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.heading} description={t.subtitle} align="center" className="mx-auto" />
 

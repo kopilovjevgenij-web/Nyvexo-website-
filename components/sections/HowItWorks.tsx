@@ -7,7 +7,7 @@ export function HowItWorks({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.process;
 
   return (
-    <section id="how-it-works" className="bg-mist py-20 sm:py-28">
+    <section id="how-it-works" className="scroll-mt-[4.5rem] bg-mist py-20 sm:py-28">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.heading} />
 

@@ -56,6 +56,22 @@ export function Button({
   );
 
   if (href) {
+    if (href.startsWith("#")) {
+      // Same-page anchor: a native <a> always re-triggers the browser's
+      // scroll-to-fragment behavior on click, even when location.hash
+      // already equals the target — next/link's client-side routing does
+      // not re-navigate (and so does not re-scroll) in that case.
+      return (
+        <a
+          href={href}
+          className={classes}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href}

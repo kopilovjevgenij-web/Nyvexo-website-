@@ -36,7 +36,7 @@ export function Contact({ dictionary, locale }: { dictionary: Dictionary; locale
   }
 
   return (
-    <section id="contact" className="py-20 sm:py-28">
+    <section id="contact" className="scroll-mt-[4.5rem] py-20 sm:py-28">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <Reveal>

@@ -10,7 +10,7 @@ export function Services({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.services;
 
   return (
-    <section id="services" className="bg-mist py-20 sm:py-28">
+    <section id="services" className="scroll-mt-[4.5rem] bg-mist py-20 sm:py-28">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.heading} />
 
