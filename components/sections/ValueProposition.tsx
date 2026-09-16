@@ -7,7 +7,7 @@ export function ValueProposition({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.valueProp;
 
   return (
-    <section id="value" className="bg-ink py-20 text-white sm:py-28">
+    <section id="value" className="scroll-mt-[4.5rem] bg-ink py-20 text-white sm:py-28">
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">

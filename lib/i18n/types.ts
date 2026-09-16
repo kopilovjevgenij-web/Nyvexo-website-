@@ -20,6 +20,7 @@ export type PricingTier = {
   price: string;
   description: string;
   items: string[];
+  launchNote?: string;
 };
 
 export type TechItem = { name: string; benefit: string };
@@ -128,6 +129,30 @@ export type Dictionary = {
     subtitle: string;
     note: string;
     tiers: [PricingTier, PricingTier, PricingTier];
+  };
+  lossCalculator: {
+    eyebrow: string;
+    heading: string;
+    subtitle: string;
+    callsLabel: string;
+    callsPlaceholder: string;
+    valueLabel: string;
+    valuePlaceholder: string;
+    shareLabel: string;
+    shareNote: string;
+    formulaLabel: string;
+    resultEmpty: string;
+    resultPrefix: string;
+    resultSuffix: string;
+    disclaimer: string;
+    ctaText: string;
+    ctaButton: string;
+  };
+  trustBadges: {
+    heading: string;
+    items: [string, string, string];
+    legalPrefix: string;
+    legalJoiner: string;
   };
   bigStatement: {
     line1: string;

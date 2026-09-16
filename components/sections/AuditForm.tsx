@@ -34,7 +34,7 @@ export function AuditForm({ dictionary, locale }: { dictionary: Dictionary; loca
   }
 
   return (
-    <section id="audit" className="py-20 sm:py-28">
+    <section id="audit" className="scroll-mt-[4.5rem] py-20 sm:py-28">
       <Container>
         <div className="grid grid-cols-1 gap-12 rounded-3xl border border-line bg-mist p-7 sm:p-10 lg:grid-cols-2 lg:gap-16 lg:p-14">
           <Reveal className="flex flex-col justify-center">

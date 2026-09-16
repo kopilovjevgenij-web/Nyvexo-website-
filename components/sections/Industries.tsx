@@ -8,7 +8,7 @@ export function Industries({ dictionary }: { dictionary: Dictionary }) {
   const t = dictionary.industries;
 
   return (
-    <section id="industries" className="py-20 sm:py-28">
+    <section id="industries" className="scroll-mt-[4.5rem] py-20 sm:py-28">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.heading} />
 

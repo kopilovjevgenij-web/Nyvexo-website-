@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, scrollToHash } from "@/lib/utils";
 
 type ButtonBaseProps = {
   variant?: "primary" | "secondary" | "ghost";
@@ -56,6 +58,29 @@ export function Button({
   );
 
   if (href) {
+    if (href.startsWith("#")) {
+      // Same-page anchor: drive the scroll explicitly instead of relying on
+      // native fragment navigation. next/link's client-side routing skips
+      // the scroll entirely when location.hash already equals the target,
+      // and even a plain <a> is unreliable on repeat clicks over a very
+      // long distance (e.g. a footer link back up the page) — both real,
+      // reproduced cases, not just a theoretical concern.
+      const { onClick, ...anchorProps } = props as React.AnchorHTMLAttributes<HTMLAnchorElement>;
+      return (
+        <a
+          href={href}
+          className={classes}
+          onClick={(e) => {
+            onClick?.(e);
+            scrollToHash(e, href);
+          }}
+          {...anchorProps}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href}

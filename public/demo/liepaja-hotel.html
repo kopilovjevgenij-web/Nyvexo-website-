@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liepāja Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fog:#DCE1DE;
+    --fog-2:#EEF1EF;
+    --steel:#465158;
+    --steel-2:#2E363B;
+    --amber:#C97B2E;
+    --windblue:#3E6E77;
+    --ink:#1B2224;
+    --line:#C7D0CC;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--fog-2); color:var(--ink); font-family:"IBM Plex Sans",system-ui,sans-serif;}
+  h1,h2,h3{font-family:"Big Shoulders Display",sans-serif; text-transform:uppercase; letter-spacing:.01em; text-wrap:balance; margin:0;}
+  p{margin:0; line-height:1.65;}
+  a{color:inherit;}
+  .wrap{max-width:1100px; margin-inline:auto; padding-inline:20px;}
+
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--ink); color:var(--fog-2); border-bottom:3px solid var(--amber);}
+  .headrow{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:14px;}
+  .brand{font-family:"Big Shoulders Display",sans-serif; font-size:1.3rem; font-weight:700; text-transform:uppercase; letter-spacing:.02em;}
+  nav{display:flex; gap:24px; font-size:.82rem; text-transform:uppercase; letter-spacing:.04em;}
+  nav a{text-decoration:none; opacity:.8;}
+  nav a:hover{opacity:1;}
+  .callbtn{background:var(--amber); color:#241705; font-weight:600; font-size:.82rem; padding:.55em 1.1em; text-decoration:none; white-space:nowrap;}
+  @media (max-width:640px){ nav{display:none;} }
+
+  .hero{background:var(--ink); color:var(--fog-2); position:relative; overflow:hidden;}
+  .windlines{position:absolute; inset:0; opacity:.5; pointer-events:none;}
+  .wline{position:absolute; height:1px; left:-10%; right:-10%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);}
+  .herowrap{padding-block:80px 68px; position:relative;}
+  .eyebrow{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); font-weight:600; font-family:"IBM Plex Sans",sans-serif;}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.6rem); font-weight:700; margin-top:.4rem; line-height:.98;}
+  .hero .lede{margin-top:1.2rem; max-width:48ch; color:#C7CDCA; font-size:1.05rem; font-family:"IBM Plex Sans",sans-serif;}
+  .herobtns{display:flex; gap:14px; flex-wrap:wrap; margin-top:2rem;}
+  .btn-primary{background:var(--amber); color:#241705; font-weight:600; padding:.85em 1.5em; text-decoration:none; font-size:.95rem;}
+  .btn-ghost{border:1px solid rgba(238,241,239,.35); color:var(--fog-2); padding:.85em 1.5em; text-decoration:none; font-size:.95rem;}
+
+  .statrow{display:flex; gap:0; margin-top:3.2rem; border-top:1px solid rgba(255,255,255,.15); flex-wrap:wrap;}
+  .stat{flex:1; min-width:150px; padding-top:16px; border-right:1px solid rgba(255,255,255,.15);}
+  .stat:last-child{border-right:none;}
+  .stat b{display:block; font-family:"Big Shoulders Display",sans-serif; font-size:1.9rem; color:var(--amber); font-variant-numeric:tabular-nums;}
+  .stat span{font-size:.78rem; color:#AEB6B3; font-family:"IBM Plex Sans",sans-serif;}
+
+  section{padding-block:64px;}
+  .kicker{font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--windblue); font-weight:600; font-family:"IBM Plex Sans",sans-serif;}
+  .sectiontitle{font-size:clamp(1.7rem,3.6vw,2.4rem); font-weight:700; margin-top:.4rem;}
+
+  .three{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:2.4rem; background:var(--line);}
+  @media (max-width:820px){ .three{grid-template-columns:1fr;} }
+  .tcard{background:var(--fog-2); padding:26px 24px;}
+  .tcard .tag{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--amber); font-weight:600; font-family:"IBM Plex Sans",sans-serif;}
+  .tcard h3{font-size:1.5rem; margin-top:.5rem; font-weight:600;}
+  .tcard p{font-size:.9rem; color:#4B5459; margin-top:.6rem; font-family:"IBM Plex Sans",sans-serif;}
+
+  .rooms{background:var(--steel-2); color:var(--fog-2);}
+  .roomgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:2.4rem;}
+  @media (max-width:820px){ .roomgrid{grid-template-columns:1fr;} }
+  .room{border:1px solid rgba(238,241,239,.16); }
+  .room-visual{height:118px; background:linear-gradient(160deg, var(--windblue), #274347);}
+  .room-visual.v2{background:linear-gradient(160deg, var(--steel), #232a2e);}
+  .room-visual.v3{background:linear-gradient(160deg, var(--amber), #7a4d1c);}
+  .room-body{padding:16px 18px 20px;}
+  .room-body h3{font-size:1.1rem; font-family:"IBM Plex Sans",sans-serif; text-transform:none; font-weight:600;}
+  .room-body p{font-size:.85rem; color:#B9C0BD; margin-top:.5rem; font-family:"IBM Plex Sans",sans-serif;}
+
+  .ctaband{background:var(--fog); text-align:center;}
+  .ctaband h2{font-size:clamp(1.8rem,4vw,2.6rem);}
+  .ctaband p{margin-top:.9rem; color:#41494c; font-family:"IBM Plex Sans",sans-serif;}
+  .phonebig{display:inline-block; margin-top:1.6rem; font-family:"Big Shoulders Display",sans-serif; font-size:clamp(1.8rem,5vw,2.6rem); font-weight:700; color:var(--ink); text-decoration:none; border-bottom:4px solid var(--amber); padding-bottom:.1em;}
+
+  footer{background:var(--ink); color:#9AA3A0; font-size:.82rem; font-family:"IBM Plex Sans",sans-serif; border-top:3px solid var(--amber);}
+  .footwrap{padding-block:28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .footwrap strong{color:var(--fog-2); font-family:"Big Shoulders Display",sans-serif; text-transform:uppercase;}
+  .concept-badge{background:var(--steel-2); color:#C9CDD3; border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:.4em 1em; font-size:.72rem;}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Liepāja Hotel</div>
+    <nav>
+      <a href="#numuri">Numuri</a>
+      <a href="#pilseta">Pilsēta</a>
+      <a href="#kontakti">Kontakti</a>
+    </nav>
+    <a class="callbtn" href="tel:+37163422095">+371 63422095</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="windlines" aria-hidden="true">
+    <div class="wline" style="top:22%; animation:none;"></div>
+    <div class="wline" style="top:48%;"></div>
+    <div class="wline" style="top:74%;"></div>
+  </div>
+  <div class="wrap herowrap">
+    <div class="eyebrow">Pilsēta, kur piedzimst vējš</div>
+    <h1>Liepāja gaida ar<br>jūru pie durvīm.</h1>
+    <p class="lede">Liepāja Hotel atrodas pilsētā, kur vējš no jūras satiekas ar roka mūzikas vēsturi un Karostas cietokšņa mūriem. Plaša pludmale, vēja dēļošana un dzintara krasts — viss soļu attālumā no numura loga.</p>
+    <div class="herobtns">
+      <a class="btn-primary" href="tel:+37163422095">Zvanīt un rezervēt</a>
+      <a class="btn-ghost" href="#numuri">Skatīt numurus</a>
+    </div>
+    <div class="statrow">
+      <div class="stat"><b>~7 min</b><span>līdz Baltijas jūras pludmalei</span></div>
+      <div class="stat"><b>3.</b><span>lielākā pilsēta Latvijā</span></div>
+      <div class="stat"><b>1 zvans</b><span>un numurs jums rezervēts</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="pilseta">
+  <div class="wrap">
+    <div class="kicker">Kāpēc Liepāja</div>
+    <h2 class="sectiontitle">Vējš, dzintars un roks</h2>
+    <div class="three">
+      <div class="tcard">
+        <div class="tag">Vējš</div>
+        <h3>Vēja dēļošana</h3>
+        <p>Viens no labākajiem kite un windsurfinga krastiem Baltijā — pludmale reti ir tukša no buriniekiem pie horizonta.</p>
+      </div>
+      <div class="tcard">
+        <div class="tag">Vēsture</div>
+        <h3>Karosta</h3>
+        <p>Bijusī Krievijas impērijas kara osta ar cietokšņa mūriem, pareizticīgo katedrāli un padomju laika cietumu — ekskursija, ko atceras.</p>
+      </div>
+      <div class="tcard">
+        <div class="tag">Skaņa</div>
+        <h3>Latvijas roka galvaspilsēta</h3>
+        <p>Liepāja ir devusi Latvijai lielāko daļu roka mūziķu — vakaros pilsētas centrā regulāri skan dzīva mūzika.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="numuri">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--amber)">Numuri</div>
+    <h2 class="sectiontitle" style="color:var(--fog-2)">Trīs veidi apstāties Liepājā</h2>
+    <div class="roomgrid">
+      <div class="room">
+        <div class="room-visual v1"></div>
+        <div class="room-body">
+          <h3>Standarta numurs</h3>
+          <p>Kompakts un funkcionāls — piemērots darba braucienam vai vienas nakts pieturai ceļā uz Kurzemi.</p>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-visual v2"></div>
+        <div class="room-body">
+          <h3>Superior numurs</h3>
+          <p>Plašāka telpa ar sēdvietu pie loga — laba izvēle nedēļas nogalei pie jūras.</p>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-visual v3"></div>
+        <div class="room-body">
+          <h3>Ģimenes numurs</h3>
+          <p>Divas guļamzonas — piemērots ģimenēm, kas dodas uz pludmali uz vairākām dienām.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband" id="kontakti">
+  <div class="wrap">
+    <h2>Rezervējiet numuru Liepājā</h2>
+    <p>Zvaniet tieši — palīdzēsim izvēlēties numuru un datumus.</p>
+    <a class="phonebig" href="tel:+37163422095">+371 63422095</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footwrap">
+    <div>
+      <strong>Liepāja Hotel</strong><br>
+      Liepāja, Latvija
+    </div>
+    <div class="concept-badge">Dizaina koncepts · sagatavoja Nyvexo</div>
+  </div>
+</footer>
+
+</body>
+</html>

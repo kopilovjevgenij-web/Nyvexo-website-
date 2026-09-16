@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/constants";
 import type { Dictionary } from "@/lib/i18n/types";
-import { cn } from "@/lib/utils";
+import { cn, scrollToHash } from "@/lib/utils";
 
 function switchLocaleHref(pathname: string, target: Locale) {
   const segments = pathname.split("/");
@@ -74,13 +74,14 @@ export function Header({ dictionary, locale }: { dictionary: Dictionary; locale:
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {dictionary.nav.links.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
+              onClick={(e) => scrollToHash(e, item.href)}
               className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -108,14 +109,17 @@ export function Header({ dictionary, locale }: { dictionary: Dictionary; locale:
         <div className="border-t border-line bg-white lg:hidden">
           <Container className="flex flex-col gap-1 py-6">
             {dictionary.nav.links.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  scrollToHash(e, item.href);
+                }}
                 className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-mist"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <div className="mt-2 flex items-center justify-between gap-4 border-t border-line px-3 pt-4">
               <LanguageSwitcher locale={locale} />

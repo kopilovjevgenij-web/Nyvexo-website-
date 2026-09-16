@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Logo } from "@/components/Logo";
@@ -5,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { SITE, type Locale } from "@/lib/constants";
 import { localeHref } from "@/lib/i18n/paths";
 import type { Dictionary } from "@/lib/i18n/types";
+import { scrollToHash } from "@/lib/utils";
 
 export function Footer({ dictionary, locale }: { dictionary: Dictionary; locale: Locale }) {
   const nav = dictionary.footer;
@@ -23,9 +26,13 @@ export function Footer({ dictionary, locale }: { dictionary: Dictionary; locale:
             <ul className="mt-4 space-y-3">
               {nav.solutions.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-white/60 transition-colors hover:text-white">
+                  <a
+                    href={item.href}
+                    onClick={(e) => scrollToHash(e, item.href)}
+                    className="text-sm text-white/60 transition-colors hover:text-white"
+                  >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -36,9 +43,13 @@ export function Footer({ dictionary, locale }: { dictionary: Dictionary; locale:
             <ul className="mt-4 space-y-3">
               {nav.company.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-white/60 transition-colors hover:text-white">
+                  <a
+                    href={item.href}
+                    onClick={(e) => scrollToHash(e, item.href)}
+                    className="text-sm text-white/60 transition-colors hover:text-white"
+                  >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

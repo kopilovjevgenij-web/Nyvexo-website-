@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Katrīna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#1B2430;
+    --night-2:#242F3D;
+    --parchment:#F6F2EA;
+    --candle:#E8A64D;
+    --candle-dim:#B97F35;
+    --moss:#5C6B4F;
+    --line:#33404F;
+    --line-light:#DFD6C4;
+    --ink:#211C15;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ }
+  }
+  :root[data-theme="dark"]{ }
+
+  *{box-sizing:border-box;}
+  body{background:var(--parchment); color:var(--ink); font-family:"Work Sans",system-ui,sans-serif; padding-inline:0;}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; text-wrap:balance; margin:0; letter-spacing:-.01em;}
+  p{margin:0; line-height:1.6;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin-inline:auto; padding-inline:20px;}
+
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--night); color:var(--parchment); border-bottom:1px solid var(--line);}
+  .headrow{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:14px;}
+  .brand{font-family:"Fraunces",serif; font-size:1.15rem; font-weight:600; letter-spacing:.01em;}
+  .brand em{font-style:normal; color:var(--candle);}
+  nav{display:flex; gap:22px; font-size:.85rem;}
+  nav a{text-decoration:none; opacity:.82;}
+  nav a:hover{opacity:1;}
+  .callbtn{background:var(--candle); color:#241705; font-weight:600; font-size:.82rem; padding:.55em 1.1em; border-radius:3px; text-decoration:none; white-space:nowrap;}
+  @media (max-width:640px){ nav{display:none;} }
+
+  .hero{background:
+      radial-gradient(480px 320px at 18% 18%, rgba(232,166,77,.16), transparent 65%),
+      radial-gradient(360px 260px at 82% 32%, rgba(232,166,77,.10), transparent 70%),
+      linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
+    color:var(--parchment); position:relative; overflow:hidden;}
+  .hero::before{content:"";position:absolute; inset:0; background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 64px);
+    opacity:.5; pointer-events:none;}
+  .herowrap{padding-block:76px 64px; position:relative;}
+  .eyebrow{font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--candle); font-weight:600;}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,3.6rem); font-weight:500; margin-top:.5rem; max-width:14ch;}
+  .hero .lede{margin-top:1.1rem; max-width:46ch; color:#D9D2C4; font-size:1.05rem;}
+  .herobtns{display:flex; gap:14px; flex-wrap:wrap; margin-top:2rem;}
+  .btn-primary{background:var(--candle); color:#241705; font-weight:600; padding:.85em 1.5em; border-radius:3px; text-decoration:none; font-size:.95rem;}
+  .btn-ghost{border:1px solid rgba(246,242,234,.35); color:var(--parchment); padding:.85em 1.5em; border-radius:3px; text-decoration:none; font-size:.95rem;}
+
+  .glowrow{display:flex; gap:6px; margin-top:3rem;}
+  .glow{width:6px; height:6px; border-radius:50%; background:var(--candle); box-shadow:0 0 10px 3px rgba(232,166,77,.55);}
+
+  section{padding-block:60px;}
+  .kicker{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--moss); font-weight:600;}
+  .sectiontitle{font-size:clamp(1.5rem,3vw,2rem); font-weight:500; margin-top:.4rem; max-width:20ch;}
+
+  .rooms{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:2.2rem;}
+  @media (max-width:820px){ .rooms{grid-template-columns:1fr;} }
+  .room{border:1px solid var(--line-light); border-radius:4px; overflow:hidden; background:#fff;}
+  .room-visual{height:132px; position:relative;
+    background:linear-gradient(155deg, var(--moss) 0%, #384330 100%);}
+  .room-visual.v2{background:linear-gradient(155deg, var(--night-2) 0%, var(--night) 100%);}
+  .room-visual.v3{background:linear-gradient(155deg, var(--candle-dim) 0%, #7a4d1f 100%);}
+  .room-visual::after{content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 75% 30%, rgba(255,255,255,.22), transparent 45%);}
+  .room-body{padding:18px 20px 22px;}
+  .room-body h3{font-size:1.15rem; font-weight:500;}
+  .room-body p{font-size:.88rem; color:#5a5346; margin-top:.5rem;}
+  .room-price{margin-top:.9rem; font-size:.8rem; color:var(--moss); font-weight:600;}
+
+  .local{background:var(--night); color:var(--parchment);}
+  .localgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:2.4rem;}
+  @media (max-width:820px){ .localgrid{grid-template-columns:1fr;} }
+  .localitem{border-top:1px solid var(--line); padding-top:16px;}
+  .localitem .num{font-family:"Fraunces",serif; font-size:1.6rem; color:var(--candle);}
+  .localitem h3{font-size:1.05rem; font-weight:500; margin-top:.3rem; color:var(--parchment);}
+  .localitem p{font-size:.86rem; color:#B9B2A2; margin-top:.4rem;}
+
+  .ctaband{background:linear-gradient(180deg,#EFE8D8,var(--parchment)); text-align:center;}
+  .ctaband h2{font-size:clamp(1.6rem,3.4vw,2.2rem); font-weight:500;}
+  .ctaband p{margin-top:.8rem; color:#5a5346;}
+  .phonebig{display:inline-block; margin-top:1.6rem; font-family:"Fraunces",serif; font-size:clamp(1.6rem,4vw,2.1rem); color:var(--night); text-decoration:none; border-bottom:2px solid var(--candle); padding-bottom:.15em;}
+
+  footer{background:var(--night); color:#9CA3AD; font-size:.82rem; border-top:1px solid var(--line);}
+  .footwrap{padding-block:30px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .footwrap strong{color:var(--parchment);}
+  .concept-badge{background:var(--night-2); color:#C9CDD3; border:1px solid var(--line); border-radius:999px; padding:.4em 1em; font-size:.72rem; letter-spacing:.02em;}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Hotel <em>Katrīna</em></div>
+    <nav>
+      <a href="#numuri">Numuri</a>
+      <a href="#cesis">Cēsis</a>
+      <a href="#kontakti">Kontakti</a>
+    </nav>
+    <a class="callbtn" href="tel:+37120008870">+371 20008870</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap herowrap">
+    <div class="eyebrow">Cēsu vecpilsēta · kopš pilsētas viduslaiku sirds</div>
+    <h1>Nakšņot soļa attālumā no Cēsu pils gaismām.</h1>
+    <p class="lede">Hotel Katrīna atrodas Cēsu vecpilsētā — pāris minūšu gājienā no pils drupām, kur katru rudeni tumsu izgaismo tūkstošiem laternu. Klusas ielas, akmens mūri un rīti ar kafiju, kas smaržo pēc Vidzemes meža.</p>
+    <div class="herobtns">
+      <a class="btn-primary" href="tel:+37120008870">Zvanīt un rezervēt</a>
+      <a class="btn-ghost" href="#numuri">Skatīt numurus</a>
+    </div>
+    <div class="glowrow" aria-hidden="true">
+      <div class="glow"></div><div class="glow"></div><div class="glow"></div><div class="glow"></div><div class="glow"></div>
+    </div>
+  </div>
+</div>
+
+<section id="numuri">
+  <div class="wrap">
+    <div class="kicker">Numuri</div>
+    <h2 class="sectiontitle">Trīs veidi, kā apstāties Cēsīs</h2>
+    <div class="rooms">
+      <div class="room">
+        <div class="room-visual v1"></div>
+        <div class="room-body">
+          <h3>Vecpilsētas numurs</h3>
+          <p>Kompakts un mājīgs, ar skatu uz jumtiem un baznīcas torni. Ideāls vienam vai diviem ceļotājiem uz nakti vai divām.</p>
+          <div class="room-price">No 1 nakts</div>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-visual v2"></div>
+        <div class="room-body">
+          <h3>Pils skata numurs</h3>
+          <p>Logi vērsti uz pils parka pusi — vakarā redzami pirmie laternu atspīdumi, kad parks sāk gatavoties tumsai.</p>
+          <div class="room-price">Populārākais izvēles</div>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-visual v3"></div>
+        <div class="room-body">
+          <h3>Ģimenes numurs</h3>
+          <p>Plašāka telpa ar papildu guļvietu — piemērots ģimenēm, kas dodas uz Gaujas nacionālo parku uz vairākām dienām.</p>
+          <div class="room-price">Līdz 4 personām</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="local" id="cesis">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--candle)">Kāpēc tieši Cēsis</div>
+    <h2 class="sectiontitle" style="color:var(--parchment)">Viss, kas jāredz, ir tuvāk, nekā šķiet</h2>
+    <div class="localgrid">
+      <div class="localitem">
+        <div class="num">2 min</div>
+        <h3>Cēsu pils un parks</h3>
+        <p>Viduslaiku bruņinieku ordeņa pils drupas un parks — rudenī izgaismots tūkstošiem laternu Gaismas svētku laikā.</p>
+      </div>
+      <div class="localitem">
+        <div class="num">10 min</div>
+        <h3>Gaujas nacionālais parks</h3>
+        <p>Smilšakmens klintis, pārgājienu takas un Gaujas ieleja — Latvijas dabas parku sirds, kāju gājienā no vecpilsētas.</p>
+      </div>
+      <div class="localitem">
+        <div class="num">5 min</div>
+        <h3>Cēsu alus darītava</h3>
+        <p>Viena no vecākajām alus darītavām Baltijā — degustācijas un ekskursijas soļu attālumā no viesnīcas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband" id="kontakti">
+  <div class="wrap">
+    <h2>Rezervējiet savu nakšņošanu Cēsīs</h2>
+    <p>Zvaniet tieši — atbildam katru dienu un palīdzam izvēlēties piemērotāko numuru.</p>
+    <a class="phonebig" href="tel:+37120008870">+371 20008870</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footwrap">
+    <div>
+      <strong>Hotel Katrīna</strong><br>
+      Cēsis, Vidzeme, Latvija
+    </div>
+    <div class="concept-badge">Dizaina koncepts · sagatavoja Nyvexo</div>
+  </div>
+</footer>
+
+</body>
+</html>
