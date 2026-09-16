@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sporta Medicīnas Centrs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --field:#E7EAE6;
+    --field-2:#F4F6F3;
+    --graphite:#2B3230;
+    --graphite-2:#202624;
+    --motion:#2F7D6E;
+    --spark:#D98A2B;
+    --line:#C7CFC9;
+    --ink:#1E2422;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--field-2); color:var(--ink); font-family:"Source Sans 3",system-ui,sans-serif;}
+  h1,h2,h3{font-family:"Barlow Condensed",sans-serif; text-transform:uppercase; letter-spacing:.01em; text-wrap:balance; margin:0;}
+  p{margin:0; line-height:1.65;}
+  a{color:inherit;}
+  .wrap{max-width:1100px; margin-inline:auto; padding-inline:20px;}
+
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--graphite-2); color:var(--field-2); border-bottom:1px solid rgba(255,255,255,.08);}
+  .headrow{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:14px;}
+  .brand{font-family:"Barlow Condensed",sans-serif; font-size:1.25rem; font-weight:700; text-transform:uppercase; letter-spacing:.02em;}
+  .brand span{color:var(--motion);}
+  nav{display:flex; gap:24px; font-size:.82rem;}
+  nav a{text-decoration:none; opacity:.82;}
+  nav a:hover{opacity:1;}
+  .callbtn{background:var(--motion); color:#fff; font-weight:600; font-size:.82rem; padding:.55em 1.1em; border-radius:3px; text-decoration:none; white-space:nowrap;}
+  @media (max-width:680px){ nav{display:none;} }
+
+  .hero{background:var(--graphite-2); color:var(--field-2); position:relative; overflow:hidden;}
+  .scanline{position:absolute; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, rgba(47,125,110,.9), transparent); animation:scan 5s linear infinite;}
+  @keyframes scan{ 0%{top:8%;} 100%{top:92%;} }
+  @media (prefers-reduced-motion:reduce){ .scanline{animation:none; top:50%;} }
+  .gridbg{position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size:38px 38px; opacity:.6;}
+  .herowrap{padding-block:76px 60px; position:relative;}
+  .eyebrow{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--motion); font-weight:600;}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.9rem); font-weight:700; margin-top:.5rem; line-height:1.03; max-width:16ch;}
+  .hero .lede{margin-top:1.2rem; max-width:48ch; color:#B9C2BE; font-size:1.05rem;}
+  .herobtns{display:flex; gap:14px; flex-wrap:wrap; margin-top:2rem;}
+  .btn-primary{background:var(--motion); color:#fff; font-weight:600; padding:.85em 1.5em; border-radius:3px; text-decoration:none; font-size:.95rem;}
+  .btn-ghost{border:1px solid rgba(244,246,243,.3); color:var(--field-2); padding:.85em 1.5em; border-radius:3px; text-decoration:none; font-size:.95rem;}
+
+  section{padding-block:60px;}
+  .kicker{font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--motion); font-weight:600;}
+  .sectiontitle{font-size:clamp(1.6rem,3.4vw,2.2rem); font-weight:700; margin-top:.4rem;}
+
+  .services{display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:2.2rem; background:var(--line);}
+  @media (max-width:920px){ .services{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .services{grid-template-columns:1fr;} }
+  .svc{background:var(--field-2); padding:22px 20px;}
+  .svc .ico{width:34px; height:34px; border-radius:8px; background:var(--motion); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1rem; font-weight:700; font-family:"Barlow Condensed",sans-serif;}
+  .svc h3{font-size:1.25rem; margin-top:.9rem; font-weight:600; text-transform:none;}
+  .svc p{font-size:.86rem; color:#4B5652; margin-top:.5rem;}
+
+  .process{background:var(--graphite); color:var(--field-2);}
+  .steps{display:flex; gap:0; margin-top:2.4rem; flex-wrap:wrap;}
+  .step{flex:1; min-width:200px; border-left:2px solid var(--motion); padding:4px 20px 4px 20px;}
+  .step b{font-family:"Barlow Condensed",sans-serif; font-size:2.2rem; color:var(--spark); font-variant-numeric:tabular-nums; display:block;}
+  .step h3{font-size:1.15rem; margin-top:.3rem; font-weight:600; text-transform:none;}
+  .step p{font-size:.85rem; color:#AEB8B3; margin-top:.4rem;}
+
+  .ctaband{background:var(--field); text-align:center;}
+  .ctaband h2{font-size:clamp(1.7rem,3.6vw,2.3rem);}
+  .ctaband p{margin-top:.9rem; color:#41493f;}
+  .contactrow{display:flex; gap:28px; justify-content:center; flex-wrap:wrap; margin-top:1.8rem;}
+  .contactitem{text-align:left;}
+  .contactitem .label{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--motion); font-weight:600;}
+  .contactitem a{display:block; font-family:"Barlow Condensed",sans-serif; font-size:1.5rem; font-weight:700; color:var(--ink); text-decoration:none; margin-top:.2rem;}
+
+  footer{background:var(--graphite-2); color:#9AA6A0; font-size:.82rem; border-top:1px solid rgba(255,255,255,.08);}
+  .footwrap{padding-block:28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .footwrap strong{color:var(--field-2); font-family:"Barlow Condensed",sans-serif; text-transform:uppercase;}
+  .concept-badge{background:var(--graphite); color:#C9CDD3; border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:.4em 1em; font-size:.72rem;}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Daugavpils <span>Sport Medicine</span></div>
+    <nav>
+      <a href="#pakalpojumi">Pakalpojumi</a>
+      <a href="#process">Process</a>
+      <a href="#kontakti">Kontakti</a>
+    </nav>
+    <a class="callbtn" href="tel:+37165425285">+371 65425285</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="gridbg" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="wrap herowrap">
+    <div class="eyebrow">Sporta medicīna · Daugavpils</div>
+    <h1>Ātrāk atgriezties sportā, nevis tikai izārstēt sāpes.</h1>
+    <p class="lede">Sporta traumu diagnostika, rehabilitācija un fizioterapija sportistiem un aktīviem cilvēkiem — no pirmās apskates līdz pilnai slodzei atpakaļ treniņu procesā.</p>
+    <div class="herobtns">
+      <a class="btn-primary" href="tel:+37165425285">Pieteikties vizītei</a>
+      <a class="btn-ghost" href="#pakalpojumi">Pakalpojumi</a>
+    </div>
+  </div>
+</div>
+
+<section id="pakalpojumi">
+  <div class="wrap">
+    <div class="kicker">Pakalpojumi</div>
+    <h2 class="sectiontitle">Kā strādājam</h2>
+    <div class="services">
+      <div class="svc">
+        <div class="ico">01</div>
+        <h3>Sporta traumu diagnostika</h3>
+        <p>Locītavu, saišu un muskuļu traumu izmeklēšana, lai noteiktu precīzu cēloni, nevis tikai simptomu.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">02</div>
+        <h3>Rehabilitācija</h3>
+        <p>Individuāla atveseļošanās programma pēc traumas vai operācijas, ar skaidru progresa plānu.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">03</div>
+        <h3>Fizioterapija</h3>
+        <p>Manuālā terapija, kustību korekcija un slodzes vadīšana ikdienas treniņu procesā.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">04</div>
+        <h3>Sagatavošanās sezonai</h3>
+        <p>Profilaktiska pārbaude sportistiem pirms sezonas sākuma vai pēc ilgākas pauzes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--spark)">Vizītes gaita</div>
+    <h2 class="sectiontitle" style="color:var(--field-2)">Trīs soļi līdz atgriešanās plānam</h2>
+    <div class="steps">
+      <div class="step">
+        <b>1</b>
+        <h3>Pieraksts pa tālruni</h3>
+        <p>Īss zvans, lai saprastu traumas raksturu un vienotos par pirmās vizītes laiku.</p>
+      </div>
+      <div class="step">
+        <b>2</b>
+        <h3>Izmeklēšana</h3>
+        <p>Klātienes apskate un funkcionālā testēšana, lai noteiktu precīzu diagnozi.</p>
+      </div>
+      <div class="step">
+        <b>3</b>
+        <h3>Atgriešanās plāns</h3>
+        <p>Individuāls rehabilitācijas grafiks ar konkrētiem atskaites punktiem līdz pilnai slodzei.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband" id="kontakti">
+  <div class="wrap">
+    <h2>Pierakstīties uz vizīti</h2>
+    <p>Zvaniet vai rakstiet — atbildam darba dienās.</p>
+    <div class="contactrow">
+      <div class="contactitem">
+        <div class="label">Tālrunis</div>
+        <a href="tel:+37165425285">+371 65425285</a>
+      </div>
+      <div class="contactitem">
+        <div class="label">E-pasts</div>
+        <a href="mailto:sport.medicina@inbox.lv" style="font-size:1.1rem;">sport.medicina@inbox.lv</a>
+      </div>
+      <div class="contactitem">
+        <div class="label">Adrese</div>
+        <a href="#" style="font-size:1.1rem; text-decoration:none;">Stadiona iela 1, Daugavpils</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footwrap">
+    <div>
+      <strong>Daugavpils Sport Medicine Centre</strong><br>
+      Stadiona iela 1, Daugavpils
+    </div>
+    <div class="concept-badge">Dizaina koncepts · sagatavoja Nyvexo</div>
+  </div>
+</footer>
+
+</body>
+</html>
