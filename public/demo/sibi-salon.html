@@ -1,0 +1,441 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SIBI Salons AI Assistant</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #faf5f2;
+    --surface: #ffffff;
+    --surface-2: #f0e2da;
+    --ink: #2b2320;
+    --ink-muted: #8a7267;
+    --accent: #b8556b;
+    --accent-ink: #fff8f6;
+    --accent-2: #a98358;
+    --border: #e8d6cc;
+    --bubble-bot: #f0e2da;
+    --bubble-user: #b8556b;
+    --bubble-user-ink: #fff8f6;
+    --shadow: 0 1px 2px rgba(43,35,32,.06), 0 10px 30px -12px rgba(43,35,32,.18);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1d1613;
+      --surface: #261d19;
+      --surface-2: #302420;
+      --ink: #f4e9e2;
+      --ink-muted: #bda498;
+      --accent: #d97b8f;
+      --accent-ink: #241417;
+      --accent-2: #c9a06c;
+      --border: #3d2f28;
+      --bubble-bot: #302420;
+      --bubble-user: #d97b8f;
+      --bubble-user-ink: #241417;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1d1613;
+    --surface: #261d19;
+    --surface-2: #302420;
+    --ink: #f4e9e2;
+    --ink-muted: #bda498;
+    --accent: #d97b8f;
+    --accent-ink: #241417;
+    --accent-2: #c9a06c;
+    --border: #3d2f28;
+    --bubble-bot: #302420;
+    --bubble-user: #d97b8f;
+    --bubble-user-ink: #241417;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Jost', system-ui, sans-serif;
+    padding-inline: 16px;
+    padding-block: 28px 40px;
+  }
+  .wrap { max-width: 620px; margin: 0 auto; }
+
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-2); font-weight: 600; margin-bottom: 6px; }
+  h1 {
+    font-family: 'Marcellus', Georgia, serif; font-weight: 400;
+    font-size: clamp(1.6rem, 4.8vw, 2.15rem);
+    line-height: 1.15; text-wrap: balance; margin: 0 0 10px;
+  }
+  .lede { color: var(--ink-muted); font-size: 15px; line-height: 1.55; max-width: 54ch; margin: 0 0 26px; }
+  .lede b { color: var(--ink); font-weight: 600; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+
+  .widget-head { background: var(--surface-2); padding: 14px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); }
+  .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Marcellus', serif; font-size: 15px; flex-shrink: 0;
+  }
+  .widget-head .name { font-weight: 600; font-size: 14.5px; }
+  .widget-head .status { font-size: 12.5px; color: var(--accent-2); display: flex; align-items: center; gap: 5px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); flex-shrink: 0; }
+
+  .langs { margin-left: auto; display: flex; gap: 4px; }
+  .lang-btn {
+    font-family: inherit; font-size: 12px; font-weight: 600;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--ink-muted); border-radius: 999px; padding: 5px 10px; cursor: pointer;
+  }
+  .lang-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+  .thread { padding: 18px; display: flex; flex-direction: column; gap: 10px; min-height: 220px; max-height: 46vh; overflow-y: auto; }
+  .msg { max-width: 82%; padding: 10px 13px; border-radius: 14px; font-size: 14.5px; line-height: 1.45; }
+  .msg.bot { background: var(--bubble-bot); color: var(--ink); border-bottom-left-radius: 4px; align-self: flex-start; }
+  .msg.user { background: var(--bubble-user); color: var(--bubble-user-ink); border-bottom-right-radius: 4px; align-self: flex-end; }
+  .msg.system { align-self: center; background: transparent; color: var(--accent-2); font-size: 12.5px; font-weight: 600; text-align: center; max-width: 100%; padding: 4px 10px; }
+  .msg.fade-in { animation: fadeIn .25s ease both; }
+  @media (prefers-reduced-motion: reduce) { .msg.fade-in { animation: none; } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  .typing { align-self: flex-start; display: flex; gap: 4px; padding: 12px 13px; }
+  .typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-muted); opacity: .5; animation: blink 1.1s infinite ease-in-out; }
+  .typing span:nth-child(2) { animation-delay: .15s; }
+  .typing span:nth-child(3) { animation-delay: .3s; }
+  @keyframes blink { 0%,80%,100% { opacity: .3; } 40% { opacity: .9; } }
+  @media (prefers-reduced-motion: reduce) { .typing span { animation: none; opacity: .6; } }
+
+  .forward-btn {
+    align-self: flex-start; font-family: inherit; font-size: 13px; font-weight: 600;
+    background: transparent; color: var(--accent); border: 1px solid var(--accent);
+    border-radius: 999px; padding: 7px 13px; cursor: pointer; margin-top: -2px;
+  }
+  .forward-btn:hover { background: var(--accent); color: var(--accent-ink); }
+  .forward-btn:disabled { opacity: .45; cursor: default; background: transparent; color: var(--accent); }
+
+  .quick { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 18px 14px; }
+  .chip {
+    font-family: inherit; font-size: 13px; text-align: left;
+    background: var(--surface-2); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 12px; padding: 7px 11px; cursor: pointer;
+  }
+  .chip:hover { border-color: var(--accent); }
+
+  .composer { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); }
+  .composer input {
+    flex: 1; font-family: inherit; font-size: 14.5px;
+    background: var(--bg); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 12px; padding: 10px 13px; min-width: 0;
+  }
+  .composer input:focus-visible, .chip:focus-visible, .lang-btn:focus-visible, .forward-btn:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+  .composer button {
+    font-family: inherit; font-weight: 600; font-size: 14px;
+    background: var(--accent); color: var(--accent-ink);
+    border: none; border-radius: 12px; padding: 0 16px; cursor: pointer;
+  }
+
+  .callout { margin-top: 18px; display: flex; gap: 12px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+  .callout .mark { font-family: 'Marcellus', serif; font-size: 26px; color: var(--accent-2); line-height: 1; }
+  .callout p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-muted); }
+  .callout b { color: var(--ink); }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+  .step { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 14px 15px; }
+  .step .n { font-family: 'Marcellus', serif; font-size: 19px; color: var(--accent); margin-bottom: 6px; display: block; }
+  .step p { margin: 0; font-size: 13px; line-height: 1.45; color: var(--ink-muted); }
+  @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+
+  .foot { margin-top: 22px; font-size: 12.5px; color: var(--ink-muted); line-height: 1.6; }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Nyvexo · AI demo prototips</div>
+  <h1 id="h1">SIBI salons — AI asistents ziņām</h1>
+  <p class="lede" id="lede">
+    Strādājošs <b>demo prototips</b>, kas parāda, kā AI asistents varētu atbildēt uz Instagram un WhatsApp ziņām
+    uzreiz — jebkurā diennakts laikā un trīs valodās, papildinot jūsu esošo pierakstīšanos.
+  </p>
+
+  <div class="card">
+    <div class="widget-head">
+      <div class="avatar">S</div>
+      <div>
+        <div class="name" id="wname">SIBI asistents</div>
+        <div class="status"><span class="dot"></span><span id="wstatus">Tiešsaistē — demo</span></div>
+      </div>
+      <div class="langs">
+        <button class="lang-btn" data-lang="lv" aria-pressed="true">LV</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </div>
+
+    <div class="thread" id="thread" aria-live="polite"></div>
+    <div class="quick" id="quick"></div>
+
+    <div class="composer">
+      <input id="input" type="text" placeholder="" />
+      <button id="sendBtn">Sūtīt</button>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="mark">"</span>
+    <p id="calloutText">Jūsu vietne un, iespējams, arī direct ziņas šobrīd ir tikai latviešu valodā — lai gan salons atrodas tieši pie Vecrīgas, kur klientu vidū droši vien ir arī ārzemnieki un krievvalodīgie.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step"><span class="n">01</span><p id="s1">Klients raksta Instagram vai WhatsApp jebkurā laikā</p></div>
+    <div class="step"><span class="n">02</span><p id="s2">Asistents atbild uzreiz, trīs valodās</p></div>
+    <div class="step"><span class="n">03</span><p id="s3">Klients nonāk pie pieraksta, nevis pie klusuma</p></div>
+  </div>
+
+  <p class="foot" id="foot">
+    Demo prototips sagatavots iepazīstināšanai — atbildes šeit ir ieprogrammētas parauga scenārijam.
+    Reālajā versijā asistents strādā ar jūsu faktisko grafiku un pierakstīšanās sistēmu.
+    Sagatavoja Nyvexo · nyvexo.lv
+  </p>
+</div>
+
+<script>
+(function(){
+  var T = {
+    lv: {
+      wname: "SIBI asistents", wstatus: "Tiešsaistē — demo",
+      h1: "SIBI salons — AI asistents ziņām",
+      lede: "Strādājošs <b>demo prototips</b>, kas parāda, kā AI asistents varētu atbildēt uz Instagram un WhatsApp ziņām uzreiz — jebkurā diennakts laikā un trīs valodās, papildinot jūsu esošo pierakstīšanos.",
+      greeting: "Sveiki! Es esmu SIBI AI asistents (demo). Ar ko varu palīdzēt?",
+      placeholder: "Uzrakstiet savu jautājumu...",
+      send: "Sūtīt",
+      forward: "Pārsūtīt komandai",
+      forwarding: "Pārsūta...",
+      forwarded: "✓ Jautājums nosūtīts SIBI komandai — atbildēs tiklīdz brīvs meistars.",
+      callout: "Jūsu vietne un, iespējams, arī direct ziņas šobrīd ir tikai latviešu valodā — lai gan salons atrodas tieši pie Vecrīgas, kur klientu vidū droši vien ir arī ārzemnieki un krievvalodīgie.",
+      s1: "Klients raksta Instagram vai WhatsApp jebkurā laikā",
+      s2: "Asistents atbild uzreiz, trīs valodās",
+      s3: "Klients nonāk pie pieraksta, nevis pie klusuma",
+      foot: "Demo prototips sagatavots iepazīstināšanai — atbildes šeit ir ieprogrammētas parauga scenārijam. Reālajā versijā asistents strādā ar jūsu faktisko grafiku un pierakstīšanās sistēmu. Sagatavoja Nyvexo · nyvexo.lv",
+      quick: [
+        {k:"availability", q:"Vai šodien ir brīvs laiks manikīram?"},
+        {k:"price", q:"Cik maksā skropstu pagarināšana?"},
+        {k:"holidays", q:"Vai strādājat svētkos?"},
+        {k:"booking", q:"Kā varu pierakstīties?"}
+      ],
+      answers: {
+        availability: "Aktuālo pieejamību šodienai reālajā versijā pārbaudīšu tieši jūsu pierakstīšanās sistēmā. Kādam pakalpojumam vēlaties pierakstīties? Pārsūtīšu, lai apstiprina tuvāko brīvo laiku.",
+        price: "Precīzu cenu par skropstu pagarināšanu labāk pateiks meistars, jo tā atšķiras atkarībā no tehnikas un garuma. Vai pārsūtu jūsu jautājumu komandai, lai ātri atbild?",
+        holidays: "Jā! SIBI strādā katru dienu no plkst. 9:00 līdz 21:00, arī brīvdienās un svētkos.",
+        booking: "Varat pierakstīties tiešsaistē mūsu sistēmā — pastāstiet, kāds pakalpojums interesē, un palīdzēšu izvēlēties piemērotāko laiku.",
+        fallback: "Labs jautājums — to precīzi atbildēs mūsu komanda. Vai pārsūtu jūsu jautājumu?"
+      },
+      keywords: {
+        availability: ["brīv","šodien","laik"],
+        price: ["cen","maks","€","eur"],
+        holidays: ["svētk","brīvdien","strādāj"],
+        booking: ["pierakst","rezervē","kā var"]
+      }
+    },
+    en: {
+      wname: "SIBI assistant", wstatus: "Online — demo",
+      h1: "SIBI Salons — AI Assistant for DMs",
+      lede: "A working <b>demo prototype</b> showing how an AI assistant could reply to Instagram and WhatsApp messages instantly — any time of day, in three languages, alongside your existing booking.",
+      greeting: "Hi! I'm the SIBI AI assistant (demo). How can I help?",
+      placeholder: "Type your question...",
+      send: "Send",
+      forward: "Forward to the team",
+      forwarding: "Forwarding...",
+      forwarded: "✓ Your question was sent to the SIBI team — they'll reply as soon as a stylist is free.",
+      callout: "Your website — and likely your DMs too — are currently Latvian-only, even though the salon sits right by Old Town, where clients surely include foreigners and Russian speakers.",
+      s1: "A client messages on Instagram or WhatsApp, any time",
+      s2: "The assistant replies instantly, in three languages",
+      s3: "The client reaches a booking, not silence",
+      foot: "This is a demo prototype for a pitch meeting — the answers here follow a scripted sample scenario. The live version works from your real schedule and booking system. Built by Nyvexo · nyvexo.lv",
+      quick: [
+        {k:"availability", q:"Any free slot for a manicure today?"},
+        {k:"price", q:"How much are lash extensions?"},
+        {k:"holidays", q:"Are you open on holidays?"},
+        {k:"booking", q:"How do I book?"}
+      ],
+      answers: {
+        availability: "In the live version I'd check today's availability in your real booking system. Which service would you like? I can forward this to confirm the nearest open slot.",
+        price: "The exact price for lash extensions is best confirmed by the stylist, since it depends on technique and length. Shall I forward your question to the team for a quick answer?",
+        holidays: "Yes! SIBI is open every day from 9:00 to 21:00, including weekends and holidays.",
+        booking: "You can book online through our system — tell me which service you're interested in and I'll help find a suitable time.",
+        fallback: "Good question — our team can answer that precisely. Shall I forward it?"
+      },
+      keywords: {
+        availability: ["free","today","slot","availab"],
+        price: ["price","cost","€","eur","how much"],
+        holidays: ["holiday","weekend","open"],
+        booking: ["book","appointment","how do i"]
+      }
+    },
+    ru: {
+      wname: "Ассистент SIBI", wstatus: "На связи — демо",
+      h1: "SIBI salons — AI-ассистент для сообщений",
+      lede: "Рабочий <b>демо-прототип</b>, который показывает, как AI-ассистент мог бы мгновенно отвечать на сообщения в Instagram и WhatsApp — в любое время суток, на трёх языках, вместе с вашей текущей системой записи.",
+      greeting: "Здравствуйте! Я AI-ассистент SIBI (демо). Чем могу помочь?",
+      placeholder: "Введите свой вопрос...",
+      send: "Отправить",
+      forward: "Передать команде",
+      forwarding: "Передаю...",
+      forwarded: "✓ Вопрос отправлен команде SIBI — ответят, как только освободится мастер.",
+      callout: "Ваш сайт, а скорее всего и директ, сейчас только на латышском — хотя салон находится прямо у Старого города, где среди клиентов наверняка есть и иностранцы, и русскоязычные.",
+      s1: "Клиент пишет в Instagram или WhatsApp в любое время",
+      s2: "Ассистент отвечает мгновенно, на трёх языках",
+      s3: "Клиент доходит до записи, а не до тишины",
+      foot: "Это демо-прототип для встречи — ответы здесь заданы по сценарию для примера. В рабочей версии ассистент опирается на ваш реальный график и систему записи. Подготовлено Nyvexo · nyvexo.lv",
+      quick: [
+        {k:"availability", q:"Есть свободное время на маникюр сегодня?"},
+        {k:"price", q:"Сколько стоит наращивание ресниц?"},
+        {k:"holidays", q:"Вы работаете в праздники?"},
+        {k:"booking", q:"Как записаться?"}
+      ],
+      answers: {
+        availability: "В рабочей версии я бы сразу проверил доступность на сегодня в вашей системе записи. На какую услугу хотите записаться? Передам запрос, чтобы подтвердить ближайшее свободное время.",
+        price: "Точную цену на наращивание ресниц лучше подтвердит мастер — она зависит от техники и длины. Передать ваш вопрос команде для быстрого ответа?",
+        holidays: "Да! SIBI работает каждый день с 9:00 до 21:00, включая выходные и праздники.",
+        booking: "Записаться можно онлайн через нашу систему — подскажите, какая услуга интересует, и помогу подобрать удобное время.",
+        fallback: "Хороший вопрос — точно ответит наша команда. Передать ваш вопрос?"
+      },
+      keywords: {
+        availability: ["свобод","сегодня","время"],
+        price: ["цен","сколько сто","€","eur"],
+        holidays: ["праздник","выходн","работа"],
+        booking: ["записат","запис","как"]
+      }
+    }
+  };
+
+  var lang = "lv";
+  var thread = document.getElementById("thread");
+  var quickWrap = document.getElementById("quick");
+  var input = document.getElementById("input");
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function addMsg(text, who){
+    var m = el("div", "msg fade-in " + who, text);
+    thread.appendChild(m);
+    thread.scrollTop = thread.scrollHeight;
+    return m;
+  }
+
+  function addSystem(text){
+    var m = el("div", "msg fade-in system", text);
+    thread.appendChild(m);
+    thread.scrollTop = thread.scrollHeight;
+  }
+
+  function addForwardBtn(){
+    var b = el("button", "forward-btn", T[lang].forward);
+    b.addEventListener("click", function(){
+      b.disabled = true;
+      b.textContent = T[lang].forwarding;
+      setTimeout(function(){
+        b.remove();
+        addSystem(T[lang].forwarded);
+      }, 700);
+    });
+    thread.appendChild(b);
+    thread.scrollTop = thread.scrollHeight;
+  }
+
+  function botReply(key){
+    var typing = el("div", "typing fade-in", "<span></span><span></span><span></span>");
+    thread.appendChild(typing);
+    thread.scrollTop = thread.scrollHeight;
+    setTimeout(function(){
+      typing.remove();
+      var ans = T[lang].answers[key] || T[lang].answers.fallback;
+      addMsg(ans, "bot");
+      if (key !== "holidays") addForwardBtn();
+    }, 650);
+  }
+
+  function matchKey(text){
+    var lower = text.toLowerCase();
+    var kws = T[lang].keywords;
+    for (var k in kws){
+      for (var i = 0; i < kws[k].length; i++){
+        if (lower.indexOf(kws[k][i]) !== -1) return k;
+      }
+    }
+    return null;
+  }
+
+  function ask(text, key){
+    addMsg(text, "user");
+    botReply(key || matchKey(text) || "fallback");
+  }
+
+  function renderQuick(){
+    quickWrap.innerHTML = "";
+    T[lang].quick.forEach(function(item){
+      var c = el("button", "chip", item.q);
+      c.addEventListener("click", function(){ ask(item.q, item.k); });
+      quickWrap.appendChild(c);
+    });
+  }
+
+  function renderStatic(){
+    document.getElementById("h1").textContent = T[lang].h1;
+    document.getElementById("lede").innerHTML = T[lang].lede;
+    document.getElementById("wname").textContent = T[lang].wname;
+    document.getElementById("wstatus").textContent = T[lang].wstatus;
+    document.getElementById("calloutText").textContent = T[lang].callout;
+    document.getElementById("s1").textContent = T[lang].s1;
+    document.getElementById("s2").textContent = T[lang].s2;
+    document.getElementById("s3").textContent = T[lang].s3;
+    document.getElementById("foot").textContent = T[lang].foot;
+    document.getElementById("sendBtn").textContent = T[lang].send;
+    input.placeholder = T[lang].placeholder;
+    document.title = T[lang].h1;
+  }
+
+  function resetThread(){
+    thread.innerHTML = "";
+    addMsg(T[lang].greeting, "bot");
+    renderQuick();
+  }
+
+  function setLang(l){
+    lang = l;
+    document.querySelectorAll(".lang-btn").forEach(function(b){
+      b.setAttribute("aria-pressed", b.dataset.lang === l ? "true" : "false");
+    });
+    renderStatic();
+    resetThread();
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(function(b){
+    b.addEventListener("click", function(){ setLang(b.dataset.lang); });
+  });
+
+  document.getElementById("sendBtn").addEventListener("click", function(){
+    var v = input.value.trim();
+    if (!v) return;
+    input.value = "";
+    ask(v);
+  });
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){ document.getElementById("sendBtn").click(); }
+  });
+
+  setLang("lv");
+})();
+</script>
+
+</body></html>
