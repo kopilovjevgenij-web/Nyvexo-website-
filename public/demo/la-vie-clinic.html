@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Vie Clinic — AI asistents (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f6f4ef;
+    --surface: #ffffff;
+    --surface-2: #f0ece3;
+    --text: #1f2926;
+    --text-soft: #5c6b66;
+    --border: #e2ddd0;
+    --accent: #0f6b5c;
+    --accent-ink: #ffffff;
+    --accent-2: #c98a63;
+    --bubble-bot: #ffffff;
+    --bubble-user: #0f6b5c;
+    --bubble-user-text: #ffffff;
+    --callout-bg: #fbeee6;
+    --callout-border: #e3b79a;
+    --shadow: 0 10px 30px rgba(15,40,35,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #101614;
+      --surface: #161f1c;
+      --surface-2: #1c2622;
+      --text: #eef1ef;
+      --text-soft: #a6b3ae;
+      --border: #2a332f;
+      --accent: #3fb39c;
+      --accent-ink: #08130f;
+      --accent-2: #e0a479;
+      --bubble-bot: #1c2622;
+      --bubble-user: #3fb39c;
+      --bubble-user-text: #08130f;
+      --callout-bg: #24211c;
+      --callout-border: #6b4a34;
+      --shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #101614;
+    --surface: #161f1c;
+    --surface-2: #1c2622;
+    --text: #eef1ef;
+    --text-soft: #a6b3ae;
+    --border: #2a332f;
+    --accent: #3fb39c;
+    --accent-ink: #08130f;
+    --accent-2: #e0a479;
+    --bubble-bot: #1c2622;
+    --bubble-user: #3fb39c;
+    --bubble-user-text: #08130f;
+    --callout-bg: #24211c;
+    --callout-border: #6b4a34;
+    --shadow: 0 10px 30px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Manrope',sans-serif; line-height:1.55;
+    padding:32px 16px 64px;
+  }
+  .wrap{max-width:720px;margin:0 auto}
+  .top{margin-bottom:22px}
+  .eyebrow{
+    font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin-bottom:6px;
+  }
+  h1{
+    font-family:'Spectral',serif; font-weight:500; font-size:28px;
+    margin:0 0 8px; color:var(--text);
+  }
+  .sub{color:var(--text-soft); font-size:15px; max-width:56ch}
+
+  .callout{
+    background:var(--callout-bg); border:1px solid var(--callout-border);
+    border-radius:14px; padding:16px 18px; margin:22px 0 26px;
+    font-size:14.5px; color:var(--text);
+  }
+  .callout b{color:var(--accent-2)}
+
+  .card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:20px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 18px; border-bottom:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .head-left{display:flex; align-items:center; gap:12px}
+  .avatar{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--accent); color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Spectral',serif; font-weight:600; font-size:16px;
+  }
+  .head-name{font-weight:700; font-size:14.5px}
+  .head-status{font-size:12px; color:var(--text-soft)}
+  .langs{display:flex; gap:6px}
+  .lang-btn{
+    border:1px solid var(--border); background:transparent; color:var(--text-soft);
+    font-family:'Manrope',sans-serif; font-size:12px; font-weight:700;
+    padding:5px 9px; border-radius:8px; cursor:pointer;
+  }
+  .lang-btn.active{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+
+  .thread{
+    padding:18px; min-height:280px; max-height:440px; overflow-y:auto;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .msg{max-width:80%; padding:10px 13px; border-radius:14px; font-size:14.5px}
+  .msg.bot{
+    align-self:flex-start; background:var(--bubble-bot); border:1px solid var(--border);
+    border-bottom-left-radius:4px;
+  }
+  .msg.user{
+    align-self:flex-end; background:var(--bubble-user); color:var(--bubble-user-text);
+    border-bottom-right-radius:4px;
+  }
+  .typing{align-self:flex-start; display:flex; gap:4px; padding:12px 14px;
+    background:var(--bubble-bot); border:1px solid var(--border); border-radius:14px; border-bottom-left-radius:4px;}
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--text-soft);opacity:.5; animation:blink 1.2s infinite}
+  .typing span:nth-child(2){animation-delay:.2s}
+  .typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:.9}}
+
+  .fwd{
+    align-self:flex-start; margin-top:2px;
+    border:1px solid var(--accent); color:var(--accent); background:transparent;
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:13px;
+    padding:7px 12px; border-radius:10px; cursor:pointer;
+  }
+  .fwd:hover{background:var(--accent); color:var(--accent-ink)}
+
+  .chips{
+    display:flex; flex-wrap:wrap; gap:8px; padding:0 18px 16px;
+  }
+  .chip{
+    border:1px solid var(--border); background:var(--surface-2); color:var(--text);
+    font-family:'Manrope',sans-serif; font-size:13px; padding:8px 12px;
+    border-radius:999px; cursor:pointer; text-align:left;
+  }
+  .chip:hover{border-color:var(--accent); color:var(--accent)}
+
+  .inputrow{
+    display:flex; gap:8px; padding:14px 18px; border-top:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .inputrow input{
+    flex:1; border:1px solid var(--border); background:var(--surface);
+    color:var(--text); border-radius:10px; padding:10px 12px; font-family:'Manrope',sans-serif; font-size:14px;
+  }
+  .inputrow button{
+    border:none; background:var(--accent); color:var(--accent-ink);
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:14px;
+    padding:10px 16px; border-radius:10px; cursor:pointer;
+  }
+
+  .foot{
+    margin-top:18px; font-size:12.5px; color:var(--text-soft); text-align:center;
+  }
+  .foot b{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="eyebrow">Nyvexo · interaktīvs prototips</div>
+    <h1>La Vie Clinic — AI asistents (demo)</h1>
+    <p class="sub">Šis ir scenāriju prototips, kas parāda, kā izskatītos AI čata asistents jūsu vietnē — atbild uzreiz LV/RU/EN, kamēr administrators nav pieejams.</p>
+  </div>
+
+  <div class="callout">
+    <b>Kāpēc tieši šis piemērs:</b> jūsu pašreizējā "Pieteikt vizīti" forma savāc kontaktus un saka "mēs ar jums sazināsimies" — bez tūlītēja apstiprinājuma vai brīvā laika. Procedūrām ar augstu čeku (botulīns, lāzerepilācija) gaidīšana bieži nozīmē, ka klients pa to laiku jau pierakstās pie kāda cita.
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <div class="head-left">
+        <div class="avatar">LV</div>
+        <div>
+          <div class="head-name">La Vie asistents</div>
+          <div class="head-status" id="statusLine">Demo režīms · atbild uzreiz</div>
+        </div>
+      </div>
+      <div class="langs">
+        <button class="lang-btn active" data-lang="lv" onclick="setLang('lv')">LV</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+      </div>
+    </div>
+
+    <div class="thread" id="thread"></div>
+
+    <div class="chips" id="chips"></div>
+
+    <div class="inputrow">
+      <input type="text" id="freeText" placeholder="Uzrakstiet savu jautājumu..." onkeydown="if(event.key==='Enter')sendFree()">
+      <button onclick="sendFree()">→</button>
+    </div>
+  </div>
+
+  <p class="foot">Šis ir <b>demo ar iepriekš uzrakstītiem scenārijiem</b>, nevis reāli pievienots AI. Reālajā versijā atbildes balstītos uz jūsu cenrādi, grafiku un abu filiāļu (Rīga/Tallina) pieejamību, un neatbildētie gadījumi tiktu pārsūtīti administratoram. Sagatavoja <b>Nyvexo</b> · nyvexo.lv</p>
+</div>
+
+<script>
+const T = {
+  lv: {
+    status: "Demo režīms · atbild uzreiz",
+    chips: [
+      "Cik maksā botulotoksīna injekcijas?",
+      "Vai šodien varu pieteikties uz konsultāciju?",
+      "Kura filiāle ir tuvāk — Rīgā vai Tallinā?",
+      "Kāds ir jūsu darba laiks?"
+    ],
+    answers: {
+      price: "Botulotoksīna injekciju cena atkarīga no zonu skaita un devas — precīzu summu apstiprina ārsts konsultācijā. Orientējoši šī procedūra sākas no ~150-200 €. Vēlaties, lai administrators atsūta precīzu cenrādi jūsu gadījumam?",
+      today: "Šodien pieejamību varu pārbaudīt tikai kopā ar administratoru — abās Rīgas filiālēs (Augusta Deglavas ielā un Gustava Zemgala gatvē) grafiki atšķiras. Pārsūtīt jūsu pieprasījumu, lai jums pārbauda brīvos laikus tūlīt?",
+      branch: "Mums ir divas filiāles Rīgā — Augusta Deglava ielā 66 un Gustava Zemgala gatvē 74 — un filiāle Tallinā, Roseni 12. Kurai pilsētai/rajonam jums ērtāk, lai ieteiktu tuvāko?",
+      hours: "Godīgi sakot — precīzs darba laiks šobrīd nav publicēts mūsu vietnē, tāpēc droši vien tas arī jums nebija skaidrs. Uzrakstiet šeit, un administrators apstiprinās brīvos laikus jums personīgi."
+    },
+    fwdLabel: "Pārsūtīt administratoram →",
+    fwdConfirm: "Paldies! Jūsu jautājums pārsūtīts La Vie Clinic administratoram, atbildēs tuvākajā laikā.",
+    fallback: "Šis ir demo ar ierobežotu jautājumu kopu — pilnajā versijā AI atbildētu uz jebkuru jautājumu par procedūrām, cenām un pieejamību. Pārsūtīt šo jautājumu administratoram?",
+    placeholder: "Uzrakstiet savu jautājumu..."
+  },
+  en: {
+    status: "Demo mode · replies instantly",
+    chips: [
+      "How much do Botox injections cost?",
+      "Can I book a consultation today?",
+      "Which location is closer — Riga or Tallinn?",
+      "What are your working hours?"
+    ],
+    answers: {
+      price: "Botox pricing depends on the number of zones and dose — the exact amount is confirmed by the doctor during consultation. As a guide, it starts around ~€150-200. Would you like the administrator to send an exact quote for your case?",
+      today: "I can only check today's real availability together with the administrator — the two Riga locations (Augusta Deglava iela and Gustava Zemgala gatve) have different schedules. Shall I forward your request so someone checks open slots right now?",
+      branch: "We have two locations in Riga — Augusta Deglava iela 66 and Gustava Zemgala gatve 74 — plus a location in Tallinn, Roseni 12. Which city/area is more convenient for you?",
+      hours: "Honestly — exact working hours aren't published on our website right now, so it's understandable if that wasn't clear to you either. Write here and the administrator will confirm available times personally."
+    },
+    fwdLabel: "Forward to administrator →",
+    fwdConfirm: "Thanks! Your question was forwarded to the La Vie Clinic administrator, they'll reply shortly.",
+    fallback: "This demo covers a limited set of questions — the full version would answer anything about procedures, pricing and availability. Forward this question to the administrator?",
+    placeholder: "Type your question..."
+  },
+  ru: {
+    status: "Демо-режим · отвечает мгновенно",
+    chips: [
+      "Сколько стоят инъекции ботулотоксина?",
+      "Могу ли я записаться на консультацию сегодня?",
+      "Какой филиал ближе — в Риге или Таллине?",
+      "Какой у вас график работы?"
+    ],
+    answers: {
+      price: "Цена инъекций ботулотоксина зависит от количества зон и дозы — точную сумму подтверждает врач на консультации. Ориентировочно процедура начинается от ~150-200 €. Хотите, чтобы администратор прислал точный расчёт под ваш случай?",
+      today: "Реальную доступность на сегодня я могу проверить только вместе с администратором — в двух рижских филиалах (ул. Augusta Deglava и Gustava Zemgala gatve) разные графики. Переслать ваш запрос, чтобы прямо сейчас проверили свободное время?",
+      branch: "У нас два филиала в Риге — Augusta Deglava iela 66 и Gustava Zemgala gatve 74 — и филиал в Таллине, Roseni 12. Какой город/район вам удобнее, чтобы посоветовать ближайший?",
+      hours: "Честно говоря — точный график работы сейчас не опубликован на нашем сайте, так что вам, возможно, это тоже было не совсем понятно. Напишите здесь, и администратор лично подтвердит свободное время."
+    },
+    fwdLabel: "Переслать администратору →",
+    fwdConfirm: "Спасибо! Ваш вопрос передан администратору La Vie Clinic, скоро ответят.",
+    fallback: "Это демо с ограниченным набором вопросов — в полной версии AI отвечал бы на любой вопрос о процедурах, ценах и доступности. Переслать этот вопрос администратору?",
+    fallback_alt: "",
+    placeholder: "Напишите свой вопрос..."
+  }
+};
+
+let currentLang = "lv";
+const chipKeys = ["price","today","branch","hours"];
+
+function el(tag, cls, text){
+  const e = document.createElement("div");
+  if(cls) e.className = cls;
+  if(text) e.textContent = text;
+  return e;
+}
+
+function setLang(lang){
+  currentLang = lang;
+  document.querySelectorAll(".lang-btn").forEach(b=>b.classList.toggle("active", b.dataset.lang===lang));
+  document.getElementById("statusLine").textContent = T[lang].status;
+  document.getElementById("freeText").placeholder = T[lang].placeholder;
+  document.getElementById("avatarLabel");
+  resetThread();
+}
+
+function resetThread(){
+  const thread = document.getElementById("thread");
+  thread.innerHTML = "";
+  const chips = document.getElementById("chips");
+  chips.innerHTML = "";
+  chipKeys.forEach((key,i)=>{
+    const chip = el("button","chip", T[currentLang].chips[i]);
+    chip.onclick = ()=> askQuick(key, T[currentLang].chips[i]);
+    chips.appendChild(chip);
+  });
+}
+
+function addUserMsg(text){
+  const thread = document.getElementById("thread");
+  thread.appendChild(el("div","msg user", text));
+  thread.scrollTop = thread.scrollHeight;
+}
+
+function showTyping(cb){
+  const thread = document.getElementById("thread");
+  const t = el("div","typing");
+  t.innerHTML = "<span></span><span></span><span></span>";
+  thread.appendChild(t);
+  thread.scrollTop = thread.scrollHeight;
+  setTimeout(()=>{
+    t.remove();
+    cb();
+  }, 650 + Math.random()*450);
+}
+
+function addBotMsg(text, withForward){
+  const thread = document.getElementById("thread");
+  thread.appendChild(el("div","msg bot", text));
+  if(withForward){
+    const btn = el("button","fwd", T[currentLang].fwdLabel);
+    btn.onclick = ()=>{
+      btn.disabled = true;
+      btn.style.opacity = .5;
+      showTyping(()=> addBotMsg(T[currentLang].fwdConfirm, false));
+    };
+    thread.appendChild(btn);
+  }
+  thread.scrollTop = thread.scrollHeight;
+}
+
+function askQuick(key, label){
+  addUserMsg(label);
+  const withForward = key !== "hours";
+  showTyping(()=> addBotMsg(T[currentLang].answers[key], withForward));
+}
+
+function matchKey(text){
+  const s = text.toLowerCase();
+  if(/cen|price|стои|€|eur/.test(s)) return "price";
+  if(/šodien|today|сегодня|brīv|available|своб/.test(s)) return "today";
+  if(/filiāl|location|филиал|rīg|tallin|рига|таллин/.test(s)) return "branch";
+  if(/darba laik|hours|график|working/.test(s)) return "hours";
+  return null;
+}
+
+function sendFree(){
+  const input = document.getElementById("freeText");
+  const text = input.value.trim();
+  if(!text) return;
+  addUserMsg(text);
+  input.value = "";
+  const key = matchKey(text);
+  showTyping(()=>{
+    if(key){
+      addBotMsg(T[currentLang].answers[key], key !== "hours");
+    } else {
+      addBotMsg(T[currentLang].fallback, true);
+    }
+  });
+}
+
+resetThread();
+</script>
+</body>
+</html>
